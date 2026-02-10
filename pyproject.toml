@@ -1,0 +1,69 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cbb-mcp"
+version = "0.1.0"
+description = "MCP server for NCAA Men's D1 College Basketball — live scores, rankings, stats, box scores, and more"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11"
+authors = [
+    { name = "Raja Chatrathi" },
+]
+keywords = [
+    "mcp",
+    "college-basketball",
+    "ncaa",
+    "espn",
+    "sports",
+    "claude",
+    "ai",
+    "live-scores",
+    "statistics",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Software Development :: Libraries",
+    "Topic :: Internet :: WWW/HTTP",
+]
+dependencies = [
+    "mcp[cli]>=1.26.0",
+    "aiohttp>=3.9.0",
+    "pandas>=2.0.0",
+    "pydantic>=2.11.0",
+    "pydantic-settings>=2.5.0",
+    "sportsdataverse>=0.0.38",
+    "cbbpy>=2.0.0",
+    "thefuzz[speedup]>=0.22.0",
+    "structlog>=24.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0.0",
+    "pytest-asyncio>=0.23.0",
+    "aioresponses>=0.7.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/rajachatrathi/cbb-mcp"
+Repository = "https://github.com/rajachatrathi/cbb-mcp"
+Issues = "https://github.com/rajachatrathi/cbb-mcp/issues"
+
+[project.scripts]
+cbb-mcp = "cbb_mcp.server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cbb_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

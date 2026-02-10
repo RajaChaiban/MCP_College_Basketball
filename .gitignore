@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Secrets / environment
+.env
+.env.local
+.env.production
+.env.*.local
+
+# Cache
+.cache/
+*.db
+
+# Linters / type checkers
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Claude
+.claude/
+CLAUDE.md
+claude.md
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Junk files from bad pip installs
+=*

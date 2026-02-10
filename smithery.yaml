@@ -1,0 +1,71 @@
+name: cbb-mcp
+displayName: College Basketball MCP
+description: >
+  NCAA Men's D1 College Basketball data server for Claude.
+  Live scores, rankings, team stats, box scores, play-by-play, and more
+  from ESPN, NCAA, sportsdataverse, and cbbpy — with automatic fallback.
+version: 0.1.0
+license: MIT
+author: Raja Chatrathi
+
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+  commandFunction: |-
+    (config) => ({ command: 'cbb-mcp' })
+
+tools:
+  - name: get_live_scores
+    description: Live/final scores for any date, filterable by conference or Top 25
+  - name: get_team
+    description: Look up any team by name (fuzzy matched) with record, conference, venue
+  - name: search_teams
+    description: Search teams by name or conference
+  - name: get_team_roster
+    description: Full roster with player details
+  - name: get_team_schedule
+    description: Complete schedule with results and upcoming games
+  - name: get_game_detail
+    description: Comprehensive game info with scoring summary
+  - name: get_box_score
+    description: Detailed per-player and team box score
+  - name: get_play_by_play
+    description: Play-by-play data with timestamps and shot coordinates
+  - name: get_rankings
+    description: AP Top 25, Coaches Poll with rank, record, points, trend
+  - name: get_standings
+    description: Conference standings with records and streaks
+  - name: get_team_stats
+    description: Season stats (PPG, FG%, rebounds, turnovers, etc.)
+  - name: get_player_stats
+    description: Individual player season statistics
+  - name: get_stat_leaders
+    description: National stat leaders by category
+  - name: compare_teams
+    description: Side-by-side comparison of two teams
+  - name: get_games_by_date
+    description: All games on a date with TV info
+  - name: get_tournament_bracket
+    description: March Madness bracket and results
+
+resources:
+  - name: conferences
+    uri: cbb://conferences
+    description: List all D1 conferences
+
+prompts:
+  - name: game_preview_prompt
+    description: Generate a comprehensive game preview analysis
+  - name: season_recap_prompt
+    description: Generate a season recap for any team
+
+tags:
+  - sports
+  - basketball
+  - ncaa
+  - college-basketball
+  - espn
+  - live-scores
+  - statistics

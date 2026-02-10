@@ -1,0 +1,17 @@
+services:
+  cbb-mcp:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - CBB_TRANSPORT=streamable-http
+      - CBB_HOST=0.0.0.0
+      - CBB_PORT=8000
+      - CBB_LOG_LEVEL=INFO
+      - CBB_SERVER_API_KEY=${CBB_SERVER_API_KEY:-}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp/cbb-cache
+    security_opt:
+      - no-new-privileges:true
