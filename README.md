@@ -1,5 +1,12 @@
 # cbb-mcp
 
+<!-- mcp-name: io.github.rajachatrathi/college-basketball -->
+
+[![PyPI](https://img.shields.io/pypi/v/cbb-mcp)](https://pypi.org/project/cbb-mcp/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.11+](https://img.shields.io/badge/python-3.11+-blue.svg)](https://www.python.org/downloads/)
+[![MCP Registry](https://img.shields.io/badge/MCP-Registry-green)](https://registry.modelcontextprotocol.io/)
+
 **NCAA Men's D1 College Basketball MCP Server**
 
 An [MCP](https://modelcontextprotocol.io) server that gives Claude (and any MCP client) real-time access to college basketball data — live scores, rankings, team stats, box scores, play-by-play, and more.
