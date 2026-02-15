@@ -17,7 +17,7 @@ async def get_session() -> aiohttp.ClientSession:
     """Get or create a shared aiohttp session."""
     global _session
     if _session is None or _session.closed:
-        timeout = aiohttp.ClientTimeout(total=15, connect=5)
+        timeout = aiohttp.ClientTimeout(total=30, connect=10)
         _session = aiohttp.ClientSession(
             timeout=timeout,
             headers={"User-Agent": "cbb-mcp/0.1.0"},

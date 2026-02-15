@@ -42,6 +42,7 @@ claude.md
 # OS
 .DS_Store
 Thumbs.db
+nul
 
 # Junk files from bad pip installs
 =*

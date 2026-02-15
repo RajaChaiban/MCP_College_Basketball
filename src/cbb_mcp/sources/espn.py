@@ -26,11 +26,33 @@ from cbb_mcp.utils.constants import (
     ESPN_API_BASE,
     ESPN_CONFERENCES,
     ESPN_CORE_BASE,
+    ESPN_WEB_BASE,
 )
 from cbb_mcp.utils.errors import GameNotFoundError, SourceError, TeamNotFoundError
 from cbb_mcp.utils.http_client import fetch_json
 
 logger = structlog.get_logger()
+
+# ESPN's scoreboard returns a `conferenceId` per team that differs from
+# the `groups` param used in the scoreboard URL.  This maps the
+# user-friendly conference name → scoreboard conferenceId.
+# Verified by looking up known teams via the /teams/{id} endpoint.
+_SCOREBOARD_CONF_IDS: dict[str, str] = {
+    "ACC": "2",
+    "Big 12": "8",
+    "Big East": "4",
+    "Big Ten": "7",
+    "SEC": "23",
+    "WCC": "29",
+    "A-10": "3",
+    "Mountain West": "44",
+    "Ivy": "12",
+    "MAAC": "13",
+    "C-USA": "11",
+    "ASUN": "11",
+    "Big West": "9",
+    "Horizon": "45",
+}
 
 
 def _safe_get(data: dict, *keys, default=""):
@@ -72,24 +94,83 @@ class ESPNSource(DataSource):
     async def get_live_scores(
         self, date: str, conference: str = "", top25: bool = False
     ) -> list[Game]:
+        # Always fetch all games — ESPN's server-side 'groups' filter is
+        # unreliable and can return teams from the wrong conference.
         params: dict[str, str] = {"dates": date.replace("-", ""), "limit": "200"}
-        if conference:
-            conf = ESPN_CONFERENCES.get(conference)
-            if conf:
-                params["groups"] = conf["id"]
 
         try:
             data = await fetch_json(f"{ESPN_API_BASE}/scoreboard", params=params)
         except Exception as e:
             raise SourceError(self.name, f"Failed to fetch scores: {e}") from e
 
+        # Resolve the target conference ID from scoreboard data for filtering.
+        # ESPN scoreboard competitors include a `conferenceId` field that we
+        # can match against the conference name.
+        target_conf_id: str | None = None
+        if conference:
+            target_conf_id = await self._find_conference_id(data, conference)
+
         games: list[Game] = []
         for event in data.get("events", []):
+            if target_conf_id is not None:
+                if not self._event_has_conference(event, target_conf_id):
+                    continue
             game = self._parse_event(event)
             if top25 and not (game.home.rank or game.away.rank):
                 continue
             games.append(game)
         return games
+
+    async def _find_conference_id(self, scoreboard_data: dict, conference: str) -> str | None:
+        """Look up the ESPN conferenceId for a given conference name.
+
+        ESPN's scoreboard embeds a conferenceId on each competitor's team
+        object, but it uses a different numbering system than the URL
+        ``groups`` parameter. We first check a static map of known IDs,
+        then fall back to a dynamic lookup.
+        """
+        if conference not in ESPN_CONFERENCES:
+            return None
+
+        # Fast path: static map covers major conferences
+        if conference in _SCOREBOARD_CONF_IDS:
+            return _SCOREBOARD_CONF_IDS[conference]
+
+        # Slow path: find a team from this conference via search,
+        # then look up its groups.id from the team detail endpoint.
+        try:
+            teams_data = await fetch_json(
+                f"{ESPN_API_BASE}/teams", params={"limit": "400"}
+            )
+            all_teams = (
+                teams_data.get("sports", [{}])[0]
+                .get("leagues", [{}])[0]
+                .get("teams", [])
+            )
+            # Pick the first team, look up its detail to get groups.id
+            if all_teams:
+                sample_id = str(all_teams[0].get("team", all_teams[0]).get("id", ""))
+                if sample_id:
+                    detail = await fetch_json(f"{ESPN_API_BASE}/teams/{sample_id}")
+                    team = detail.get("team", detail)
+                    gid = str(team.get("groups", {}).get("id", ""))
+                    if gid:
+                        # Cache for future calls
+                        _SCOREBOARD_CONF_IDS[conference] = gid
+                        return gid
+        except Exception:
+            logger.debug("conference_id_lookup_failed", conference=conference)
+
+        return None
+
+    @staticmethod
+    def _event_has_conference(event: dict, conf_id: str) -> bool:
+        """Check if any team in an event belongs to the given conferenceId."""
+        comp = event.get("competitions", [{}])[0]
+        for c in comp.get("competitors", []):
+            if str(c.get("team", {}).get("conferenceId", "")) == conf_id:
+                return True
+        return False
 
     # ── Teams ───────────────────────────────────────────────────
 
@@ -137,8 +218,18 @@ class ESPNSource(DataSource):
             raise SourceError(self.name, f"Failed to fetch roster: {e}") from e
 
         players: list[Player] = []
-        for group in data.get("athletes", []):
-            for athlete in group.get("items", []):
+        athletes_data = data.get("athletes", [])
+
+        for entry in athletes_data:
+            # Handle both flat array and grouped {items: [...]} formats
+            if isinstance(entry, dict) and "items" in entry:
+                athlete_list = entry["items"]
+            elif isinstance(entry, dict) and "displayName" in entry:
+                athlete_list = [entry]
+            else:
+                continue
+
+            for athlete in athlete_list:
                 players.append(
                     Player(
                         id=str(athlete.get("id", "")),
@@ -324,31 +415,48 @@ class ESPNSource(DataSource):
 
         try:
             data = await fetch_json(
-                f"{ESPN_API_BASE}/standings", params=params
+                f"{ESPN_WEB_BASE}/standings", params=params
             )
         except Exception as e:
             raise SourceError(self.name, f"Failed to fetch standings: {e}") from e
 
         standings_list: list[ConferenceStandings] = []
-        for child in data.get("children", []):
-            conf_name = child.get("name", "")
+
+        # The web API returns either a single conference (with standings
+        # at top level) or multiple conferences under "children".
+        conference_blocks: list[dict] = []
+        if data.get("children"):
+            conference_blocks = data["children"]
+        elif data.get("standings"):
+            # Single conference response
+            conference_blocks = [data]
+
+        for block in conference_blocks:
+            conf_name = block.get("name", block.get("abbreviation", ""))
             entries: list[StandingsEntry] = []
 
-            for i, entry in enumerate(child.get("standings", {}).get("entries", [])):
+            standings_entries = block.get("standings", {}).get("entries", [])
+            for i, entry in enumerate(standings_entries):
                 team_data = entry.get("team", {})
-                stats = {
-                    s.get("name", ""): s.get("displayValue", "")
-                    for s in entry.get("stats", [])
-                }
+                # Build stat lookup keyed by "type" (unique per stat)
+                stats_by_type: dict[str, str] = {}
+                for s in entry.get("stats", []):
+                    stype = s.get("type", "")
+                    val = s.get("summary", s.get("displayValue", ""))
+                    stats_by_type[stype] = val
+
+                overall = stats_by_type.get("total", "")
+                conf_record = stats_by_type.get("vsconf", "")
+                streak_display = stats_by_type.get("streak", "")
+
                 entries.append(
                     StandingsEntry(
                         team_id=str(team_data.get("id", "")),
                         team_name=team_data.get("displayName", ""),
                         conference_rank=i + 1,
-                        overall_record=stats.get("overall", ""),
-                        conference_record=stats.get("vsConf", stats.get("Conference", "")),
-                        streak=stats.get("streak", ""),
-                        last_10=stats.get("Last Ten Games", ""),
+                        overall_record=overall,
+                        conference_record=conf_record,
+                        streak=streak_display,
                     )
                 )
 
@@ -373,11 +481,13 @@ class ESPNSource(DataSource):
         except Exception as e:
             raise SourceError(self.name, f"Failed to fetch team stats: {e}") from e
 
-        splits = data.get("results", data)
         stat_map: dict[str, float] = {}
 
-        # ESPN returns stats in categories
-        for category in data.get("statistics", data.get("stats", [])):
+        # ESPN site API nests stats under results.stats.categories
+        categories = (
+            data.get("results", {}).get("stats", {}).get("categories", [])
+        )
+        for category in categories:
             if isinstance(category, dict):
                 for stat in category.get("stats", []):
                     name = stat.get("name", "")
@@ -390,12 +500,15 @@ class ESPNSource(DataSource):
             team_id=team_id,
             team_name=data.get("team", {}).get("displayName", ""),
             season=season,
+            games_played=int(stat_map.get("gamesPlayed", 0)),
             ppg=stat_map.get("avgPoints", stat_map.get("points", 0)),
             opp_ppg=stat_map.get("avgPointsAgainst", 0),
             fg_pct=stat_map.get("fieldGoalPct", 0),
             three_pct=stat_map.get("threePointFieldGoalPct", 0),
             ft_pct=stat_map.get("freeThrowPct", 0),
             rpg=stat_map.get("avgRebounds", stat_map.get("rebounds", 0)),
+            offensive_rpg=stat_map.get("avgOffensiveRebounds", 0),
+            defensive_rpg=stat_map.get("avgDefensiveRebounds", 0),
             apg=stat_map.get("avgAssists", stat_map.get("assists", 0)),
             spg=stat_map.get("avgSteals", stat_map.get("steals", 0)),
             bpg=stat_map.get("avgBlocks", stat_map.get("blocks", 0)),
@@ -407,52 +520,96 @@ class ESPNSource(DataSource):
     ) -> list[PlayerStats]:
         if not team_id:
             return []
+
+        season = CURRENT_SEASON
+
+        # Step 1: Get athlete refs from core API
         try:
-            data = await fetch_json(
-                f"{ESPN_API_BASE}/teams/{team_id}/statistics",
-                params={"season": str(CURRENT_SEASON)},
+            roster_data = await fetch_json(
+                f"{ESPN_CORE_BASE}/seasons/{season}/teams/{team_id}/athletes",
+                params={"limit": "50"},
             )
         except Exception as e:
-            raise SourceError(self.name, f"Failed to fetch player stats: {e}") from e
+            raise SourceError(self.name, f"Failed to fetch athlete list: {e}") from e
 
+        athlete_refs = [
+            item["$ref"] for item in roster_data.get("items", [])
+            if isinstance(item, dict) and "$ref" in item
+        ]
+
+        # Step 2: Fetch athlete profiles concurrently to get names/positions
+        import asyncio
+        athletes_info: list[dict] = []
+        try:
+            tasks = [fetch_json(ref) for ref in athlete_refs]
+            athletes_info = await asyncio.gather(*tasks, return_exceptions=True)
+        except Exception as e:
+            raise SourceError(self.name, f"Failed to fetch athlete profiles: {e}") from e
+
+        # Step 3: Fetch per-athlete season stats concurrently
+        stat_refs = [
+            f"{ESPN_CORE_BASE}/seasons/{season}/types/2/athletes/{a.get('id')}/statistics/0"
+            for a in athletes_info
+            if isinstance(a, dict) and a.get("id")
+        ]
+        stats_results: list = []
+        try:
+            tasks = [fetch_json(ref) for ref in stat_refs]
+            stats_results = await asyncio.gather(*tasks, return_exceptions=True)
+        except Exception:
+            pass
+
+        # Step 4: Combine athlete info with stats
+        team_name = ""
         players: list[PlayerStats] = []
-        for category in data.get("statistics", []):
-            if category.get("name") == "general":
-                labels = category.get("labels", [])
-                for athlete in category.get("athletes", []):
-                    athlete_data = athlete.get("athlete", {})
-                    stats_values = athlete.get("stats", [])
-                    stat_dict: dict[str, str] = {}
-                    for j, label in enumerate(labels):
-                        if j < len(stats_values):
-                            stat_dict[label] = stats_values[j]
+        for i, athlete_data in enumerate(athletes_info):
+            if not isinstance(athlete_data, dict) or not athlete_data.get("id"):
+                continue
 
-                    pid = str(athlete_data.get("id", ""))
-                    if player_id and pid != player_id:
-                        continue
+            pid = str(athlete_data.get("id", ""))
+            if player_id and pid != player_id:
+                continue
 
-                    players.append(
-                        PlayerStats(
-                            player_id=pid,
-                            name=athlete_data.get("displayName", ""),
-                            team=data.get("team", {}).get("displayName", ""),
-                            position=athlete_data.get("position", {}).get(
-                                "abbreviation", ""
-                            ),
-                            games_played=int(stat_dict.get("GP", 0)),
-                            minutes_per_game=float(stat_dict.get("MIN", 0)),
-                            ppg=float(stat_dict.get("PTS", 0)),
-                            rpg=float(stat_dict.get("REB", 0)),
-                            apg=float(stat_dict.get("AST", 0)),
-                            spg=float(stat_dict.get("STL", 0)),
-                            bpg=float(stat_dict.get("BLK", 0)),
-                            topg=float(stat_dict.get("TO", 0)),
-                            fg_pct=float(stat_dict.get("FG%", 0)),
-                            three_pct=float(stat_dict.get("3PT%", 0)),
-                            ft_pct=float(stat_dict.get("FT%", 0)),
-                        )
-                    )
-                break
+            # Parse stats from core API response
+            stat_map: dict[str, float] = {}
+            if i < len(stats_results) and isinstance(stats_results[i], dict):
+                stat_data = stats_results[i]
+                for split in stat_data.get("splits", {}).get("categories", []):
+                    for s in split.get("stats", []):
+                        try:
+                            stat_map[s["name"]] = float(s.get("value", 0))
+                        except (ValueError, TypeError, KeyError):
+                            pass
+
+            # Resolve team name once
+            if not team_name:
+                team_ref = athlete_data.get("team", {})
+                if isinstance(team_ref, dict) and "displayName" in team_ref:
+                    team_name = team_ref["displayName"]
+
+            gp = stat_map.get("gamesPlayed", 0)
+            players.append(
+                PlayerStats(
+                    player_id=pid,
+                    name=athlete_data.get("displayName", ""),
+                    team=team_name,
+                    position=_safe_get(athlete_data, "position", "abbreviation"),
+                    games_played=int(gp),
+                    minutes_per_game=stat_map.get("avgMinutes", 0),
+                    ppg=stat_map.get("avgPoints", 0),
+                    rpg=stat_map.get("avgRebounds", 0),
+                    apg=stat_map.get("avgAssists", 0),
+                    spg=stat_map.get("avgSteals", 0),
+                    bpg=stat_map.get("avgBlocks", 0),
+                    topg=stat_map.get("avgTurnovers", 0),
+                    fg_pct=stat_map.get("fieldGoalPct", 0),
+                    three_pct=stat_map.get("threePointFieldGoalPct", 0),
+                    ft_pct=stat_map.get("freeThrowPct", 0),
+                )
+            )
+
+        # Sort by PPG descending for readability
+        players.sort(key=lambda p: p.ppg, reverse=True)
         return players
 
     async def get_stat_leaders(
@@ -460,42 +617,72 @@ class ESPNSource(DataSource):
     ) -> list[StatLeader]:
         season = season or CURRENT_SEASON
         cat_map = {
-            "scoring": "avgPoints",
-            "rebounds": "avgRebounds",
-            "assists": "avgAssists",
-            "steals": "avgSteals",
-            "blocks": "avgBlocks",
+            "scoring": "pointsPerGame",
+            "rebounds": "reboundsPerGame",
+            "assists": "assistsPerGame",
+            "steals": "stealsPerGame",
+            "blocks": "blocksPerGame",
             "field_goal_pct": "fieldGoalPct",
-            "three_point_pct": "threePointPct",
+            "three_point_pct": "threePointFieldGoalPct",
             "free_throw_pct": "freeThrowPct",
         }
-        stat_name = cat_map.get(category.lower(), "avgPoints")
+        stat_name = cat_map.get(category.lower(), "pointsPerGame")
 
+        # Core API has the leaders data (site API 404s)
         try:
             data = await fetch_json(
-                f"{ESPN_API_BASE}/leaders",
-                params={"season": str(season)},
+                f"{ESPN_CORE_BASE}/seasons/{season}/types/2/leaders",
+                params={"limit": "20"},
             )
         except Exception as e:
             raise SourceError(self.name, f"Failed to fetch leaders: {e}") from e
 
-        leaders: list[StatLeader] = []
-        for cat_data in data.get("leaders", []):
-            if cat_data.get("name") == stat_name or cat_data.get("abbreviation", "").lower() == category.lower():
-                for entry in cat_data.get("leaders", []):
-                    athlete = entry.get("athlete", {})
-                    team = athlete.get("team", {})
-                    leaders.append(
-                        StatLeader(
-                            rank=entry.get("rank", 0),
-                            player_id=str(athlete.get("id", "")),
-                            name=athlete.get("displayName", ""),
-                            team=team.get("displayName", team.get("name", "")),
-                            value=float(entry.get("value", 0)),
-                            stat_category=category,
-                        )
-                    )
+        # Find the matching category
+        target_entries: list[dict] = []
+        for cat_data in data.get("categories", []):
+            if cat_data.get("name") == stat_name:
+                target_entries = cat_data.get("leaders", [])
                 break
+
+        if not target_entries:
+            return []
+
+        # Resolve $ref links for athlete and team concurrently
+        import asyncio
+        athlete_refs = []
+        team_refs = []
+        for entry in target_entries[:20]:
+            athlete_refs.append(entry.get("athlete", {}).get("$ref", ""))
+            team_refs.append(entry.get("team", {}).get("$ref", ""))
+
+        all_refs = athlete_refs + team_refs
+        resolved: list = []
+        try:
+            tasks = [fetch_json(ref) for ref in all_refs if ref]
+            resolved = await asyncio.gather(*tasks, return_exceptions=True)
+        except Exception:
+            pass
+
+        # Split resolved results back into athletes and teams
+        n = len(athlete_refs)
+        athlete_data_list = resolved[:n] if len(resolved) >= n else resolved
+        team_data_list = resolved[n:] if len(resolved) > n else []
+
+        leaders: list[StatLeader] = []
+        for i, entry in enumerate(target_entries[:20]):
+            athlete_info = athlete_data_list[i] if i < len(athlete_data_list) and isinstance(athlete_data_list[i], dict) else {}
+            team_info = team_data_list[i] if i < len(team_data_list) and isinstance(team_data_list[i], dict) else {}
+
+            leaders.append(
+                StatLeader(
+                    rank=i + 1,
+                    player_id=str(athlete_info.get("id", "")),
+                    name=athlete_info.get("displayName", "Unknown"),
+                    team=team_info.get("displayName", team_info.get("name", "")),
+                    value=float(entry.get("value", 0)),
+                    stat_category=category,
+                )
+            )
         return leaders
 
     # ── Private Parsers ─────────────────────────────────────────
@@ -559,11 +746,20 @@ class ESPNSource(DataSource):
             except (ValueError, TypeError):
                 pass
 
+        # ESPN sometimes returns score as a dict for future games
+        raw_score = data.get("score", 0)
+        if isinstance(raw_score, dict):
+            raw_score = raw_score.get("value", 0)
+        try:
+            score = int(raw_score)
+        except (ValueError, TypeError):
+            score = 0
+
         return TeamScore(
             team_id=str(team_data.get("id", "")),
             team_name=team_data.get("displayName", team_data.get("name", "")),
             abbreviation=team_data.get("abbreviation", ""),
-            score=int(data.get("score", 0)),
+            score=score,
             rank=rank if rank > 0 else None,
             record=record_str,
             logo_url=team_data.get("logo", ""),
@@ -676,11 +872,20 @@ class ESPNSource(DataSource):
                 if not record_str:
                     record_str = records[0].get("displayValue", "")
 
+            # ESPN sometimes returns score as a dict for future games
+            raw_score = c.get("score", 0)
+            if isinstance(raw_score, dict):
+                raw_score = raw_score.get("value", 0)
+            try:
+                score_val = int(raw_score)
+            except (ValueError, TypeError):
+                score_val = 0
+
             return TeamScore(
                 team_id=str(team.get("id", "")),
                 team_name=team.get("displayName", team.get("name", "")),
                 abbreviation=team.get("abbreviation", ""),
-                score=int(c.get("score", 0)),
+                score=score_val,
                 rank=rank,
                 record=record_str,
                 logo_url=team.get("logo", ""),

@@ -96,6 +96,8 @@ async def compare_teams(team1_query: str, team2_query: str) -> TeamComparison:
         ("spg", "Steals Per Game", True),
         ("bpg", "Blocks Per Game", True),
         ("topg", "Turnovers Per Game", False),  # lower is better
+        ("offensive_rpg", "Offensive Rebounds Per Game", True),
+        ("defensive_rpg", "Defensive Rebounds Per Game", True),
     ]
 
     for attr, label, higher_better in comparisons:

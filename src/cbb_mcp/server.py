@@ -204,7 +204,7 @@ async def get_game_detail(game_id: str) -> str:
     try:
         game_id = _validate_game_id(game_id)
         game = await games.get_game_detail(game_id)
-        return formatting.format_game(game)
+        return formatting.format_game_detail(game)
     except CBBError as e:
         return str(e)
 
