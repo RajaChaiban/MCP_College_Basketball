@@ -1,6 +1,6 @@
 # cbb-mcp
 
-<!-- mcp-name: io.github.rajachatrathi/college-basketball -->
+<!-- mcp-name: io.github.rajachaiban/college-basketball -->
 
 [![PyPI](https://img.shields.io/pypi/v/cbb-mcp)](https://pypi.org/project/cbb-mcp/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
@@ -152,7 +152,7 @@ All config via environment variables (or `.env` file):
 ## Development
 
 ```bash
-git clone https://github.com/rajachatrathi/cbb-mcp.git
+git clone https://github.com/rajachaiban/cbb-mcp.git
 cd cbb-mcp
 pip install -e ".[dev]"
 pytest

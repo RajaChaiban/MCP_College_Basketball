@@ -10,7 +10,7 @@ readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 authors = [
-    { name = "Raja Chatrathi" },
+    { name = "Raja Chaiban" },
 ]
 keywords = [
     "mcp",
@@ -54,9 +54,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/rajachatrathi/cbb-mcp"
-Repository = "https://github.com/rajachatrathi/cbb-mcp"
-Issues = "https://github.com/rajachatrathi/cbb-mcp/issues"
+Homepage = "https://github.com/rajachaiban/cbb-mcp"
+Repository = "https://github.com/rajachaiban/cbb-mcp"
+Issues = "https://github.com/rajachaiban/cbb-mcp/issues"
 
 [project.scripts]
 cbb-mcp = "cbb_mcp.server:main"

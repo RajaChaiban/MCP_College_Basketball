@@ -6,7 +6,7 @@ description: >
   from ESPN, NCAA, sportsdataverse, and cbbpy — with automatic fallback.
 version: 0.1.0
 license: MIT
-author: Raja Chatrathi
+author: Raja Chaiban
 
 startCommand:
   type: stdio
