@@ -24,7 +24,7 @@ ENV CBB_CACHE_DIR=/tmp/cbb-cache
 
 EXPOSE 8000
 
-HEALTHCHECK --interval=30s --timeout=5s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/mcp')" || exit 1
+HEALTHCHECK --interval=30s --timeout=5s --start-period=10s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/mcp', timeout=4)" || exit 1
 
 ENTRYPOINT ["cbb-mcp"]

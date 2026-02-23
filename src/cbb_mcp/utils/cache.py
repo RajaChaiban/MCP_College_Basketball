@@ -13,6 +13,7 @@ logger = structlog.get_logger()
 
 # In-memory cache: key -> (expire_time, data)
 _mem_cache: dict[str, tuple[float, object]] = {}
+_MEM_CACHE_MAX = 1000  # max entries before LRU eviction
 
 
 def _cache_key(namespace: str, *args: str) -> str:
@@ -66,6 +67,11 @@ def put(namespace: str, *args: str, data: object, ttl: int) -> None:
 
     key = _cache_key(namespace, *args)
     expire = time.time() + ttl
+
+    # Evict oldest entry if at capacity
+    if len(_mem_cache) >= _MEM_CACHE_MAX:
+        oldest_key = min(_mem_cache, key=lambda k: _mem_cache[k][0])
+        del _mem_cache[oldest_key]
 
     _mem_cache[key] = (expire, data)
 

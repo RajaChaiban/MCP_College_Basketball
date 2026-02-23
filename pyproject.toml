@@ -44,6 +44,7 @@ dependencies = [
     "cbbpy>=2.0.0",
     "thefuzz[speedup]>=0.22.0",
     "structlog>=24.0.0",
+    "uvicorn>=0.29.0",
 ]
 
 [project.optional-dependencies]

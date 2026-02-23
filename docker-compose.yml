@@ -15,3 +15,10 @@ services:
       - /tmp/cbb-cache
     security_opt:
       - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M

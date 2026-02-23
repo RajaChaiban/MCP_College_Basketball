@@ -12,9 +12,20 @@ startCommand:
   type: stdio
   configSchema:
     type: object
-    properties: {}
+    properties:
+      log_level:
+        type: string
+        title: Log Level
+        description: "Logging verbosity: DEBUG, INFO, WARNING, ERROR"
+        default: INFO
+        enum: [DEBUG, INFO, WARNING, ERROR, CRITICAL]
   commandFunction: |-
-    (config) => ({ command: 'cbb-mcp' })
+    (config) => ({
+      command: 'cbb-mcp',
+      env: {
+        CBB_LOG_LEVEL: config.log_level || 'INFO'
+      }
+    })
 
 tools:
   - name: get_live_scores
