@@ -1,0 +1,237 @@
+/* ── ESPN Design Tokens ───────────────────────────────────────────────────── */
+:root {
+  --espn-red: #CC0000;
+  --espn-black: #000000;
+  --espn-dark-gray: #1A1A1A;
+  --espn-med-gray: #2B2B2B;
+  --espn-light-gray: #DCDCDC;
+  --espn-silver: #A5A5A5;
+  --bg-main: #000000;
+  --bg-panel: #121212;
+  --text-primary: #FFFFFF;
+  --text-secondary: #A5A5A5;
+  --border-subtle: #333333;
+  --radius-espn: 0px; /* ESPN often uses sharp corners for a pro look */
+}
+
+/* ── Global ─────────────────────────────────────────────────────────────── */
+body {
+    background-color: var(--espn-black) !important;
+    color: var(--text-primary) !important;
+    font-family: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    padding: 0;
+    height: 100vh;
+}
+
+/* ── Top bar ────────────────────────────────────────────────────────────── */
+.top-bar {
+    background: var(--espn-black);
+    border-bottom: 3px solid var(--espn-red);
+    padding: 8px 20px;
+    min-height: 50px;
+}
+
+.logo-cbb {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+    font-style: italic;
+    letter-spacing: -1px;
+}
+
+.logo-live {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--espn-red);
+    font-style: italic;
+}
+
+.top-bar-date {
+    color: var(--espn-silver);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+/* ── Rankings Sidebar (Right Side) ───────────────────────────────────────── */
+.rankings-col {
+    background: var(--espn-dark-gray);
+    border-left: 1px solid var(--border-subtle);
+    height: calc(100vh - 50px);
+    padding: 0;
+    overflow-y: auto;
+}
+
+.rankings-header {
+    background: var(--espn-med-gray);
+    padding: 10px 15px;
+    border-bottom: 1px solid var(--espn-red);
+}
+
+.rankings-title {
+    color: var(--text-primary);
+    font-weight: 900;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.rank-row {
+    border-bottom: 1px solid var(--border-subtle);
+    padding: 8px 15px;
+    background: var(--espn-dark-gray);
+}
+
+.rank-row:hover {
+    background: var(--espn-med-gray);
+}
+
+.rank-number {
+    color: var(--espn-red);
+    font-weight: 900;
+    font-size: 1rem;
+}
+
+/* ── Floating AI Chat (Lower Right) ──────────────────────────────────────── */
+.chat-offcanvas {
+    background: var(--espn-dark-gray) !important;
+    border: 2px solid var(--espn-red) !important;
+    width: 380px !important;
+    height: 550px !important;
+    top: auto !important;
+    bottom: 20px !important;
+    right: 20px !important;
+    left: auto !important;
+    border-radius: 8px !important;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.9) !important;
+    transform: none !important; /* Prevent standard slide-in behavior from breaking placement */
+    visibility: visible !important;
+}
+
+.chat-offcanvas.offcanvas-end {
+    transform: translateX(100%); /* Initial state for animation */
+}
+
+.chat-offcanvas.show {
+    transform: none !important;
+}
+
+.chat-panel {
+    height: 100%;
+}
+
+.chat-history {
+    background: #111111;
+}
+
+.assistant-message {
+    background: var(--espn-med-gray) !important;
+    border-left: 3px solid var(--espn-red) !important;
+    border-radius: 4px !important;
+}
+
+.user-message {
+    background: #444444 !important;
+    border-radius: 4px !important;
+}
+
+.chat-send-btn {
+    background: var(--espn-red) !important;
+    border: none !important;
+}
+
+/* ── Map Styling ─────────────────────────────────────────────────────────── */
+.map-col {
+    background: var(--espn-black);
+}
+
+/* ── Badges ──────────────────────────────────────────────────────────────── */
+.badge-success {
+    background-color: var(--espn-red) !important; /* Live markers are red in ESPN style */
+}
+
+/* ── Game Detail Panel (ESPN Black Theme) ──────────────────────────────── */
+.game-offcanvas {
+    background: var(--espn-black) !important;
+    border-top: 3px solid var(--espn-red) !important;
+    color: var(--text-primary) !important;
+}
+
+.game-offcanvas .offcanvas-header {
+    background: var(--espn-black);
+    border-bottom: 1px solid var(--espn-med-gray);
+}
+
+.game-offcanvas .offcanvas-body {
+    background: var(--espn-black);
+}
+
+.team-name-score {
+    color: var(--text-primary);
+    font-weight: 700;
+}
+
+.score-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-primary) !important;
+}
+
+.score-winner {
+    color: var(--espn-red) !important;
+}
+
+.status-badge {
+    background: var(--espn-red) !important;
+    color: white !important;
+    font-weight: 700 !important;
+    padding: 4px 12px !important;
+}
+
+.venue-text, .team-record-score {
+    color: var(--espn-silver);
+}
+
+.broadcast-text {
+    color: var(--espn-red);
+}
+
+.panel-divider {
+    border-color: var(--espn-med-gray);
+}
+
+/* Tabs */
+.game-panel-tabs .nav-link {
+    background: var(--espn-dark-gray);
+    color: var(--espn-silver);
+    border: none;
+    margin-right: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.game-panel-tabs .nav-link.active {
+    background: var(--espn-red) !important;
+    color: white !important;
+    border: none;
+}
+
+.pbp-row {
+    border-bottom: 1px solid var(--espn-med-gray);
+}
+
+.pbp-time {
+    color: var(--espn-silver);
+}
+
+.pbp-desc {
+    color: var(--text-primary);
+}
+
+.pbp-scoring {
+    color: var(--espn-red);
+}

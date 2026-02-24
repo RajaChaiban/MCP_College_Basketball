@@ -53,6 +53,15 @@ dev = [
     "pytest-asyncio>=0.23.0",
     "aioresponses>=0.7.0",
 ]
+dashboard = [
+    "dash>=2.17.0",
+    "dash-bootstrap-components>=1.6.0",
+    "plotly>=5.20.0",
+    "geopandas>=0.14.0",
+    "shapely>=2.0.0",
+    "google-genai>=1.0.0",
+    "geopy>=2.4.0",
+]
 
 [project.urls]
 Homepage = "https://github.com/rajachaiban/cbb-mcp"

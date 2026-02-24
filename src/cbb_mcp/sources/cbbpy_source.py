@@ -69,7 +69,7 @@ class CbbpySource(DataSource):
             games.append(
                 Game(
                     id=str(row.get("GAME_ID", "")),
-                    date=str(row.get("GAME_DAY", "")),
+                    date=str(row.get("game_day", "")),
                     status=status,
                     status_detail="Final" if status == "post" else "",
                     venue=str(row.get("ARENA", "")),

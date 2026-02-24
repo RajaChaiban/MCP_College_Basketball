@@ -32,6 +32,13 @@ env/
 .claude/
 CLAUDE.md
 claude.md
+Summary_CBB_Predictive_Model.md
+
+# ML Model Data
+*.csv
+*.joblib
+*.pkl
+*.onnx
 
 # IDE
 .vscode/
