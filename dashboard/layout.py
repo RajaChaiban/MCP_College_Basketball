@@ -39,6 +39,7 @@ def build_layout() -> dbc.Container:
             dcc.Store(id="games-store", storage_type="memory"),
             dcc.Store(id="selected-game-store", storage_type="memory"),
             dcc.Store(id="conversation-store", storage_type="session"),
+            dcc.Store(id="prob-history-store", storage_type="memory"),
 
             # ── Intervals ────────────────────────────────────────────────────
             dcc.Interval(id="live-refresh", interval=30_000, n_intervals=0),

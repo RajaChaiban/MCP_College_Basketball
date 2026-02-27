@@ -35,6 +35,7 @@ if os.path.exists(_env_path):
 
 import dash
 import dash_bootstrap_components as dbc
+from dash import Input, Output # Added this line
 
 from dashboard.layout import build_layout, register_layout_callbacks
 from dashboard.callbacks.map_callbacks import register_map_callbacks
@@ -57,6 +58,23 @@ app = dash.Dash(
 )
 
 app.layout = build_layout()
+
+# ── Client-side callbacks ─────────────────────────────────────────────────────
+
+app.clientside_callback(
+    """
+    function(children) {
+        const chatHistory = document.getElementById('chat-history');
+        if (chatHistory) {
+            chatHistory.scrollTop = chatHistory.scrollHeight;
+        }
+        return window.dash_clientside.no_update;
+    }
+    """,
+    Output("chat-history", "children", allow_duplicate=True), # This is a dummy output to trigger the JS
+    Input("chat-history", "children"), # This input watches for changes to chat-history children
+    prevent_initial_call=True,
+)
 
 # ── Register callbacks ────────────────────────────────────────────────────────
 

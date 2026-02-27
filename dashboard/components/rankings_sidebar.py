@@ -40,6 +40,9 @@ def build_rankings_list(poll: object | None, poll_type: str = "ap") -> html.Div:
         rank = getattr(entry, "rank", "?")
         team_name = getattr(entry, "team_name", "Unknown")
         record = getattr(entry, "record", "")
+        if record:
+            record = record.replace('-', ' - ')
+
         prev_rank = getattr(entry, "previous_rank", None)
 
         if prev_rank and prev_rank != rank:

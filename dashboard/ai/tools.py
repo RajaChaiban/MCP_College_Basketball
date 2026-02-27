@@ -59,14 +59,15 @@ FUNCTION_DECLARATIONS: list[dict] = [
     },
     {
         "name": "get_live_scores",
-        "description": "Get live and final college basketball scores for a given date.",
+        "description": "Get live and final college basketball scores for a given date. Always pass an explicit date in YYYY-MM-DD format — do not omit it.",
         "parameters": {
             "type": "object",
             "properties": {
-                "date": {"type": "string", "description": "Date in YYYY-MM-DD format. Defaults to today."},
+                "date": {"type": "string", "description": "Date in YYYY-MM-DD format (e.g. '2026-02-26'). Required — use today's or yesterday's date from the system prompt."},
                 "conference": {"type": "string", "description": "Optional conference filter (e.g. 'ACC', 'Big Ten')"},
                 "top25_only": {"type": "boolean", "description": "If true, only show games involving ranked teams"},
             },
+            "required": ["date"],
         },
     },
     {
@@ -176,13 +177,14 @@ FUNCTION_DECLARATIONS: list[dict] = [
     },
     {
         "name": "get_games_by_date",
-        "description": "Get all games on a specific date with TV broadcast info.",
+        "description": "Get all games on a specific date with TV broadcast info. Always pass an explicit date in YYYY-MM-DD format — do not omit it.",
         "parameters": {
             "type": "object",
             "properties": {
-                "date": {"type": "string", "description": "Date in YYYY-MM-DD format. Defaults to today."},
+                "date": {"type": "string", "description": "Date in YYYY-MM-DD format (e.g. '2026-02-26'). Required — use today's or yesterday's date from the system prompt."},
                 "conference": {"type": "string", "description": "Optional conference filter"},
             },
+            "required": ["date"],
         },
     },
     {
@@ -195,7 +197,50 @@ FUNCTION_DECLARATIONS: list[dict] = [
             },
         },
     },
+    {
+        "name": "get_win_probability",
+        "description": "Get the current win probability for the home team in a live game. Returns formatted result with feature values.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "game_id": {"type": "string", "description": "ESPN game ID"},
+            },
+            "required": ["game_id"],
+        },
+    },
+    {
+        "name": "explain_win_probability",
+        "description": "Get a narrative explanation of factors affecting win probability (score, strength, time remaining, etc.).",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "game_id": {"type": "string", "description": "ESPN game ID"},
+            },
+            "required": ["game_id"],
+        },
+    },
+    {
+        "name": "get_probability_history",
+        "description": "Get win probability history for a game as a time-series table with trend summary.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "game_id": {"type": "string", "description": "ESPN game ID"},
+                "history_json": {"type": "string", "description": "JSON array of probability snapshots (each with 'time_str'/'time', 'prob')"},
+            },
+            "required": ["game_id"],
+        },
+    },
 ]
+
+
+# ── Tool routing ──────────────────────────────────────────────────────────────
+
+PREDICTOR_TOOL_NAMES = frozenset({
+    "get_win_probability",
+    "explain_win_probability",
+    "get_probability_history",
+})
 
 
 # ── Gemini Tool wrapper ───────────────────────────────────────────────────────
@@ -209,9 +254,14 @@ def get_gemini_tools() -> list[dict]:
 
 async def dispatch_tool(tool_name: str, tool_args: dict[str, Any]) -> str:
     """
-    Dispatch a tool call to the MCP server via stdio.
+    Dispatch a tool call to either the predictor client (in-process) or MCP server.
     Returns the text result string.
     """
+    if tool_name in PREDICTOR_TOOL_NAMES:
+        from dashboard.ai.predictor_client import get_predictor_client
+        client = get_predictor_client()
+        return await client.call_tool(tool_name, tool_args)
+
     from dashboard.ai.mcp_client import get_client
 
     client = get_client()

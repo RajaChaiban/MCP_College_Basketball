@@ -23,9 +23,10 @@ def register_chat_callbacks(app) -> None:
         State("chat-input", "value"),
         State("conversation-store", "data"),
         State("selected-game-store", "data"),
+        State("prob-history-store", "data"),
         prevent_initial_call=True,
     )
-    def handle_chat(n_clicks, n_submit, user_input, history, selected_game):
+    def handle_chat(n_clicks, n_submit, user_input, history, selected_game, prob_history):
         """Handle chat submission and run AI agent."""
         if not user_input or not user_input.strip():
             return no_update, no_update, no_update, no_update
@@ -34,8 +35,23 @@ def register_chat_callbacks(app) -> None:
 
         # Build context from selected game
         context = {}
-        if selected_game and selected_game.get("game_id"):
-            context["selected_game_id"] = selected_game["game_id"]
+        try:
+            if selected_game and isinstance(selected_game, dict) and selected_game.get("game_id"):
+                game_id = selected_game["game_id"]
+                context["selected_game_id"] = game_id
+
+                # Include probability history for the selected game if available
+                if prob_history and isinstance(prob_history, dict):
+                    # Try with both string and original game_id as keys
+                    game_history = prob_history.get(game_id) or prob_history.get(str(game_id)) or []
+                    if game_history:
+                        import json
+                        context["prob_history_json"] = json.dumps(game_history)
+        except Exception as e:
+            # Log error but don't crash - history wasn't critical for basic chat
+            import traceback
+            print(f"[chat_callbacks] Error building context: {e}")
+            traceback.print_exc()
 
         try:
             from dashboard.ai.agent import run_chat_turn

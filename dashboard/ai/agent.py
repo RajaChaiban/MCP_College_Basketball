@@ -7,6 +7,7 @@ Loops function_call → function_response until no more calls.
 from __future__ import annotations
 
 import os
+from datetime import date
 from typing import Any
 
 from dashboard.ai.tools import dispatch_tool, get_gemini_tools
@@ -15,16 +16,30 @@ MODEL = os.environ.get("GEMINI_MODEL", "gemini-1.5-flash")
 MAX_TOKENS = 4096
 MAX_TOOL_ROUNDS = 10
 
-SYSTEM_PROMPT = """You are a knowledgeable NCAA Men's Division I college basketball analyst assistant.
+_SYSTEM_PROMPT_TEMPLATE = """You are a knowledgeable NCAA Men's Division I college basketball analyst assistant.
 You have access to live data including scores, box scores, play-by-play, rankings, and statistics.
 
-When answering questions:
-- Use the available tools to fetch current data rather than relying on memory
-- Be concise and focused on what the user asked
-- Format stats clearly using markdown tables when appropriate
-- When a game is selected in the dashboard, you have context about that game and can reference it
+TODAY'S DATE: {today}
+YESTERDAY'S DATE: {yesterday}
 
-Today's data is live — always fetch fresh data rather than guessing."""
+When answering questions:
+- ALWAYS call a tool to fetch current data — never answer from memory or training data.
+- For any question about scores, games, or results you MUST call get_live_scores or get_games_by_date first.
+- When the user says "yesterday", use date {yesterday}. When they say "today", use date {today}.
+- Be concise and focused on what the user asked.
+- Format stats clearly using markdown tables when appropriate.
+- When a game is selected in the dashboard, you have context about that game and can reference it.
+
+Your training data is outdated — always fetch fresh data via tools, never guess."""
+
+
+def _build_system_prompt() -> str:
+    today = date.today()
+    yesterday = date.fromordinal(today.toordinal() - 1)
+    return _SYSTEM_PROMPT_TEMPLATE.format(
+        today=today.strftime("%Y-%m-%d"),
+        yesterday=yesterday.strftime("%Y-%m-%d"),
+    )
 
 
 async def run_chat_turn(
@@ -62,6 +77,8 @@ async def run_chat_turn(
             ctx_parts.append(f"[Context: The user is viewing game ID {game_id}]")
         if team := context.get("selected_team"):
             ctx_parts.append(f"[Context: The user is viewing {team}]")
+        if prob_history := context.get("prob_history_json"):
+            ctx_parts.append(f"[Context: Win probability history available. Call get_probability_history with game_id={context.get('selected_game_id')} and history_json={prob_history}]")
         if ctx_parts:
             full_user_message = "\n".join(ctx_parts) + "\n\n" + user_message
 
@@ -79,8 +96,11 @@ async def run_chat_turn(
 
     tools = get_gemini_tools()
     config = types.GenerateContentConfig(
-        system_instruction=SYSTEM_PROMPT,
+        system_instruction=_build_system_prompt(),
         tools=tools,
+        tool_config=types.ToolConfig(
+            function_calling_config=types.FunctionCallingConfig(mode="AUTO")
+        ),
         max_output_tokens=MAX_TOKENS,
     )
 

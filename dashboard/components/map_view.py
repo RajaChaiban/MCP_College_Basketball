@@ -29,49 +29,65 @@ def build_map_figure(games: list, conference_filter: str = "") -> go.Figure:
     Build a Scattergeo figure with one marker per game.
 
     Args:
-        games: List of Game model instances.
+        games: List of Game dicts (from games-store).
         conference_filter: If set, only show games matching this conference.
 
     Returns:
         go.Figure
     """
     lats, lons, texts, colors, sizes, custom_data, hover_texts = [], [], [], [], [], [], []
+    games_to_plot = []
 
-    for game in games:
-        # Get venue coordinates from home team name
-        coords = get_coords(
-            team_name=game.home.team_name,
-        )
+    for g_dict in games:
+        # Extract fields from dict
+        home_team = g_dict.get("home", {}).get("team_name", "Unknown")
+        away_team = g_dict.get("away", {}).get("team_name", "Unknown")
+        home_score = g_dict.get("home", {}).get("score", 0)
+        away_score = g_dict.get("away", {}).get("score", 0)
+        status = g_dict.get("status", "pre")
+        status_detail = g_dict.get("status_detail", "")
+        clock = g_dict.get("clock", "")
+        game_id = g_dict.get("id", "")
+        win_prob = g_dict.get("win_prob")
+        
+        # Get venue coordinates
+        coords = get_coords(team_name=home_team)
         if not coords:
-            # Try away team
-            coords = get_coords(team_name=game.away.team_name)
+            coords = get_coords(team_name=away_team)
         if not coords:
             continue
 
         lat, lon = coords
-
-        # Build display text
-        status = game.status or "pre"
         status_label = STATUS_LABELS.get(status, status)
 
         if status == "in":
-            score_text = f"{game.away.team_name} {game.away.score} - {game.home.score} {game.home.team_name}"
-            time_text = game.status_detail or game.clock or "In Progress"
-            hover = f"<b>{score_text}</b><br>{time_text}<br><i>Click for details</i>"
+            prob_text = ""
+            if win_prob is not None:
+                prob_text = f"<br>Win Prob: <b>{win_prob:.1%}</b> {home_team}"
+            score_text = f"{away_team} {away_score} - {home_score} {home_team}"
+            time_text = status_detail or clock or "In Progress"
+            hover = f"<b>{score_text}</b><br>{time_text}{prob_text}<br><i>Click for details</i>"
         elif status == "post":
-            score_text = f"{game.away.team_name} {game.away.score} - {game.home.score} {game.home.team_name}"
+            score_text = f"{away_team} {away_score} - {home_score} {home_team}"
             hover = f"<b>{score_text}</b><br>Final<br><i>Click for box score</i>"
         else:
-            hover = f"<b>{game.away.team_name} @ {game.home.team_name}</b><br>{game.status_detail or 'Upcoming'}"
-            if game.broadcast:
-                hover += f"<br>TV: {game.broadcast}"
+            if win_prob is not None:
+                winner = home_team if win_prob >= 0.5 else away_team
+                conf_pct = max(win_prob, 1 - win_prob)
+                pred_text = f"<br>Prediction: <b>{winner}</b> favored ({conf_pct:.0%})"
+            else:
+                pred_text = ""
+            hover = f"<b>{away_team} @ {home_team}</b><br>{status_detail or 'Upcoming'}{pred_text}"
+            if g_dict.get("broadcast"):
+                hover += f"<br>📺 {g_dict['broadcast']}"
 
         lats.append(lat)
         lons.append(lon)
         hover_texts.append(hover)
         colors.append(STATUS_COLORS.get(status, "#42A5F5"))
-        sizes.append(16 if status == "in" else 12)
-        custom_data.append(game.id)
+        sizes.append(18 if status == "in" else 12)
+        custom_data.append(game_id)
+        games_to_plot.append({"status": status, "win_prob": win_prob, "lat": lat, "lon": lon})
 
     fig = go.Figure()
 
@@ -95,6 +111,24 @@ def build_map_figure(games: list, conference_filter: str = "") -> go.Figure:
                 showlegend=False,
             )
         )
+
+    # Add orange prediction ring for pre-game games with a prediction
+    pre_lats = [g["lat"] for g in games_to_plot if g["status"] == "pre" and g["win_prob"] is not None]
+    pre_lons = [g["lon"] for g in games_to_plot if g["status"] == "pre" and g["win_prob"] is not None]
+    if pre_lats:
+        fig.add_trace(go.Scattergeo(
+            lat=pre_lats,
+            lon=pre_lons,
+            mode="markers",
+            marker=dict(
+                size=22,
+                color="rgba(255, 165, 0, 0.15)",
+                symbol="circle-open",
+                line=dict(width=2, color="#FFA500"),
+            ),
+            hoverinfo="none",
+            showlegend=False,
+        ))
 
     # Add legend traces (invisible markers just for the legend)
     for status, color in STATUS_COLORS.items():

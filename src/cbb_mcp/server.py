@@ -23,6 +23,11 @@ _log_level = getattr(logging, _level_name)
 
 structlog.configure(
     wrapper_class=structlog.make_filtering_bound_logger(_log_level),
+    processors=[
+        structlog.processors.TimeStamper(fmt="%Y-%m-%d %H:%M:%S"),
+        structlog.dev.ConsoleRenderer(colors=False),
+    ],
+    logger_factory=structlog.PrintLoggerFactory(file=sys.stderr),
 )
 
 logger = structlog.get_logger()

@@ -14,6 +14,53 @@
   --radius-espn: 0px; /* ESPN often uses sharp corners for a pro look */
 }
 
+
+/* Styling for the conference dropdown */
+.conference-dropdown {
+    /* Styles for the main button/dropdown container */
+    background-color: var(--espn-dark-gray) !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--radius-espn) !important; /* Use ESPN's sharp corners */
+}
+
+/* Style for the displayed selected value (e.g., "All Conferences" or "ACC") */
+.conference-dropdown .dash-dropdown-value {
+    color: var(--text-primary) !important;
+}
+
+.conference-dropdown .dash-dropdown-value-item {
+    color: var(--text-primary) !important;
+}
+
+/* Style for the placeholder text when no value is selected */
+.conference-dropdown .dash-dropdown-placeholder {
+    color: var(--espn-silver) !important;
+}
+
+/* Styles for the dropdown menu when it's open */
+.dash-dropdown-menu {
+    background-color: var(--espn-dark-gray) !important;
+    border: 1px solid var(--border-subtle) !important;
+    border-radius: var(--radius-espn) !important;
+}
+
+/* Styles for individual options in the dropdown menu */
+.dash-dropdown-menu .dash-dropdown-menu-item {
+    background-color: var(--espn-dark-gray) !important;
+    color: var(--text-primary) !important;
+}
+
+/* Style for hovered option in the dropdown */
+.dash-dropdown-menu .dash-dropdown-menu-item:hover {
+    background-color: var(--espn-med-gray) !important;
+}
+
+/* Style for the selected option in the dropdown */
+.dash-dropdown-menu .dash-dropdown-menu-item--selected {
+    background-color: var(--espn-red) !important; /* ESPN Red for selected item */
+    color: white !important;
+}
 /* ── Global ─────────────────────────────────────────────────────────────── */
 body {
     background-color: var(--espn-black) !important;
@@ -74,8 +121,8 @@ body {
 
 .rankings-title {
     color: var(--text-primary);
-    font-weight: 900;
-    font-size: 0.9rem;
+    font-weight: 700; /* Changed from 900 to 700 */
+    font-size: 1rem;   /* Changed from 0.9rem to 1rem */
     text-transform: uppercase;
     margin: 0;
 }
@@ -94,6 +141,167 @@ body {
     color: var(--espn-red);
     font-weight: 900;
     font-size: 1rem;
+    width: 25px; /* Give rank number a fixed width for alignment */
+    text-align: right;
+    margin-right: 8px;
+}
+
+.rank-team-name {
+    flex-grow: 1; /* Allow team name to take up available space */
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.rank-record {
+    color: var(--espn-silver);
+    font-size: 0.85rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.rank-up {
+    color: #4CAF50; /* Green for moving up */
+    font-weight: 700;
+}
+
+.rank-down {
+    color: #FF5252; /* Red for moving down */
+    font-weight: 700;
+}
+
+.rank-same {
+    color: var(--espn-silver); /* Consistent with secondary text */
+    font-weight: 700;
+}
+
+/* ── Floating AI Chat (Lower Right) ──────────────────────────────────────── */
+
+/* ── Chat Panel UI ────────────────────────────────────────────────────────── */
+.chat-panel {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.chat-panel-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    color: var(--text-primary);
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.chat-history {
+    background: #111111;
+    flex-grow: 1; /* Allows chat history to fill available space */
+    padding: 15px;
+    overflow-y: auto; /* Enable scrolling for history */
+    display: flex;
+    flex-direction: column; /* Ensure messages stack vertically */
+}
+
+.chat-message-row {
+    display: flex;
+    margin-bottom: 15px;
+    max-width: 80%; /* Limit message width */
+}
+
+.chat-message-row.user-row {
+    margin-left: auto; /* Push user messages to the right */
+    justify-content: flex-end;
+}
+
+.chat-message-row.assistant-row {
+    margin-right: auto; /* Keep assistant messages to the left */
+    justify-content: flex-start;
+}
+
+.chat-avatar {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+    flex-shrink: 0; /* Prevent avatar from shrinking */
+}
+
+.user-avatar {
+    background-color: var(--espn-red);
+    color: var(--text-primary);
+    margin-left: 10px;
+}
+
+.assistant-avatar {
+    background-color: var(--espn-med-gray);
+    color: var(--espn-red);
+    margin-right: 10px;
+}
+
+.chat-message {
+    padding: 10px 15px;
+    border-radius: 18px; /* More rounded corners for bubbles */
+    word-wrap: break-word;
+    white-space: pre-wrap; /* Preserve whitespace and breaks */
+    font-size: 0.9rem;
+    line-height: 1.4;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.assistant-message {
+    background: var(--espn-med-gray) !important;
+    border-top-left-radius: 2px; /* Slight adjustment for bubble look */
+}
+
+.user-message {
+    background: #444444 !important;
+    color: var(--text-primary);
+    border-top-right-radius: 2px; /* Slight adjustment for bubble look */
+}
+
+.chat-input-row {
+    display: flex;
+    padding: 10px 15px;
+    border-top: 1px solid var(--border-subtle);
+    background: var(--espn-dark-gray);
+    gap: 10px;
+}
+
+.chat-input .form-control {
+    background: #222222 !important;
+    border: 1px solid var(--border-subtle) !important;
+    color: var(--text-primary) !important;
+    border-radius: 18px !important;
+    padding-right: 40px; /* Space for potential send icon inside input */
+}
+
+.chat-input .form-control::placeholder {
+    color: var(--espn-silver);
+}
+
+.chat-send-btn {
+    background: var(--espn-red) !important;
+    border: none !important;
+    border-radius: 50% !important; /* Make send button round */
+    width: 38px;
+    height: 38px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.chat-send-btn:hover {
+    opacity: 0.8;
+}
+
+.chat-loading {
+    padding: 10px;
+    text-align: center;
 }
 
 /* ── Floating AI Chat (Lower Right) ──────────────────────────────────────── */
@@ -110,38 +318,23 @@ body {
     box-shadow: 0 10px 40px rgba(0,0,0,0.9) !important;
     transform: none !important; /* Prevent standard slide-in behavior from breaking placement */
     visibility: visible !important;
+    display: flex; /* Make it a flex container */
+    flex-direction: column; /* Stack header, body, footer */
 }
 
-.chat-offcanvas.offcanvas-end {
-    transform: translateX(100%); /* Initial state for animation */
+.chat-offcanvas .offcanvas-header {
+    background: var(--espn-black);
+    border-bottom: 1px solid var(--espn-red);
+    padding: 10px 15px;
+    flex-shrink: 0; /* Prevent header from shrinking */
 }
 
-.chat-offcanvas.show {
-    transform: none !important;
-}
-
-.chat-panel {
-    height: 100%;
-}
-
-.chat-history {
-    background: #111111;
-}
-
-.assistant-message {
-    background: var(--espn-med-gray) !important;
-    border-left: 3px solid var(--espn-red) !important;
-    border-radius: 4px !important;
-}
-
-.user-message {
-    background: #444444 !important;
-    border-radius: 4px !important;
-}
-
-.chat-send-btn {
-    background: var(--espn-red) !important;
-    border: none !important;
+.chat-offcanvas .offcanvas-body {
+    padding: 0; /* Remove default padding, chat-history handles it */
+    flex-grow: 1; /* Allow body to grow and fill space */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* Hide overflow from chat-history */
 }
 
 /* ── Map Styling ─────────────────────────────────────────────────────────── */
@@ -234,4 +427,203 @@ body {
 
 .pbp-scoring {
     color: var(--espn-red);
+}
+
+/* ── Win Probability Chart (Enhanced) ────────────────────────────────── */
+.prob-chart-container-enhanced {
+    padding: 20px;
+    background: var(--bg-panel);
+    border-radius: var(--radius-espn);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.prob-chart-container {
+    padding: 20px;
+    background: var(--bg-panel);
+    border-radius: var(--radius-espn);
+}
+
+.chart-title {
+    color: var(--text-primary);
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 1px;
+    border-left: 4px solid var(--espn-red);
+    padding-left: 10px;
+    margin-bottom: 15px;
+}
+
+.prob-graph {
+    height: 300px;
+}
+
+.prob-chart-placeholder {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    background: var(--espn-dark-gray);
+    border: 1px dashed var(--border-subtle);
+    margin: 20px 0;
+}
+
+/* ── Win Probability Cards (Current %) ─────────────────────────────── */
+.prob-cards-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 10px;
+}
+
+.prob-card {
+    padding: 16px 20px;
+    background: linear-gradient(135deg, rgba(30, 30, 30, 0.8) 0%, rgba(20, 20, 20, 0.9) 100%);
+    border: 2px solid;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.prob-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.6);
+}
+
+.prob-card.home-card {
+    border-color: var(--espn-red);
+    background: linear-gradient(135deg, rgba(204, 0, 0, 0.15) 0%, rgba(20, 20, 20, 0.9) 100%);
+}
+
+.prob-card.away-card {
+    border-color: #42A5F5;
+    background: linear-gradient(135deg, rgba(66, 165, 245, 0.15) 0%, rgba(20, 20, 20, 0.9) 100%);
+}
+
+.prob-card-team-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.prob-card-percentage {
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: -1px;
+    font-variant-numeric: tabular-nums;
+}
+
+/* ── Enhanced Graph Styling ────────────────────────────────────────── */
+.prob-graph {
+    height: 450px;
+    background: rgba(15, 15, 15, 0.3);
+    border-radius: 4px;
+    border: 1px solid rgba(51, 51, 51, 0.5);
+}
+
+
+/* ─── Pre-Game Prediction Panel ─────────────────────────── */
+.pre-game-prediction-container {
+    padding: 20px;
+    background: var(--espn-dark-gray);
+    height: 100%;
+}
+
+.prediction-section-header {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--espn-silver);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    padding-left: 10px;
+    border-left: 4px solid #FFA500;
+}
+
+.predicted-winner-banner {
+    background: linear-gradient(135deg, rgba(255,165,0,0.15), rgba(255,165,0,0.04));
+    border: 1px solid rgba(255,165,0,0.35);
+    padding: 14px 18px;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.predicted-winner-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    color: var(--espn-silver);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.predicted-winner-name {
+    font-size: 22px;
+    font-weight: 900;
+    color: #FFA500;
+    margin-bottom: 4px;
+}
+
+.predicted-confidence-text {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+.pre-game-prob-row {
+    display: grid;
+    grid-template-columns: 1fr 28px 1fr;
+    gap: 8px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.prob-bar-wrap {
+    height: 28px;
+    background: var(--espn-med-gray);
+    overflow: hidden;
+    position: relative;
+}
+
+.prob-bar-fill-home {
+    height: 100%;
+    background: linear-gradient(90deg, #CC0000, #FF4444);
+}
+
+.prob-bar-fill-away {
+    height: 100%;
+    background: linear-gradient(270deg, #42A5F5, #1565C0);
+    float: right;
+}
+
+.key-factors-grid {
+    display: grid;
+    grid-template-columns: 1fr 60px 1fr;
+    gap: 6px 12px;
+    margin-bottom: 14px;
+    align-items: center;
+    font-size: 13px;
+}
+
+.factor-label {
+    font-size: 10px;
+    color: var(--espn-silver);
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.pre-game-footer-note {
+    font-size: 11px;
+    color: var(--espn-silver);
+    text-align: center;
+    font-style: italic;
+    margin-top: 16px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border-subtle);
 }
