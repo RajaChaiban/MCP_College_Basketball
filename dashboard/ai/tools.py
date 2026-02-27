@@ -199,7 +199,7 @@ FUNCTION_DECLARATIONS: list[dict] = [
     },
     {
         "name": "get_win_probability",
-        "description": "Get the current win probability for the home team in a live game. Returns formatted result with feature values.",
+        "description": "Get win probability for a game — works for upcoming (pre-game), live, and completed games. For pre-game, uses team rankings and season records. For live games, uses score, momentum, and time remaining. Always call this when asked about predictions or win chances.",
         "parameters": {
             "type": "object",
             "properties": {
@@ -210,7 +210,7 @@ FUNCTION_DECLARATIONS: list[dict] = [
     },
     {
         "name": "explain_win_probability",
-        "description": "Get a narrative explanation of factors affecting win probability (score, strength, time remaining, etc.).",
+        "description": "Get a 200-300 word analyst-style report explaining how the win probability was calculated, covering methodology (LR + XGBoost ensemble), key factors (rankings, records, home court, score, momentum), and confidence level. Works for both pre-game and live games. Call this when the user asks for a breakdown, report, analysis, or explanation of a prediction.",
         "parameters": {
             "type": "object",
             "properties": {
