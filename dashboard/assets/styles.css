@@ -181,6 +181,7 @@ body {
     display: flex;
     flex-direction: column;
     height: 100%;
+    background: var(--espn-dark-gray);
 }
 
 .chat-panel-title {
@@ -194,114 +195,235 @@ body {
 }
 
 .chat-history {
-    background: #111111;
-    flex-grow: 1; /* Allows chat history to fill available space */
-    padding: 15px;
-    overflow-y: auto; /* Enable scrolling for history */
+    background: #0a0a0a;
+    flex-grow: 1;
+    padding: 30px 15px 15px 15px; /* Added more top padding for fade effect */
+    overflow-y: auto;
     display: flex;
-    flex-direction: column; /* Ensure messages stack vertically */
+    flex-direction: column;
+    gap: 16px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--espn-red) #111111;
+    scroll-behavior: smooth;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 30px);
 }
 
 .chat-message-row {
     display: flex;
-    margin-bottom: 15px;
-    max-width: 80%; /* Limit message width */
+    width: 100%;
+    margin-bottom: 4px;
+    animation: fadeInSlide 0.3s ease-out forwards;
+}
+
+@keyframes fadeInSlide {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .chat-message-row.user-row {
-    margin-left: auto; /* Push user messages to the right */
     justify-content: flex-end;
 }
 
 .chat-message-row.assistant-row {
-    margin-right: auto; /* Keep assistant messages to the left */
     justify-content: flex-start;
 }
 
 .chat-avatar {
-    width: 30px;
-    height: 30px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.9rem;
-    flex-shrink: 0; /* Prevent avatar from shrinking */
+    font-size: 0.85rem;
+    flex-shrink: 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.3);
 }
 
 .user-avatar {
-    background-color: var(--espn-red);
-    color: var(--text-primary);
+    background: linear-gradient(135deg, var(--espn-red), #ff4444);
+    color: white;
     margin-left: 10px;
 }
 
 .assistant-avatar {
-    background-color: var(--espn-med-gray);
+    background: var(--espn-med-gray);
     color: var(--espn-red);
     margin-right: 10px;
+    border: 1px solid var(--border-subtle);
 }
 
 .chat-message {
-    padding: 10px 15px;
-    border-radius: 18px; /* More rounded corners for bubbles */
-    word-wrap: break-word;
-    white-space: pre-wrap; /* Preserve whitespace and breaks */
-    font-size: 0.9rem;
-    line-height: 1.4;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+    max-width: 85%;
+    padding: 10px 16px;
+    border-radius: 18px;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    position: relative;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    word-break: break-word; /* Ensure text doesn't overflow */
+    white-space: pre-wrap; /* Preserve spaces and line breaks */
 }
 
+/* Assistant & User Message bubble tweaks */
 .assistant-message {
-    background: var(--espn-med-gray) !important;
-    border-top-left-radius: 2px; /* Slight adjustment for bubble look */
+    background: var(--espn-med-gray);
+    color: #eeeeee;
+    border-bottom-left-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.05);
 }
 
 .user-message {
-    background: #444444 !important;
-    color: var(--text-primary);
-    border-top-right-radius: 2px; /* Slight adjustment for bubble look */
+    background: #333333; /* Slightly lighter than history bg */
+    color: #ffffff;
+    border-bottom-right-radius: 4px;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
+/* Thinking/Loading status indicator */
+.chat-loading-container {
+    padding: 0 15px 10px 15px;
+    height: 30px;
+    margin-top: -10px;
+    z-index: 5;
+    background: transparent;
+    display: flex;
+    align-items: center;
+}
+
+/* Custom styles for Dash's default spinners to match ESPN style */
+._dash-loading-callback {
+    font-size: 0 !important; /* Hide default text if any */
+}
+
+/* Dot animation for loading */
+.chat-loading-container .dash-spinner {
+    display: flex !important;
+    gap: 4px !important;
+}
+
+.chat-loading-container .dash-spinner > div {
+    width: 8px !important;
+    height: 8px !important;
+    background-color: var(--espn-red) !important;
+    border-radius: 50% !important;
+    animation: typing 1.4s infinite ease-in-out !important;
+}
+
+/* Chat Input styling refinements for multi-line - REMOVED (duplicate, see below) */
+
+/* Markdown styling inside messages */
+.chat-markdown p:last-child {
+    margin-bottom: 0;
+}
+
+.chat-markdown code {
+    background: rgba(0,0,0,0.3);
+    padding: 2px 4px;
+    border-radius: 4px;
+}
+
+/* Typing Indicator Animation */
+.typing-indicator {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 16px;
+    background: var(--espn-med-gray);
+    border-radius: 18px;
+    border-bottom-left-radius: 4px;
+    width: fit-content;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--espn-silver);
+    border-radius: 50%;
+    animation: typing 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: 0s; }
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typing {
+    0%, 60%, 100% { transform: translateY(0); opacity: 0.6; }
+    30% { transform: translateY(-4px); opacity: 1; }
+}
+
+/* Chat Input Row */
 .chat-input-row {
     display: flex;
-    padding: 10px 15px;
+    align-items: flex-end; /* Align to bottom for multiline */
+    padding: 12px 15px;
     border-top: 1px solid var(--border-subtle);
     background: var(--espn-dark-gray);
-    gap: 10px;
+    gap: 12px;
+    flex-wrap: nowrap;
 }
 
-.chat-input .form-control {
-    background: #222222 !important;
+.chat-input-row .chat-input {
+    flex: 1 1 auto !important;
+}
+
+.chat-input-container {
+    flex-grow: 1;
+    position: relative;
+    min-width: 0;
+}
+
+.chat-input {
+    width: 100% !important;
+    background: #1a1a1a !important;
     border: 1px solid var(--border-subtle) !important;
     color: var(--text-primary) !important;
-    border-radius: 18px !important;
-    padding-right: 40px; /* Space for potential send icon inside input */
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
+    font-size: 0.95rem !important;
+    resize: none !important;
+    min-height: 42px !important;
+    max-height: 200px !important;
+    overflow: hidden !important;
+    line-height: 1.4 !important;
+    box-sizing: border-box !important;
+    transition: height 0.1s ease !important;
+    font-family: inherit !important;
+    display: block !important;
 }
 
-.chat-input .form-control::placeholder {
-    color: var(--espn-silver);
+.chat-input:focus {
+    border-color: var(--espn-red) !important;
+    box-shadow: 0 0 0 2px rgba(204, 0, 0, 0.2) !important;
 }
 
 .chat-send-btn {
     background: var(--espn-red) !important;
     border: none !important;
-    border-radius: 50% !important; /* Make send button round */
-    width: 38px;
-    height: 38px;
+    border-radius: 50% !important;
+    width: 40px;
+    height: 40px;
     padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    transition: transform 0.2s ease, background 0.2s ease;
+    margin-bottom: 2px;
 }
 
 .chat-send-btn:hover {
-    opacity: 0.8;
+    background: #e60000 !important;
+    transform: scale(1.05);
 }
 
+.chat-send-btn:active {
+    transform: scale(0.95);
+}
+
+/* Hide the old loading indicator as we'll use the typing bubble */
 .chat-loading {
-    padding: 10px;
-    text-align: center;
+    display: none;
 }
 
 /* ── Floating AI Chat (Lower Right) ──────────────────────────────────────── */

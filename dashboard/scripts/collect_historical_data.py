@@ -151,8 +151,8 @@ async def collect_data(start_date: str, end_date: str, output_file: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--start", default="2025-02-01", help="Start date YYYY-MM-DD")
-    parser.add_argument("--end", default="2025-02-15", help="End date YYYY-MM-DD")
+    parser.add_argument("--start", default="2025-11-01", help="Start date YYYY-MM-DD")
+    parser.add_argument("--end", default="2026-02-27", help="End date YYYY-MM-DD")
     parser.add_argument("--output", default="cbb_training_data.csv", help="Output CSV path")
     args = parser.parse_args()
     

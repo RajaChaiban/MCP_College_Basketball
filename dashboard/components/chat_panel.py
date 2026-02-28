@@ -14,35 +14,35 @@ def build_chat_panel() -> html.Div:
         [
             # Chat history display
             html.Div(
-                id="chat-history",
-                className="chat-history",
-                children=[
+                [
                     html.Div(
-                        className="chat-message-row assistant-row",
-                        children=[
-                            html.Div(
-                                html.I(className="fas fa-robot"),
-                                className="chat-avatar assistant-avatar",
-                            ),
-                            html.Div(
-                                "Hi! Ask me anything about tonight's games, stats, or standings. "
-                                "If you've clicked a game on the map, I have context about it.",
-                                className="chat-message assistant-message",
-                            ),
-                        ],
-                    )
+                        id="chat-history",
+                        className="chat-history",
+                        children=render_chat_history([]),
+                    ),
+                    # Loading indicator positioned at the bottom of the history
+                    html.Div(
+                        dcc.Loading(
+                            id="chat-loading",
+                            type="dot",
+                            children=html.Div(id="chat-loading-dummy"),
+                            overlay_style={"visibility":"visible", "opacity": "0.5", "backgroundColor": "transparent"},
+                            color="var(--espn-red)",
+                        ),
+                        className="chat-loading-container",
+                    ),
                 ],
+                style={"flex-grow": "1", "display": "flex", "flex-direction": "column", "position": "relative", "overflow": "hidden"}
             ),
             # Input area
             html.Div(
                 [
-                    dbc.Input(
+                    dbc.Textarea(
                         id="chat-input",
                         placeholder="Ask about games, stats, rankings...",
-                        type="text",
                         className="chat-input",
+                        rows=1,
                         debounce=False,
-                        n_submit=0,
                         autofocus=True,
                     ),
                     dbc.Button(
@@ -55,20 +55,36 @@ def build_chat_panel() -> html.Div:
                 ],
                 className="chat-input-row",
             ),
-            # Loading indicator
-            dcc.Loading(
-                id="chat-loading",
-                type="dot",
-                color="#7B68EE",
-                children=html.Div(id="chat-loading-dummy"),
-                className="chat-loading",
-            ),
+            # Trigger for client-side Enter key handling
+            dcc.Store(id="chat-input-trigger", data=0),
         ],
         className="chat-panel",
     )
 
 
-def render_chat_history(history: list[dict]) -> list:
+def render_typing_indicator() -> html.Div:
+    """Render the 'assistant is thinking' dots."""
+    return html.Div(
+        className="chat-message-row assistant-row",
+        children=[
+            html.Div(
+                html.I(className="fas fa-robot"),
+                className="chat-avatar assistant-avatar",
+            ),
+            html.Div(
+                className="typing-indicator",
+                children=[
+                    html.Div(className="typing-dot"),
+                    html.Div(className="typing-dot"),
+                    html.Div(className="typing-dot"),
+                ],
+            ),
+        ],
+        id="typing-indicator-row",
+    )
+
+
+def render_chat_history(history: list[dict], show_typing: bool = False) -> list:
     """
     Render the conversation history as HTML elements.
     Supports Gemini format: {"role": "user"|"model", "parts": [{"text": "..."}]}
@@ -82,7 +98,7 @@ def render_chat_history(history: list[dict]) -> list:
                     className="chat-avatar assistant-avatar",
                 ),
                 html.Div(
-                    "Hi! Ask me anything about tonight's games, stats, or standings.",
+                    "Hi! I'm your CBB Assistant. Ask me about tonight's games, rankings, or team stats!",
                     className="chat-message assistant-message",
                 ),
             ],
@@ -91,14 +107,15 @@ def render_chat_history(history: list[dict]) -> list:
 
     for msg in history:
         role = msg.get("role", "user")
-
-        # Extract text from Gemini-format parts
+        
+        # Extract text from Gemini-format parts or content string
+        text_content = ""
         parts = msg.get("parts", [])
-        text_content = " ".join(
-            p.get("text", "") for p in parts if isinstance(p, dict) and p.get("text")
-        ).strip()
-
-        # Fallback: old Anthropic format {"role": ..., "content": str}
+        if parts:
+             text_content = " ".join(
+                p.get("text", "") for p in parts if isinstance(p, dict) and p.get("text")
+            ).strip()
+        
         if not text_content:
             raw = msg.get("content", "")
             if isinstance(raw, str):
@@ -138,5 +155,8 @@ def render_chat_history(history: list[dict]) -> list:
                     ],
                 )
             )
+
+    if show_typing:
+        elements.append(render_typing_indicator())
 
     return elements
