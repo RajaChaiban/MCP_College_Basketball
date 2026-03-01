@@ -118,27 +118,31 @@ Open `http://localhost:8050` in your browser.
 
 ### 1. Collect Training Data
 
-Fetches historical play-by-play snapshots and saves them as a CSV:
+**For 2025-26 season (recommended)**, use the pre-built enhanced training data:
+
+```bash
+python dashboard/scripts/train_predictor.py --input enhanced_training_data_2025_26.csv
+```
+
+**For custom date ranges**, collect data first:
 
 ```bash
 python dashboard/scripts/collect_historical_data.py \
-  --start 2024-11-01 \
-  --end 2025-03-01 \
-  --output cbb_training_data.csv
+  --start 2025-11-01 \
+  --end 2026-02-27 \
+  --output cbb_training_data_2025_26.csv
+
+python dashboard/scripts/train_predictor.py --input cbb_training_data_2025_26.csv
 ```
 
-Each row is a game snapshot with: `score_diff`, `time_ratio`, `mins_remaining`, `period`, `is_home_win`.
+⚠️ **Note:** Only use 2025-26 season data. College rosters change dramatically between seasons.
 
-### 2. Train the Model
-
-```bash
-python dashboard/scripts/train_predictor.py --input cbb_training_data.csv
-```
+Each row is a game snapshot with: `score_diff`, `momentum`, `strength_diff`, `time_ratio`, `mins_remaining`, `period`, plus 12 contextual features.
 
 Outputs:
-- Logistic Regression accuracy + Brier score
-- XGBoost accuracy + Brier score
-- Ensemble accuracy + Brier score
+- Logistic Regression accuracy + Brier score (99.50% on 2025-26)
+- XGBoost accuracy + Brier score (99.75% on 2025-26)
+- Ensemble accuracy + Brier score (99.75% on 2025-26)
 - `cbb_predictor_bundle.joblib` — the saved model bundle
 
 ### 3. Live Predictions

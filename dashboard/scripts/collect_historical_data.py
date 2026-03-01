@@ -1,9 +1,13 @@
 """
 Predictive Engine — Historical Data Collector.
-Usage: python dashboard/scripts/collect_historical_data.py --start 2024-11-01 --end 2025-03-01 --output training_data.csv
+Usage: python dashboard/scripts/collect_historical_data.py --start 2025-11-01 --end 2026-03-01 --output cbb_training_data_2025_26.csv
 
-This script fetches play-by-play data for past games and formats it into 
+This script fetches play-by-play data for past games and formats it into
 snapshots (one per minute or significant event) for ML training.
+
+NOTE: Default date range is now 2025-26 season. For historical data from other seasons,
+specify --start and --end dates explicitly. Only 2025-26 data should be used for
+current production models due to roster changes between seasons.
 """
 
 import argparse
@@ -151,9 +155,9 @@ async def collect_data(start_date: str, end_date: str, output_file: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--start", default="2025-11-01", help="Start date YYYY-MM-DD")
-    parser.add_argument("--end", default="2026-02-27", help="End date YYYY-MM-DD")
-    parser.add_argument("--output", default="cbb_training_data.csv", help="Output CSV path")
+    parser.add_argument("--start", default="2025-11-01", help="Start date YYYY-MM-DD (default: 2025-26 season)")
+    parser.add_argument("--end", default="2026-02-27", help="End date YYYY-MM-DD (default: 2025-26 season)")
+    parser.add_argument("--output", default="cbb_training_data_2025_26.csv", help="Output CSV path (should include 2025_26 in filename)")
     args = parser.parse_args()
     
     asyncio.run(collect_data(args.start, args.end, args.output))

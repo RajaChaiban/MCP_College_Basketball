@@ -120,7 +120,7 @@ def train_models(input_csv: str):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--input", default="cbb_training_data.csv", help="Input CSV path")
+    parser.add_argument("--input", default="enhanced_training_data_2025_26.csv", help="Input CSV path (2025-26 season data recommended for best accuracy)")
     args = parser.parse_args()
     
     train_models(args.input)
