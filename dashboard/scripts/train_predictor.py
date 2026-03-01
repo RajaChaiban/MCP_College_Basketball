@@ -35,9 +35,23 @@ def train_models(input_csv: str):
         return
 
     # 2. Feature Selection
-    # Updated to include Contextual Strength and Momentum
-    features = ['score_diff', 'momentum', 'strength_diff', 'time_ratio', 'mins_remaining', 'period']
-    X = df[features]
+    # Updated to include Contextual Strength, Momentum, and 12 Contextual Features
+    # Original 6 features
+    features = [
+        'score_diff', 'momentum', 'strength_diff', 'time_ratio', 'mins_remaining', 'period',
+        # NEW 12 Contextual Features (if available)
+        'home_collapse_pct_up_10', 'away_collapse_pct_up_10',
+        'home_comeback_pct_down_5', 'away_comeback_pct_down_5',
+        'home_conf_rank', 'home_conf_win_pct', 'away_conf_rank', 'away_conf_win_pct',
+        'home_recent_win_pct', 'away_recent_win_pct',
+        'home_h2h_win_pct', 'away_h2h_win_pct'
+    ]
+
+    # Use only features that exist in the dataframe
+    available_features = [f for f in features if f in df.columns]
+    print(f"Using {len(available_features)} features: {available_features}")
+
+    X = df[available_features]
     y = df['is_home_win']
 
     # 3. Train/Test Split
@@ -88,17 +102,21 @@ def train_models(input_csv: str):
         'lr_model': lr_model,
         'xgb_model': xgb_model,
         'scaler': scaler,
-        'features': features,
+        'features': available_features,
         'weights': {'lr': 0.5, 'xgb': 0.5},
         'metadata': {
             'trained_at': pd.Timestamp.now().isoformat(),
-            'features_used': features,
-            'brier_score': ensemble_brier
+            'features_used': available_features,
+            'num_features': len(available_features),
+            'brier_score': ensemble_brier,
+            'ensemble_accuracy': ensemble_acc,
+            'data_source': 'enhanced_training_data_2025_26.csv'
         }
     }
-    
+
     joblib.dump(bundle, 'cbb_predictor_bundle.joblib')
     print("Calibrated Predictor bundle saved to cbb_predictor_bundle.joblib")
+    print(f"Bundle contains {len(available_features)} features with Brier Score: {ensemble_brier:.4f}")
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()

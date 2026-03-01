@@ -1,0 +1,59 @@
+# Docker Compose for local development with both MCP servers
+# Start both servers: docker-compose -f docker-compose-dev.yml up
+
+version: '3'
+
+services:
+  cbb-data-server:
+    build: .
+    container_name: cbb-data-server
+    command: python -m cbb_mcp.server
+    environment:
+      CBB_LOG_LEVEL: DEBUG
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./.cache:/app/.cache
+    networks:
+      - ml-dev
+
+  ml-predictor-server:
+    build: .
+    container_name: ml-predictor-server
+    command: python -m ml_sports_predictor.server
+    environment:
+      ML_SPORTS_LOG_LEVEL: DEBUG
+      ML_SPORTS_SPORTS_REGISTRY_PATH: src/ml_sports_predictor/sports_config.yaml
+    ports:
+      - "8001:8001"
+    volumes:
+      - ./.cache_ml:/app/.cache_ml
+      - ./cbb_predictor_bundle.joblib:/app/cbb_predictor_bundle.joblib:ro
+    networks:
+      - ml-dev
+    depends_on:
+      - cbb-data-server
+
+  dashboard:
+    build: .
+    container_name: cbb-dashboard
+    command: python dashboard/app.py
+    ports:
+      - "8050:8050"
+    environment:
+      GEMINI_API_KEY: ${GEMINI_API_KEY}
+      CBB_LOG_LEVEL: INFO
+      ML_SPORTS_LOG_LEVEL: INFO
+      DASH_DEBUG: "false"
+    volumes:
+      - ./.cache:/app/.cache
+      - ./.cache_ml:/app/.cache_ml
+    networks:
+      - ml-dev
+    depends_on:
+      - cbb-data-server
+      - ml-predictor-server
+
+networks:
+  ml-dev:
+    driver: bridge

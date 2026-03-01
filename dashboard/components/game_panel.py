@@ -329,7 +329,7 @@ def build_pre_game_analysis(game, win_prob: float | None) -> html.Div:
 
 
 def build_prob_chart(game, history, win_prob=None) -> html.Div:
-    """Build an enhanced line chart showing win probability over time for both teams."""
+    """Build a line chart showing win probability over game time (H1: 0-20 min, H2: 20-40 min)."""
     status = getattr(game, "status", "in")
     if status == "pre":
         return build_pre_game_analysis(game, win_prob)
@@ -346,9 +346,9 @@ def build_prob_chart(game, history, win_prob=None) -> html.Div:
             className="prob-chart-container"
         )
 
-    # Support both old and new data formats during transition
-    times_secs = [h.get("time_secs", i) for i, h in enumerate(history)]
-    times_str = [h.get("time_str", h.get("time", "??")) for h in history]
+    # X-axis: elapsed seconds from tip-off (0 = start, 1200 = halftime, 2400 = final)
+    times_secs = [h.get("time_secs", i * 30) for i, h in enumerate(history)]
+    times_str  = [h.get("time_str", h.get("time", "??")) for h in history]
 
     home_probs = [h.get("prob", 0.5) * 100 for h in history]
     away_probs = [(1.0 - h.get("prob", 0.5)) * 100 for h in history]
@@ -356,151 +356,200 @@ def build_prob_chart(game, history, win_prob=None) -> html.Div:
     home_name = game.home.team_name
     away_name = game.away.team_name
 
-    # Get current probabilities (last data point)
-    current_home_prob = home_probs[-1] if home_probs else 50
-    current_away_prob = away_probs[-1] if away_probs else 50
+    current_home_prob = home_probs[-1] if home_probs else 50.0
+    current_away_prob = away_probs[-1] if away_probs else 50.0
+
+    # ── Build hover labels that show H1/H2 notation ──────────────────────────
+    def _secs_to_half_label(secs: int) -> str:
+        if secs <= 1200:
+            m = secs // 60
+            s = secs % 60
+            return f"H1 {m}:{s:02d}"
+        else:
+            m = (secs - 1200) // 60
+            s = (secs - 1200) % 60
+            return f"H2 {m}:{s:02d}"
+
+    hover_labels = [_secs_to_half_label(int(t)) for t in times_secs]
+
+    # ── X-axis tick configuration (every 5 min, labelled H1/H2) ─────────────
+    # 9 ticks: 0, 5, 10, 15 min in H1 | halftime | 5, 10, 15, 20 min in H2
+    tick_secs  = [0, 300, 600, 900, 1200, 1500, 1800, 2100, 2400]
+    tick_labels = [
+        "H1 0:00", "H1 5:00", "H1 10:00", "H1 15:00",
+        "HALF",
+        "H2 5:00", "H2 10:00", "H2 15:00", "H2 20:00",
+    ]
 
     fig = go.Figure()
 
-    # Home team line (solid, thick)
+    # ── Home team line (solid red) ────────────────────────────────────────────
     fig.add_trace(go.Scatter(
-        x=times_secs, y=home_probs,
+        x=times_secs,
+        y=home_probs,
         mode='lines+markers',
         name=home_name,
-        line=dict(color='#CC0000', width=4),
-        marker=dict(size=7, line=dict(color='#FFFFFF', width=1)),
+        line=dict(color='#CC0000', width=3),
+        marker=dict(size=6, color='#CC0000', line=dict(color='#FFFFFF', width=1)),
         fill='tozeroy',
-        fillcolor='rgba(204, 0, 0, 0.1)',
-        hovertemplate=f"<b>{home_name}</b><br>Time: %{{customdata}}<br>Win Prob: %{{y:.1f}}%<extra></extra>",
-        customdata=times_str,
-        connectgaps=False
+        fillcolor='rgba(204, 0, 0, 0.08)',
+        hovertemplate=(
+            f"<b>{home_name}</b><br>"
+            "Time: %{customdata}<br>"
+            "Win Prob: <b>%{y:.1f}%</b><extra></extra>"
+        ),
+        customdata=hover_labels,
     ))
 
-    # Away team line (dashed, thick)
+    # ── Away team line (dashed blue) ──────────────────────────────────────────
     fig.add_trace(go.Scatter(
-        x=times_secs, y=away_probs,
+        x=times_secs,
+        y=away_probs,
         mode='lines+markers',
         name=away_name,
-        line=dict(color='#42A5F5', width=4, dash='dash'),
-        marker=dict(size=7, line=dict(color='#FFFFFF', width=1)),
-        fill='tonexty',        fillcolor='rgba(66, 165, 245, 0.1)',
-        hovertemplate=f"<b>{away_name}</b><br>Time: %{{x}}<br>Win Prob: %{{y:.1f}}%<extra></extra>",
-        connectgaps=False
+        line=dict(color='#42A5F5', width=3, dash='dash'),
+        marker=dict(size=6, color='#42A5F5', line=dict(color='#FFFFFF', width=1)),
+        fill='tonexty',
+        fillcolor='rgba(66, 165, 245, 0.08)',
+        hovertemplate=(
+            f"<b>{away_name}</b><br>"
+            "Time: %{customdata}<br>"
+            "Win Prob: <b>%{y:.1f}%</b><extra></extra>"
+        ),
+        customdata=hover_labels,
     ))
 
-    # Add 50% reference line
+    # ── 50% even-odds reference line ─────────────────────────────────────────
     fig.add_hline(
         y=50,
         line_dash="dot",
-        line_color="#666666",
+        line_color="rgba(150,150,150,0.5)",
         line_width=1,
         annotation_text="50%",
         annotation_position="right",
-        annotation_font_color="#666666"
+        annotation_font=dict(color="#888888", size=11),
+    )
+
+    # ── Halftime vertical divider ─────────────────────────────────────────────
+    fig.add_vline(
+        x=1200,
+        line_dash="dash",
+        line_color="rgba(255,165,0,0.5)",
+        line_width=1.5,
+    )
+    fig.add_annotation(
+        x=1200, y=103,
+        text="<b>HALF</b>",
+        showarrow=False,
+        font=dict(color="#FFA500", size=10),
+        xanchor="center",
+        yanchor="bottom",
+    )
+
+    # ── H1 / H2 background shading ───────────────────────────────────────────
+    fig.add_vrect(
+        x0=0, x1=1200,
+        fillcolor="rgba(255,255,255,0.02)",
+        layer="below", line_width=0,
+        annotation_text="<b>1st Half</b>",
+        annotation_position="top left",
+        annotation_font=dict(color="rgba(255,255,255,0.25)", size=10),
+    )
+    fig.add_vrect(
+        x0=1200, x1=2400,
+        fillcolor="rgba(255,255,255,0.01)",
+        layer="below", line_width=0,
+        annotation_text="<b>2nd Half</b>",
+        annotation_position="top left",
+        annotation_font=dict(color="rgba(255,255,255,0.25)", size=10),
     )
 
     fig.update_layout(
-        title=dict(
-            text="<b>Live Win Probability Trend (Elapsed Game Time)</b>",
-            font=dict(size=16, color="#FFFFFF")
-        ),
         paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(15,15,15,0.5)',
-        margin=dict(l=60, r=100, t=50, b=80),
-        height=450,
+        plot_bgcolor='rgba(15,15,15,0.6)',
+        margin=dict(l=55, r=80, t=40, b=70),
+        height=380,
         xaxis=dict(
             type='linear',
+            range=[0, 2400],
             showgrid=True,
-            gridcolor='rgba(51,51,51,0.3)',
+            gridcolor='rgba(51,51,51,0.4)',
             gridwidth=1,
-            tickfont=dict(color='#A5A5A5', size=11),
+            tickfont=dict(color='#A5A5A5', size=10),
             title=dict(
-                text="<b>Elapsed Time (MM:SS from Game Start)</b>",
-                font=dict(color='#FFFFFF', size=12)
+                text="<b>Game Time</b>",
+                font=dict(color='#BBBBBB', size=11),
             ),
             zeroline=False,
-            tickangle=-45,
+            tickangle=-30,
             tickmode='array',
-            tickvals=[i * 60 * 5 for i in range(9)], # Ticks every 5 minutes (0, 5, 10, ..., 40)
-            ticktext=[f"{i*5}:00" for i in range(9)]
+            tickvals=tick_secs,
+            ticktext=tick_labels,
         ),
         yaxis=dict(
             showgrid=True,
-            gridcolor='rgba(51,51,51,0.3)',
+            gridcolor='rgba(51,51,51,0.4)',
             gridwidth=1,
             tickfont=dict(color='#A5A5A5', size=11),
-            range=[0, 100],
-            title=dict(text="<b>Win Probability (%)</b>", font=dict(color='#FFFFFF', size=12)),
-            zeroline=False
+            range=[0, 105],
+            title=dict(
+                text="<b>Win Probability (%)</b>",
+                font=dict(color='#BBBBBB', size=11),
+            ),
+            zeroline=False,
+            ticksuffix="%",
         ),
         legend=dict(
-            orientation="v",
-            yanchor="top",
-            y=0.98,
-            xanchor="left",
-            x=0.02,
+            orientation="h",
+            yanchor="bottom",
+            y=1.02,
+            xanchor="center",
+            x=0.5,
             font=dict(color="#FFFFFF", size=12),
-            bgcolor="rgba(0,0,0,0.3)",
-            bordercolor="#333333",
-            borderwidth=1
+            bgcolor="rgba(0,0,0,0)",
         ),
         hovermode='x unified',
-        font=dict(family="Lexend, sans-serif", color="#FFFFFF")
+        font=dict(family="Lexend, sans-serif", color="#FFFFFF"),
     )
 
-    # Current probability cards
+    # ── Current probability scorecards ────────────────────────────────────────
     home_card = html.Div(
         [
             html.Div(home_name, className="prob-card-team-name"),
             html.Div(
                 f"{current_home_prob:.1f}%",
                 className="prob-card-percentage",
-                style={"color": "#CC0000"}
-            )
+                style={"color": "#CC0000"},
+            ),
         ],
-        className="prob-card home-card"
+        className="prob-card home-card",
     )
-
     away_card = html.Div(
         [
             html.Div(away_name, className="prob-card-team-name"),
             html.Div(
                 f"{current_away_prob:.1f}%",
                 className="prob-card-percentage",
-                style={"color": "#42A5F5"}
-            )
+                style={"color": "#42A5F5"},
+            ),
         ],
-        className="prob-card away-card"
+        className="prob-card away-card",
     )
 
     return html.Div(
         [
-            html.Div(
-                [
-                    home_card,
-                    away_card
-                ],
-                className="prob-cards-row"
-            ),
+            html.Div([home_card, away_card], className="prob-cards-row"),
             dcc.Graph(
                 figure=fig,
                 config={
-                    'displayModeBar': True,
+                    'displayModeBar': False,
                     'displaylogo': False,
-                    'modeBarButtonsToRemove': ['pan2d', 'lasso2d', 'select2d'],
-                    'toImageButtonOptions': {
-                        'format': 'png',
-                        'filename': 'win_probability_chart',
-                        'height': 450,
-                        'width': 800,
-                        'scale': 2
-                    }
                 },
                 className="prob-graph",
-                style={'height': '450px'}
-            )
+                style={'height': '380px'},
+            ),
         ],
-        className="prob-chart-container-enhanced"
+        className="prob-chart-container-enhanced",
     )
 
 

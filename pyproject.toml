@@ -45,6 +45,10 @@ dependencies = [
     "thefuzz[speedup]>=0.22.0",
     "structlog>=24.0.0",
     "uvicorn>=0.29.0",
+    "pyyaml>=6.0.0",
+    "joblib>=1.3.0",
+    "scikit-learn>=1.3.0",
+    "xgboost>=2.0.0",
 ]
 
 [project.optional-dependencies]
@@ -70,9 +74,10 @@ Issues = "https://github.com/rajachaiban/cbb-mcp/issues"
 
 [project.scripts]
 cbb-mcp = "cbb_mcp.server:main"
+ml-sports-predictor = "ml_sports_predictor.server:main"
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/cbb_mcp"]
+packages = ["src/cbb_mcp", "src/ml_sports_predictor"]
 
 [tool.pytest.ini_options]
 asyncio_mode = "auto"

@@ -1,0 +1,105 @@
+sports:
+  cbb:
+    name: "NCAA Men's Basketball"
+    game_duration_minutes: 40
+    period_count: 2
+    period_names: ["1st Half", "2nd Half"]
+    scoring_units: "points"
+    typical_score_range: [0, 150]
+    positions: ["PG", "SG", "SF", "PF", "C"]
+    conferences: ["ACC", "Big Ten", "SEC", "Pac-12", "Big 12", "AAC", "Mountain West", "WCC"]
+    ranking_systems: ["ap_poll", "coaches_poll", "net_rankings"]
+    predictor:
+      features: ["score_diff", "momentum", "strength_diff", "time_ratio", "mins_remaining", "period"]
+      model_path: "cbb_predictor_bundle.joblib"
+      calibration: "isotonic"
+      ensemble_weights:
+        lr: 0.5
+        xgb: 0.5
+    data_sources:
+      primary: "espn"
+      fallback: ["ncaa", "sportsdv", "cbbpy"]
+
+  soccer:
+    name: "Soccer (International)"
+    game_duration_minutes: 90
+    period_count: 2
+    period_names: ["1st Half", "2nd Half"]
+    scoring_units: "goals"
+    typical_score_range: [0, 10]
+    positions: ["GK", "FB", "CB", "MF", "FW"]
+    conferences: []
+    ranking_systems: ["fifa_ranking", "elo"]
+    predictor:
+      features: ["goal_diff", "momentum", "strength_diff", "time_ratio", "possession_pct"]
+      model_path: "models/soccer_predictor_bundle.joblib"
+      calibration: "isotonic"
+      ensemble_weights:
+        lr: 0.5
+        xgb: 0.5
+    data_sources:
+      primary: "espn"
+      fallback: ["sofascore"]
+
+  nfl:
+    name: "American Football (NFL)"
+    game_duration_minutes: 60
+    period_count: 4
+    period_names: ["1st", "2nd", "3rd", "4th"]
+    scoring_units: "points"
+    typical_score_range: [0, 60]
+    positions: ["QB", "RB", "WR", "TE", "OL", "DL", "LB", "DB"]
+    conferences: ["AFC", "NFC"]
+    ranking_systems: ["power_ranking"]
+    predictor:
+      features: ["score_diff", "momentum", "strength_diff", "time_ratio", "field_position"]
+      model_path: "models/nfl_predictor_bundle.joblib"
+      calibration: "isotonic"
+      ensemble_weights:
+        lr: 0.5
+        xgb: 0.5
+    data_sources:
+      primary: "espn"
+      fallback: []
+
+  mlb:
+    name: "Major League Baseball"
+    game_duration_minutes: 180
+    period_count: 9
+    period_names: ["1st", "2nd", "3rd", "4th", "5th", "6th", "7th", "8th", "9th+"]
+    scoring_units: "runs"
+    typical_score_range: [0, 15]
+    positions: ["P", "C", "1B", "2B", "3B", "SS", "LF", "CF", "RF", "DH"]
+    conferences: ["AL", "NL"]
+    ranking_systems: ["strength_rating"]
+    predictor:
+      features: ["run_diff", "momentum", "strength_diff", "time_ratio", "pitcher_quality"]
+      model_path: "models/mlb_predictor_bundle.joblib"
+      calibration: "isotonic"
+      ensemble_weights:
+        lr: 0.5
+        xgb: 0.5
+    data_sources:
+      primary: "espn"
+      fallback: []
+
+  tennis:
+    name: "Tennis"
+    game_duration_minutes: 180
+    period_count: 5
+    period_names: ["Set 1", "Set 2", "Set 3", "Set 4", "Set 5"]
+    scoring_units: "sets"
+    typical_score_range: [0, 5]
+    positions: []
+    conferences: []
+    ranking_systems: ["atp_ranking", "wta_ranking"]
+    predictor:
+      features: ["set_diff", "momentum", "strength_diff", "set_progress", "serve_quality"]
+      model_path: "models/tennis_predictor_bundle.joblib"
+      calibration: "isotonic"
+      ensemble_weights:
+        lr: 0.5
+        xgb: 0.5
+    data_sources:
+      primary: "espn"
+      fallback: []

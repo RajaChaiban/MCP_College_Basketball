@@ -254,14 +254,35 @@ def get_gemini_tools() -> list[dict]:
 
 async def dispatch_tool(tool_name: str, tool_args: dict[str, Any]) -> str:
     """
-    Dispatch a tool call to either the predictor client (in-process) or MCP server.
+    Dispatch a tool call to either the ML MCP server (new) or CBB MCP server.
     Returns the text result string.
+
+    Falls back to in-process predictor if ML server unavailable.
     """
     if tool_name in PREDICTOR_TOOL_NAMES:
-        from dashboard.ai.predictor_client import get_predictor_client
-        client = get_predictor_client()
-        return await client.call_tool(tool_name, tool_args)
+        # Try to route to ML MCP server first
+        try:
+            from dashboard.ai.ml_mcp_client import get_ml_client
+            client = get_ml_client()
+            result = await client.call_tool(tool_name, tool_args)
 
+            # If successful, return result
+            if not result.startswith("Tool call failed") and not "connection failed" in result.lower():
+                return result
+        except Exception as e:
+            # ML server unavailable, fall back to in-process
+            import logging
+            logging.debug(f"ML MCP server unavailable: {e}, falling back to in-process predictor")
+
+        # Fallback: use in-process predictor (deprecated but still functional)
+        try:
+            from dashboard.ai.predictor_client import get_predictor_client
+            client = get_predictor_client()
+            return await client.call_tool(tool_name, tool_args)
+        except Exception as e:
+            return f"Both ML server and in-process predictor failed: {e}"
+
+    # Route all CBB data tools to the CBB MCP server
     from dashboard.ai.mcp_client import get_client
 
     client = get_client()

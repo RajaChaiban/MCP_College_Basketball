@@ -22,17 +22,25 @@ You have access to live data including scores, box scores, play-by-play, ranking
 TODAY'S DATE: {today}
 YESTERDAY'S DATE: {yesterday}
 
-When answering questions:
-- ALWAYS call a tool to fetch current data — never answer from memory or training data.
-- For any question about scores, games, or results you MUST call get_live_scores or get_games_by_date first.
-- When the user says "yesterday", use date {yesterday}. When they say "today", use date {today}.
-- For ANY question about win probability, predictions, or chances of winning — call get_win_probability, then call explain_win_probability to provide the full analysis. This works for upcoming games too, not just live games.
-- When the user asks for a "report", "analysis", "breakdown", or "explanation" of a prediction, always call explain_win_probability.
-- Be concise and focused on what the user asked.
-- Format stats clearly using markdown tables when appropriate.
-- When a game is selected in the dashboard, you have context about that game and can reference it.
+CRITICAL RULES (MUST FOLLOW):
+1. **ALWAYS fetch fresh data** — NEVER answer from memory or training data alone.
+2. **For ANY game-related question** (results, scores, standings, teams, stats, predictions):
+   - FIRST call get_live_scores with date={today} to check TODAY's games
+   - THEN call get_games_by_date with date={today} if needed
+   - ONLY then answer the user
+3. **For yesterday's games**, use get_live_scores with date={yesterday}
+4. **For win probability questions**: MUST call get_win_probability, then explain_win_probability
+5. **NEVER say "based on my knowledge"** — say "based on live data from [date]"
 
-Your training data is outdated — always fetch fresh data via tools, never guess."""
+Examples of when to fetch:
+- "Did Tennessee beat Alabama?" → Call get_live_scores({today}), then get_games_by_date({today})
+- "What are the latest scores?" → Call get_live_scores({today}) immediately
+- "Who won yesterday?" → Call get_live_scores({yesterday})
+- "What's the win probability for game X?" → Call get_win_probability(game_id="X")
+
+Be concise and focused on what the user asked.
+Format stats clearly using markdown tables when appropriate.
+When a game is selected in the dashboard, you have context about that game and can reference it."""
 
 
 def _build_system_prompt() -> str:
@@ -172,17 +180,6 @@ async def run_chat_turn(
     if not final_text:
         final_text = "I couldn't generate a response. Please try again."
 
-    updated_history = list(history) + [
-        {"role": "user", "parts": [{"text": user_message}]},
-        {"role": "model", "parts": [{"text": final_text}]},
-    ]
-
-    return final_text, updated_history
-
-    if not final_text:
-        final_text = "I couldn't generate a response. Please try again."
-
-    # Build updated display history (text turns only, for rendering)
     updated_history = list(history) + [
         {"role": "user", "parts": [{"text": user_message}]},
         {"role": "model", "parts": [{"text": final_text}]},

@@ -146,6 +146,8 @@ async def explain_win_probability(game_id: str) -> str:
         if status == "pre":
             h_rank_str = f"#{h_rank}" if h_rank else "unranked"
             a_rank_str = f"#{a_rank}" if a_rank else "unranked"
+            h_rank_status = f"ranked {h_rank_str}" if h_rank else "unranked"
+            a_rank_status = f"ranked {a_rank_str}" if a_rank else "unranked"
             h_wp = _parse_win_pct(h_rec)
             a_wp = _parse_win_pct(a_rec)
 
@@ -168,7 +170,7 @@ async def explain_win_probability(game_id: str) -> str:
 This prediction uses a calibrated ensemble of two ML models — Logistic Regression and XGBoost — both trained on historical CBB game snapshots. For pre-game scenarios, the score differential and momentum are zero (the game hasn't started), so the entire signal comes from a blended *strength differential* feature.
 
 **How strength differential was calculated**
-The model blends two signals: AP ranking differential (weighted 60%) and season win-percentage differential (weighted 40%). {home_name} enters ranked {h_rank_str} with a {h_rec} record ({h_wp:.0%} win rate); {away_name} is {a_rank_str} with a {a_rec} record ({a_wp:.0%} win rate). The ranking component favors **{rank_edge}**, while the season record component favors **{record_edge}**. Combined, this yields a strength differential of {strength_diff:+.2f} in {home_name}'s direction.
+The model blends two signals: AP ranking differential (weighted 60%) and season win-percentage differential (weighted 40%). {home_name} enters {h_rank_status} with a {h_rec} record ({h_wp:.0%} win rate); {away_name} enters {a_rank_status} with a {a_rec} record ({a_wp:.0%} win rate). The ranking component favors **{rank_edge}**, while the season record component favors **{record_edge}**. Combined, this yields a strength differential of {strength_diff:+.2f} in {winner}'s direction.
 
 **Home court & final adjustment**
 {hca_note}
