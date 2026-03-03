@@ -10,87 +10,50 @@ from dashboard.components.chat_panel import render_chat_history
 from dashboard.utils import run_async
 
 
-import random
-
 def register_chat_callbacks(app) -> None:
     """Register chat panel callbacks."""
 
-    # Client-side callback to handle Enter key and auto-resize in the textarea
+    # Client-side callback: attach resize + Enter-key listeners once on mount
     app.clientside_callback(
         """
-        function(n_submit, value) {
-            const input = document.getElementById('chat-input');
-            if (!input) return 0;
+        function(_id) {
+            function attachListeners() {
+                const input = document.getElementById('chat-input');
+                if (!input) {
+                    setTimeout(attachListeners, 100);
+                    return;
+                }
+                if (input._cbbListenersAttached) return;
+                input._cbbListenersAttached = true;
 
-            if (!input.hasKeyDownListener) {
-                const resize = () => {
-                    // Reset height to 'auto' to get the correct scrollHeight
+                function resize() {
                     input.style.height = 'auto';
+                    const maxH = 200, minH = 42;
+                    const h = Math.max(minH, Math.min(input.scrollHeight, maxH));
+                    input.style.height = h + 'px';
+                    input.style.overflowY = h >= maxH ? 'auto' : 'hidden';
+                }
 
-                    // Get the scrollHeight and apply it
-                    let newHeight = input.scrollHeight;
+                input.addEventListener('input', resize);
+                input.addEventListener('paste', () => setTimeout(resize, 10));
 
-                    // Cap at max-height
-                    const maxHeight = 200;
-                    if (newHeight > maxHeight) {
-                        newHeight = maxHeight;
-                    }
-
-                    // Ensure minimum height
-                    if (newHeight < 42) {
-                        newHeight = 42;
-                    }
-
-                    input.style.height = newHeight + 'px';
-                };
-
-                // Bind resize function to this input specifically
-                input.addEventListener('input', function() {
-                    resize();
-                });
-
-                // Also handle when user types (including Enter with Shift)
                 input.addEventListener('keydown', function(e) {
-                    // Handle Shift+Enter for multiline (just let it happen naturally)
                     if (e.key === 'Enter' && e.shiftKey) {
-                        // Schedule resize for next frame after newline is added
                         setTimeout(resize, 0);
-                    }
-                    // Handle regular Enter to send
-                    else if (e.key === 'Enter' && !e.shiftKey) {
+                    } else if (e.key === 'Enter' && !e.shiftKey) {
                         e.preventDefault();
                         const btn = document.getElementById('chat-send-btn');
-                        if (btn) {
-                            btn.click();
-                        }
+                        if (btn) btn.click();
                     }
                 });
 
-                // Resize on paste
-                input.addEventListener('paste', () => {
-                    setTimeout(resize, 10);
-                });
+                // Watch for Dash clearing the value after send
+                const observer = new MutationObserver(() => setTimeout(resize, 0));
+                observer.observe(input, { attributes: true, attributeFilter: ['value'] });
 
-                // Handle when input is cleared or changed externally
-                input.addEventListener('change', resize);
-
-                // Trigger resize on window resize
-                window.addEventListener('resize', resize);
-
-                input.hasKeyDownListener = true;
-
-                // Initial resize
-                setTimeout(resize, 100);
-
-                // Also watch for Dash updating the value
-                const originalSetAttribute = input.setAttribute;
-                input.setAttribute = function(name, value) {
-                    originalSetAttribute.call(this, name, value);
-                    if (name === 'value') {
-                        setTimeout(resize, 0);
-                    }
-                };
+                setTimeout(resize, 50);
             }
+            attachListeners();
             return 0;
         }
         """,
@@ -98,11 +61,46 @@ def register_chat_callbacks(app) -> None:
         Input("chat-input", "id"),
     )
 
+    # Client-side callback: reset textarea height when Dash clears it after send
+    app.clientside_callback(
+        """
+        function(value) {
+            const input = document.getElementById('chat-input');
+            if (!input) return window.dash_clientside.no_update;
+            if (!value) {
+                input.style.height = '42px';
+                input.style.overflowY = 'hidden';
+            }
+            return window.dash_clientside.no_update;
+        }
+        """,
+        Output("chat-input-trigger", "data", allow_duplicate=True),
+        Input("chat-input", "value"),
+        prevent_initial_call=True,
+    )
+
+    # Client-side callback: scroll chat history to bottom after new messages arrive
+    app.clientside_callback(
+        """
+        function(children) {
+            setTimeout(function() {
+                const hist = document.getElementById('chat-history');
+                if (hist) {
+                    hist.scrollTop = hist.scrollHeight;
+                }
+            }, 50);
+            return window.dash_clientside.no_update;
+        }
+        """,
+        Output("chat-input-trigger", "data", allow_duplicate=True),
+        Input("chat-history", "children"),
+        prevent_initial_call=True,
+    )
+
     @app.callback(
         Output("chat-history", "children"),
         Output("conversation-store", "data"),
         Output("chat-input", "value"),
-        Output("chat-loading-dummy", "children"),
         Input("chat-send-btn", "n_clicks"),
         State("chat-input", "value"),
         State("conversation-store", "data"),
@@ -113,7 +111,7 @@ def register_chat_callbacks(app) -> None:
     def handle_chat(n_clicks, user_input, history, selected_game, prob_history):
         """Handle chat submission and run AI agent."""
         if not user_input or not user_input.strip():
-            return no_update, no_update, no_update, no_update
+            return no_update, no_update, no_update
 
         history = history or []
 
@@ -155,7 +153,7 @@ def register_chat_callbacks(app) -> None:
         # Use the updated render_chat_history from components.chat_panel
         # We don't show typing here because the callback has finished.
         rendered = render_chat_history(updated_history, show_typing=False)
-        return rendered, updated_history, "", random.randint(0, 1000000)
+        return rendered, updated_history, ""
 
     @app.callback(
         Output("chat-panel", "is_open", allow_duplicate=True),

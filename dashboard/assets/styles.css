@@ -196,8 +196,9 @@ body {
 
 .chat-history {
     background: #0a0a0a;
-    flex-grow: 1;
-    padding: 30px 15px 15px 15px; /* Added more top padding for fade effect */
+    flex: 1 1 0;
+    min-height: 0;
+    padding: 30px 15px 15px 15px;
     overflow-y: auto;
     display: flex;
     flex-direction: column;
@@ -280,34 +281,53 @@ body {
     border: 1px solid rgba(255,255,255,0.1);
 }
 
-/* Thinking/Loading status indicator */
-.chat-loading-container {
-    padding: 0 15px 10px 15px;
-    height: 30px;
-    margin-top: -10px;
-    z-index: 5;
-    background: transparent;
-    display: flex;
-    align-items: center;
+/*
+ * Dash's dcc.Loading injects two anonymous wrapper divs between .chat-panel
+ * and #chat-history, both with display:block and flex-grow:0, breaking the
+ * flex chain so #chat-history has no constrained height and never scrolls.
+ *
+ * Fix strategy:
+ *  - depth-1 (direct child of .chat-panel): make it a proper flex item so it
+ *    fills remaining height. Keep display:block so dcc.Loading's two internal
+ *    sibling divs (content + spinner overlay) don't split the space via flex.
+ *  - depth-2 (first child of depth-1): use height:100% + display:flex so
+ *    #chat-history can use flex-grow inside a height-constrained parent.
+ */
+.chat-panel > div:first-child {
+    flex: 1 1 0 !important;
+    min-height: 0 !important;
+    overflow: hidden !important;
 }
 
-/* Custom styles for Dash's default spinners to match ESPN style */
-._dash-loading-callback {
-    font-size: 0 !important; /* Hide default text if any */
-}
-
-/* Dot animation for loading */
-.chat-loading-container .dash-spinner {
+.chat-panel > div:first-child > div:first-child {
+    height: 100% !important;
     display: flex !important;
-    gap: 4px !important;
+    flex-direction: column !important;
+    overflow: hidden !important;
+    min-height: 0 !important;
 }
 
-.chat-loading-container .dash-spinner > div {
-    width: 8px !important;
-    height: 8px !important;
+/* chat-loading wraps chat-history; flex-grow fills available space */
+#chat-loading {
+    flex: 1 1 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    min-height: 0;
+    position: relative;
+}
+
+/* Dots inside the overlay — larger and centred */
+#chat-loading .dash-spinner {
+    display: flex !important;
+    gap: 6px !important;
+}
+
+#chat-loading .dash-spinner > div {
+    width: 10px !important;
+    height: 10px !important;
     background-color: var(--espn-red) !important;
     border-radius: 50% !important;
-    animation: typing 1.4s infinite ease-in-out !important;
 }
 
 /* Chat Input styling refinements for multi-line - REMOVED (duplicate, see below) */
@@ -384,10 +404,10 @@ body {
     resize: none !important;
     min-height: 42px !important;
     max-height: 200px !important;
-    overflow: hidden !important;
+    overflow-y: hidden;
     line-height: 1.4 !important;
     box-sizing: border-box !important;
-    transition: height 0.1s ease !important;
+    transition: height 0.15s ease !important;
     font-family: inherit !important;
     display: block !important;
 }
@@ -421,10 +441,7 @@ body {
     transform: scale(0.95);
 }
 
-/* Hide the old loading indicator as we'll use the typing bubble */
-.chat-loading {
-    display: none;
-}
+/* chat-loading is now the dcc.Loading wrapper around chat-history */
 
 /* ── Floating AI Chat (Lower Right) ──────────────────────────────────────── */
 .chat-offcanvas {

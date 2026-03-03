@@ -6,7 +6,7 @@ from __future__ import annotations
 
 from dash import Input, Output, State, callback, clientside_callback, no_update
 
-from dashboard.components.rankings_sidebar import build_rankings_list, build_all_teams_section
+from dashboard.components.rankings_sidebar import build_rankings_list, build_all_teams_rows
 from dashboard.utils import run_async
 
 
@@ -20,9 +20,8 @@ def register_rankings_callbacks(app) -> None:
     )
     def refresh_rankings(n_intervals):
         """Fetch AP Top 25 rankings."""
-        from cbb_mcp.services import rankings as rankings_svc
-
         try:
+            from cbb_mcp.services import rankings as rankings_svc
             poll = run_async(rankings_svc.get_rankings(poll_type="ap"))
             return build_rankings_list(poll, poll_type="ap")
         except Exception as e:
@@ -30,7 +29,7 @@ def register_rankings_callbacks(app) -> None:
             return build_rankings_list(None, poll_type="ap")
 
     @app.callback(
-        Output("all-teams-content", "children"),
+        Output("all-teams-list", "children"),
         Input("rankings-refresh", "n_intervals"),
         prevent_initial_call=False,
     )
@@ -40,10 +39,10 @@ def register_rankings_callbacks(app) -> None:
 
         try:
             all_teams = run_async(teams_svc.search_teams(""))
-            return build_all_teams_section(all_teams)
+            return build_all_teams_rows(all_teams)
         except Exception as e:
             print(f"[all-teams] Error: {e}")
-            return build_all_teams_section(None)
+            return build_all_teams_rows(None)
 
     # Client-side search filter — instant, no round-trip
     app.clientside_callback(
@@ -74,5 +73,5 @@ def register_rankings_callbacks(app) -> None:
         """,
         Output("all-teams-list", "data-search"),
         Input("team-search-input", "value"),
-        Input("all-teams-content", "children"),
+        Input("all-teams-list", "children"),
     )

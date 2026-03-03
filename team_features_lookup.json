@@ -1,0 +1,6292 @@
+{
+  "teams": {
+    "Houston Cougars": {
+      "conf_win_pct": 0.8214285714285714,
+      "recent_win_pct": 0.8214285714285714,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Lehigh Mountain Hawks": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Arizona Wildcats": {
+      "conf_win_pct": 0.9285714285714286,
+      "recent_win_pct": 0.9285714285714286,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Florida Gators": {
+      "conf_win_pct": 0.7857142857142857,
+      "recent_win_pct": 0.7857142857142857,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "UConn Huskies": {
+      "conf_win_pct": 0.896551724137931,
+      "recent_win_pct": 0.896551724137931,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "New Haven Chargers": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "St. John's Red Storm": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Quinnipiac Bobcats": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Michigan Wolverines": {
+      "conf_win_pct": 0.9310344827586208,
+      "recent_win_pct": 0.9310344827586208,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oakland Golden Grizzlies": {
+      "conf_win_pct": 0.2857142857142857,
+      "recent_win_pct": 0.2857142857142857,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "BYU Cougars": {
+      "conf_win_pct": 0.7142857142857143,
+      "recent_win_pct": 0.7142857142857143,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Villanova Wildcats": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Louisville Cardinals": {
+      "conf_win_pct": 0.7142857142857143,
+      "recent_win_pct": 0.7142857142857143,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "South Carolina State Bulldogs": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UCLA Bruins": {
+      "conf_win_pct": 0.5714285714285714,
+      "recent_win_pct": 0.5714285714285714,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Eastern Washington Eagles": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Arkansas Razorbacks": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southern Jaguars": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Alabama Crimson Tide": {
+      "conf_win_pct": 0.7083333333333334,
+      "recent_win_pct": 0.7083333333333334,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "North Dakota Fighting Hawks": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Iowa State Cyclones": {
+      "conf_win_pct": 0.8571428571428571,
+      "recent_win_pct": 0.8571428571428571,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Fairleigh Dickinson Knights": {
+      "conf_win_pct": 0.8,
+      "recent_win_pct": 0.8,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Illinois Fighting Illini": {
+      "conf_win_pct": 0.7586206896551724,
+      "recent_win_pct": 0.7586206896551724,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Jackson State Tigers": {
+      "conf_win_pct": 0.1428571428571428,
+      "recent_win_pct": 0.1428571428571428,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Tennessee Volunteers": {
+      "conf_win_pct": 0.6521739130434783,
+      "recent_win_pct": 0.6521739130434783,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Mercer Bears": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Kansas Jayhawks": {
+      "conf_win_pct": 0.7307692307692307,
+      "recent_win_pct": 0.7307692307692307,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Green Bay Phoenix": {
+      "conf_win_pct": 0.4285714285714285,
+      "recent_win_pct": 0.4285714285714285,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Auburn Tigers": {
+      "conf_win_pct": 0.5882352941176471,
+      "recent_win_pct": 0.5882352941176471,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bethune-Cookman Wildcats": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Gonzaga Bulldogs": {
+      "conf_win_pct": 0.9333333333333332,
+      "recent_win_pct": 0.9333333333333332,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Texas Southern Tigers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Michigan State Spartans": {
+      "conf_win_pct": 0.8214285714285714,
+      "recent_win_pct": 0.8214285714285714,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Colgate Raiders": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Wisconsin Badgers": {
+      "conf_win_pct": 0.6428571428571429,
+      "recent_win_pct": 0.6428571428571429,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Campbell Fighting Camels": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "North Carolina Tar Heels": {
+      "conf_win_pct": 0.7857142857142857,
+      "recent_win_pct": 0.7857142857142857,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.125
+    },
+    "Central Arkansas Bears": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Purdue Boilermakers": {
+      "conf_win_pct": 0.7857142857142857,
+      "recent_win_pct": 0.7857142857142857,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Evansville Purple Aces": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Duke Blue Devils": {
+      "conf_win_pct": 0.9285714285714286,
+      "recent_win_pct": 0.9285714285714286,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Texas Longhorns": {
+      "conf_win_pct": 0.5555555555555556,
+      "recent_win_pct": 0.5555555555555556,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Kentucky Wildcats": {
+      "conf_win_pct": 0.5882352941176471,
+      "recent_win_pct": 0.5882352941176471,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Nicholls Colonels": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Texas Tech Red Raiders": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Lindenwood Lions": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Creighton Bluejays": {
+      "conf_win_pct": 0.375,
+      "recent_win_pct": 0.375,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "South Dakota Coyotes": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "North Florida Ospreys": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Grambling Tigers": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Merrimack Warriors": {
+      "conf_win_pct": 0.5714285714285714,
+      "recent_win_pct": 0.5714285714285714,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "UMass Lowell River Hawks": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Valparaiso Beacons": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Sam Houston Bearkats": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Pepperdine Waves": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Utah Tech Trailblazers": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Florida Gulf Coast Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Northern Illinois Huskies": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Towson Tigers": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Western Carolina Catamounts": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Holy Cross Crusaders": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Northern Kentucky Norse": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oklahoma Sooners": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Harvard Crimson": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "New Hampshire Wildcats": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Western Michigan Broncos": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "App State Mountaineers": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "North Carolina Central Eagles": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Marquette Golden Eagles": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Indiana Hoosiers": {
+      "conf_win_pct": 0.3636363636363636,
+      "recent_win_pct": 0.3636363636363636,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "James Madison Dukes": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Coppin State Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "American University Eagles": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Pennsylvania Quakers": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Georgia Bulldogs": {
+      "conf_win_pct": 0.6153846153846154,
+      "recent_win_pct": 0.6153846153846154,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Morehead State Eagles": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Lipscomb Bisons": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bowling Green Falcons": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Le Moyne Dolphins": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Purdue Fort Wayne Mastodons": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Dominican (IL) Dominican": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Cal State Northridge Matadors": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Northern Iowa Panthers": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "South Dakota State Jackrabbits": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Brown Bears": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Vermont Catamounts": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Dartmouth Big Green": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Marist Red Foxes": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oklahoma State Cowboys": {
+      "conf_win_pct": 0.375,
+      "recent_win_pct": 0.375,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Texas A&M Aggies": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Illinois State Redbirds": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Cornell Big Red": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Ozark Christian Ambassadors": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Louisiana Tech Bulldogs": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Lyon Scots": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Montana State Bobcats": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Denver Pioneers": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.3333333333333333
+    },
+    "West Virginia Mountaineers": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Arizona State Sun Devils": {
+      "conf_win_pct": 0.2857142857142857,
+      "recent_win_pct": 0.2857142857142857,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oakland City Mighty Oaks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Missouri Tigers": {
+      "conf_win_pct": 0.4444444444444444,
+      "recent_win_pct": 0.4444444444444444,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "VMI Keydets": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Loyola Chicago Ramblers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "North Texas Mean Green": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Portland Pilots": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UC Davis Aggies": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "San Diego State Aztecs": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Idaho State Bengals": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Howard Bison": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Liberty Flames": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Florida Atlantic Owls": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "USC Trojans": {
+      "conf_win_pct": 0.4444444444444444,
+      "recent_win_pct": 0.4444444444444444,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Manhattan Jaspers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Colorado State Rams": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Omaha Mavericks": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "South Carolina Gamecocks": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southern Miss Golden Eagles": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "UT Martin Skyhawks": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Kentucky Christian Knights": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Baylor Bears": {
+      "conf_win_pct": 0.1,
+      "recent_win_pct": 0.1,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Washington Huskies": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Hawai'i Rainbow Warriors": {
+      "conf_win_pct": 0.8333333333333334,
+      "recent_win_pct": 0.8333333333333334,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "East Texas A&M Lions": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Columbia Lions": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "West Georgia Wolves": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Mississippi State Bulldogs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Army Black Knights": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Northern Arizona Lumberjacks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Wake Forest Demon Deacons": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Delaware Blue Hens": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Florida State Seminoles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Radford Highlanders": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Wofford Terriers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Ball State Cardinals": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Texas A&M-Corpus Christi Islanders": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "San Jos\u00e9 State Spartans": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Indiana State Sycamores": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "TCU Horned Frogs": {
+      "conf_win_pct": 0.375,
+      "recent_win_pct": 0.375,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Eastern Illinois Panthers": {
+      "conf_win_pct": 0.1428571428571428,
+      "recent_win_pct": 0.1428571428571428,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Milwaukee Panthers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Samford Bulldogs": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Maryland Eastern Shore Hawks": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Ohio Bobcats": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "William & Mary Tribe": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Princeton Tigers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Akron Zips": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Miami Hurricanes": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southern Utah Thunderbirds": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Stonehill Skyhawks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Rice Owls": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "SIU Edwardsville Cougars": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "NC State Wolfpack": {
+      "conf_win_pct": 0.3636363636363636,
+      "recent_win_pct": 0.3636363636363636,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "VCU Rams": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Navy Midshipmen": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Sacramento State Hornets": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Winthrop Eagles": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Middle Tennessee Blue Raiders": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Memphis Tigers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Rider Broncs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bucknell Bison": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Tennessee State Tigers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Niagara Purple Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Cincinnati Bearcats": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Loyola Maryland Greyhounds": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Detroit Mercy Titans": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Presbyterian Blue Hose": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Long Island University Sharks": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bryant Bulldogs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Syracuse Orange": {
+      "conf_win_pct": 0.1428571428571428,
+      "recent_win_pct": 0.1428571428571428,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Eastern Michigan Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UT Rio Grande Valley Vaqueros": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Rutgers Scarlet Knights": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oregon Ducks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Seton Hall Pirates": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UNLV Rebels": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "East Carolina Pirates": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Maryland Terrapins": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "St. Bonaventure Bonnies": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "California Golden Bears": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Boise State Broncos": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Kansas State Wildcats": {
+      "conf_win_pct": 0.1111111111111111,
+      "recent_win_pct": 0.1111111111111111,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Notre Dame Fighting Irish": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "NJIT Highlanders": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Tennessee Tech Golden Eagles": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "New Orleans Privateers": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Western Kentucky Hilltoppers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Vanderbilt Commodores": {
+      "conf_win_pct": 0.7391304347826086,
+      "recent_win_pct": 0.7391304347826086,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Dayton Flyers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Providence Friars": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Saint Mary's Gaels": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Norfolk State Spartans": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Wyoming Cowboys": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Chicago State Cougars": {
+      "conf_win_pct": 0.4,
+      "recent_win_pct": 0.4,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "St. Xavier  (IL) Cougars": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Louisiana Christian Wildcats": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Temple Owls": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Toledo Rockets": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Central State (OH) Marauders": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Hampton Pirates": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Apprentice School Builders": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Troy Trojans": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Iona Gaels": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Jacksonville State Gamecocks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "North Alabama Lions": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Tarleton State Texans": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Xavier Musketeers": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Saint Francis Red Flash": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UAB Blazers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Incarnate Word Cardinals": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "McNeese Cowboys": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Coe Kohawks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "West Coast Baptist Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "New Mexico Lobos": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "New Mexico Highlands Cowboys": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Colorado Buffaloes": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "California Baptist Lancers": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Stanford Cardinal": {
+      "conf_win_pct": 0.5714285714285714,
+      "recent_win_pct": 0.5714285714285714,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Blackburn Beavers": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Iowa Hawkeyes": {
+      "conf_win_pct": 0.3,
+      "recent_win_pct": 0.3,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Alcorn State Braves": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Clemson Tigers": {
+      "conf_win_pct": 0.5833333333333334,
+      "recent_win_pct": 0.5833333333333334,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "SMU Mustangs": {
+      "conf_win_pct": 0.2857142857142857,
+      "recent_win_pct": 0.2857142857142857,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Minnesota Golden Gophers": {
+      "conf_win_pct": 0.375,
+      "recent_win_pct": 0.375,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Manor College Blue Jays": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Davidson Wildcats": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "The Citadel Bulldogs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "South Florida Bulls": {
+      "conf_win_pct": 0.8,
+      "recent_win_pct": 0.8,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Utah State Aggies": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Charleston Southern Buccaneers": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Warren Wilson Owls": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Robert Morris Colonials": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "UC Santa Barbara Gauchos": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Long Beach State Beach": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Cal State Bakersfield Roadrunners": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Cal State Fullerton Titans": {
+      "conf_win_pct": 0.8,
+      "recent_win_pct": 0.8,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Cal Poly Mustangs": {
+      "conf_win_pct": 0.8,
+      "recent_win_pct": 0.8,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UC Irvine Anteaters": {
+      "conf_win_pct": 0.8,
+      "recent_win_pct": 0.8,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UC Riverside Highlanders": {
+      "conf_win_pct": 0.1428571428571428,
+      "recent_win_pct": 0.1428571428571428,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Ole Miss Rebels": {
+      "conf_win_pct": 0.1666666666666666,
+      "recent_win_pct": 0.1666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Fresno State Bulldogs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UTSA Roadrunners": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Georgetown Hoyas": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "LSU Tigers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Kennesaw State Owls": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southern Wesleyan Warriors": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Lafayette Leopards": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Mississippi Valley State Delta Devils": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Ohio State Buckeyes": {
+      "conf_win_pct": 0.2222222222222222,
+      "recent_win_pct": 0.2222222222222222,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Virginia Cavaliers": {
+      "conf_win_pct": 0.8947368421052632,
+      "recent_win_pct": 0.8947368421052632,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Nebraska Cornhuskers": {
+      "conf_win_pct": 0.7894736842105263,
+      "recent_win_pct": 0.7894736842105263,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Penn State Nittany Lions": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "South Carolina Upstate Spartans": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "George Washington Revolutionaries": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Chattanooga Mocs": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bryan (TN) Lions": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Florida A&M Rattlers": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Albany St (GA) Golden Rams": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Arkansas-Pine Bluff Golden Lions": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Ecclesia Royals": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Gardner-Webb Runnin' Bulldogs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Stetson Hatters": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Rhodes Lynx": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "SE Louisiana Lions": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Campbellsville Tigers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "North Dakota State Bison": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Minnesota Crookston Golden Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Alabama A&M Bulldogs": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 1.0
+    },
+    "Houston Christian Huskies": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southern Indiana Screaming Eagles": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "East-West University Phantoms": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Abilene Christian Wildcats": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Butler Bulldogs": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Pacific Tigers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "East Tennessee State Buccaneers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Queens University Royals": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Northern Colorado Bears": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "DePaul Blue Demons": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Montana Grizzlies": {
+      "conf_win_pct": 0.6,
+      "recent_win_pct": 0.6,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "La Salle Explorers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Binghamton Bearcats": {
+      "conf_win_pct": 0.2,
+      "recent_win_pct": 0.2,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bellarmine Knights": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UCF Knights": {
+      "conf_win_pct": 0.5555555555555556,
+      "recent_win_pct": 0.5555555555555556,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Missouri State Bears": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Idaho Vandals": {
+      "conf_win_pct": 0.25,
+      "recent_win_pct": 0.25,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Loyola Marymount Lions": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Morgan State Bears": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Marshall Thundering Herd": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "WVU Tech Golden Bears": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UNC Wilmington Seahawks": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Columbia College (SC) Fighting Koalas": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Duquesne Dukes": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Cleary University Cougars": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Kent State Golden Flashes": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Yale Bulldogs": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "San Diego Toreros": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Georgia Tech Yellow Jackets": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Virginia Tech Hokies": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Elms College Blazers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Youngstown State Penguins": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Coastal Carolina Chanticleers": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 1.0
+    },
+    "Georgia Southern Eagles": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oral Roberts Golden Eagles": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "IU Indianapolis Jaguars": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Wright State Raiders": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Jacksonville Dolphins": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southern Illinois Salukis": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "UT Arlington Mavericks": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "UNC Greensboro Spartans": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Weber State Wildcats": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Portland State Vikings": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Western Illinois Leathernecks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UL Monroe Warhawks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Little Rock Trojans": {
+      "conf_win_pct": 0.75,
+      "recent_win_pct": 0.75,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Belmont Bruins": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Bradley Braves": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Eastern Kentucky Colonels": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Austin Peay Governors": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Utah Valley Wolverines": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Southeast Missouri State Redhawks": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UIC Flames": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Murray State Racers": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "UC San Diego Tritons": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Seattle U Redhawks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Utah Utes": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Santa Clara Broncos": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Northwestern Wildcats": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Bryant & Stratton (Ohio) Bobcats": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Miami (OH) RedHawks": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 1.0
+    },
+    "Fairfield Stags": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Cleveland State Vikings": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Siena Saints": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Mount St. Mary's Mountaineers": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Saint Peter's Peacocks": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Sacred Heart Pioneers": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Canisius Golden Griffins": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Boston College Eagles": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Delaware State Hornets": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Alabama State Hornets": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Prairie View A&M Panthers": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Lamar Cardinals": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Stephen F. Austin Lumberjacks": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Northwestern State Demons": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Nevada Wolf Pack": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Washington State Cougars": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Pittsburgh Panthers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Grand Canyon Lopes": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Monmouth Hawks": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Northeastern Huskies": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UAlbany Great Danes": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Drexel Dragons": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Mercyhurst Lakers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Central Connecticut Blue Devils": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Wagner Seahawks": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Maine Black Bears": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UMBC Retrievers": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Saint Joseph's Hawks": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Morehouse Maroon Tigers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "George Mason Patriots": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Elizabeth City State Vikings": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "North Carolina A&T Aggies": {
+      "conf_win_pct": 0.3333333333333333,
+      "recent_win_pct": 0.3333333333333333,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Saint Louis Billikens": {
+      "conf_win_pct": 0.8,
+      "recent_win_pct": 0.8,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Louisiana Ragin' Cajuns": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Charleston Cougars": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Elon Phoenix": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Hofstra Pride": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Stony Brook Seawolves": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "South Alabama Jaguars": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Georgia State Panthers": {
+      "conf_win_pct": 0.6666666666666666,
+      "recent_win_pct": 0.6666666666666666,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Arkansas State Red Wolves": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Texas State Bobcats": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "St. Thomas-Minnesota Tommies": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "New Mexico State Aggies": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UTEP Miners": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Florida International Panthers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "San Francisco Dons": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Massachusetts Minutemen": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Buffalo Bulls": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Oregon State Beavers": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.0
+    },
+    "Longwood Lancers": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "UNC Asheville Bulldogs": {
+      "conf_win_pct": 0.5,
+      "recent_win_pct": 0.5,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "High Point Panthers": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.0,
+      "comeback_pct_down_5": 0.5
+    },
+    "Drake Bulldogs": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Kansas City Roos": {
+      "conf_win_pct": 0.0,
+      "recent_win_pct": 0.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.0
+    },
+    "Rhode Island Rams": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    },
+    "Tulane Green Wave": {
+      "conf_win_pct": 1.0,
+      "recent_win_pct": 1.0,
+      "collapse_pct_up_10": 0.5,
+      "comeback_pct_down_5": 0.5
+    }
+  },
+  "h2h": {
+    "('Houston Cougars', 'Lehigh Mountain Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Florida Gators')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'New Haven Chargers')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Quinnipiac Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Oakland Golden Grizzlies')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Villanova Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'South Carolina State Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Eastern Washington Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Southern Jaguars')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'North Dakota Fighting Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Fairleigh Dickinson Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Jackson State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Mercer Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Green Bay Phoenix')": [
+      1.0,
+      0.0
+    ],
+    "('Auburn Tigers', 'Bethune-Cookman Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Texas Southern Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Colgate Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'Campbell Fighting Camels')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Central Arkansas Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Evansville Purple Aces')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Texas Longhorns')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'Nicholls Colonels')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Lindenwood Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Creighton Bluejays', 'South Dakota Coyotes')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'North Florida Ospreys')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Jackson State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Grambling Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Auburn Tigers', 'Merrimack Warriors')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Oakland Golden Grizzlies')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'UMass Lowell River Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'Valparaiso Beacons')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Sam Houston Bearkats')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Pepperdine Waves')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Utah Tech Trailblazers')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Florida Gulf Coast Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Kansas Jayhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'Northern Illinois Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Towson Tigers')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Alabama Crimson Tide')": [
+      0.0,
+      1.0
+    ],
+    "('Duke Blue Devils', 'Western Carolina Catamounts')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Holy Cross Crusaders')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Arkansas Razorbacks')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Northern Kentucky Norse')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Oklahoma Sooners')": [
+      1.0,
+      0.0
+    ],
+    "('Harvard Crimson', 'New Hampshire Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Campbell Fighting Camels', 'Western Michigan Broncos')": [
+      1.0,
+      0.0
+    ],
+    "('App State Mountaineers', 'North Carolina Central Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Marquette Golden Eagles', 'Indiana Hoosiers')": [
+      0.0,
+      1.0
+    ],
+    "('James Madison Dukes', 'Coppin State Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('American University Eagles', 'Pennsylvania Quakers')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Bulldogs', 'Morehead State Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Mercer Bears', 'Lipscomb Bisons')": [
+      1.0,
+      0.0
+    ],
+    "('Bowling Green Falcons', 'Le Moyne Dolphins')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Fort Wayne Mastodons', 'Dominican (IL) Dominican')": [
+      1.0,
+      0.0
+    ],
+    "('North Dakota Fighting Hawks', 'Cal State Northridge Matadors')": [
+      0.0,
+      1.0
+    ],
+    "('Northern Iowa Panthers', 'South Dakota State Jackrabbits')": [
+      1.0,
+      0.0
+    ],
+    "('Brown Bears', 'Vermont Catamounts')": [
+      0.0,
+      1.0
+    ],
+    "('Dartmouth Big Green', 'Marist Red Foxes')": [
+      0.0,
+      1.0
+    ],
+    "('Oklahoma State Cowboys', 'Texas A&M Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois State Redbirds', 'Cornell Big Red')": [
+      1.0,
+      0.0
+    ],
+    "('South Dakota Coyotes', 'Ozark Christian Ambassadors')": [
+      1.0,
+      0.0
+    ],
+    "('Louisiana Tech Bulldogs', 'Lyon Scots')": [
+      1.0,
+      0.0
+    ],
+    "('Montana State Bobcats', 'Denver Pioneers')": [
+      0.0,
+      1.0
+    ],
+    "('West Virginia Mountaineers', 'Lehigh Mountain Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona State Sun Devils', 'Utah Tech Trailblazers')": [
+      1.0,
+      0.0
+    ],
+    "('Evansville Purple Aces', 'Oakland City Mighty Oaks')": [
+      1.0,
+      0.0
+    ],
+    "('Missouri Tigers', 'VMI Keydets')": [
+      1.0,
+      0.0
+    ],
+    "('Loyola Chicago Ramblers', 'North Texas Mean Green')": [
+      0.0,
+      1.0
+    ],
+    "('Portland Pilots', 'UC Davis Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('San Diego State Aztecs', 'Idaho State Bengals')": [
+      1.0,
+      0.0
+    ],
+    "('Howard Bison', 'Grambling Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Liberty Flames', 'Florida Atlantic Owls')": [
+      1.0,
+      0.0
+    ],
+    "('USC Trojans', 'Manhattan Jaspers')": [
+      1.0,
+      0.0
+    ],
+    "('Colorado State Rams', 'Omaha Mavericks')": [
+      1.0,
+      0.0
+    ],
+    "('South Carolina Gamecocks', 'Southern Miss Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('UT Martin Skyhawks', 'Kentucky Christian Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Baylor Bears', 'Washington Huskies')": [
+      1.0,
+      0.0
+    ],
+    "(\"Hawai'i Rainbow Warriors\", 'East Texas A&M Lions')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Columbia Lions')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'West Georgia Wolves')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Mississippi State Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Army Black Knights', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Arizona Wildcats', 'Northern Arizona Lumberjacks')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Wake Forest Demon Deacons')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Delaware Blue Hens')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Kentucky Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Florida State Seminoles')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Texas Tech Red Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Radford Highlanders')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Creighton Bluejays')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Central Arkansas Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Auburn Tigers', 'Wofford Terriers')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'Ball State Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Texas A&M-Corpus Christi Islanders')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Oakland Golden Grizzlies')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'North Florida Ospreys')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan State Spartans', 'San Jos\u00e9 State Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Indiana State Sycamores')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('TCU Horned Frogs', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Kentucky Wildcats', 'Eastern Illinois Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Milwaukee Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Colgate Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'North Carolina Central Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona State Sun Devils', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'Samford Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Creighton Bluejays', 'Maryland Eastern Shore Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'BYU Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Ohio Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'William & Mary Tribe')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Princeton Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Auburn Tigers', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Akron Zips')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Miami Hurricanes')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Southern Utah Thunderbirds')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Stonehill Skyhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Rice Owls')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'SIU Edwardsville Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('NC State Wolfpack', 'VCU Rams')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Kansas Jayhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('North Carolina Tar Heels', 'Navy Midshipmen')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Sacramento State Hornets')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Winthrop Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan Wolverines', 'Middle Tennessee Blue Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Alabama Crimson Tide')": [
+      0.0,
+      1.0
+    ],
+    "('Auburn Tigers', 'Jackson State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Memphis Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Rider Broncs')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Bucknell Bison')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Wake Forest Demon Deacons')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Tennessee State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Texas Tech Red Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Niagara Purple Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Cincinnati Bearcats', 'Louisville Cardinals')": [
+      0.0,
+      1.0
+    ],
+    "('BYU Cougars', 'Wisconsin Badgers')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Merrimack Warriors')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'Loyola Maryland Greyhounds')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Detroit Mercy Titans')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Presbyterian Blue Hose')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Jackson State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Long Island University Sharks')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Bryant Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Howard Bison')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Denver Pioneers')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Syracuse Orange')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Eastern Michigan Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'San Diego State Aztecs')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Illinois Fighting Illini', 'UT Rio Grande Valley Vaqueros')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Iowa State Cyclones')": [
+      0.0,
+      1.0
+    ],
+    "('Tennessee Volunteers', 'Rutgers Scarlet Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Oregon Ducks', 'Auburn Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('NC State Wolfpack', 'Seton Hall Pirates')": [
+      0.0,
+      1.0
+    ],
+    "('Houston Cougars', 'Tennessee Volunteers')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan Wolverines', 'Auburn Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'UNLV Rebels')": [
+      1.0,
+      0.0
+    ],
+    "('East Carolina Pirates', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('Gonzaga Bulldogs', 'Maryland Terrapins')": [
+      1.0,
+      0.0
+    ],
+    "('Baylor Bears', \"St. John's Red Storm\")": [
+      0.0,
+      1.0
+    ],
+    "('Iowa State Cyclones', 'Creighton Bluejays')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'St. Bonaventure Bonnies')": [
+      1.0,
+      0.0
+    ],
+    "('California Golden Bears', 'UCLA Bruins')": [
+      1.0,
+      0.0
+    ],
+    "('Boise State Broncos', 'NC State Wolfpack')": [
+      0.0,
+      1.0
+    ],
+    "('Indiana Hoosiers', 'Kansas State Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Notre Dame Fighting Irish')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'NJIT Highlanders')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Gonzaga Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Maryland Terrapins')": [
+      1.0,
+      0.0
+    ],
+    "('Auburn Tigers', \"St. John's Red Storm\")": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Syracuse Orange')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Kansas Jayhawks')": [
+      0.0,
+      1.0
+    ],
+    "('Kentucky Wildcats', 'Tennessee Tech Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'New Orleans Privateers')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Longhorns', 'NC State Wolfpack')": [
+      1.0,
+      0.0
+    ],
+    "('Western Kentucky Hilltoppers', 'Vanderbilt Commodores')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Miami Hurricanes', 'BYU Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Florida Gators', 'TCU Horned Frogs')": [
+      0.0,
+      1.0
+    ],
+    "('North Carolina Tar Heels', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('Vanderbilt Commodores', 'VCU Rams')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Eastern Illinois Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Illinois Fighting Illini')": [
+      1.0,
+      0.0
+    ],
+    "('Dayton Flyers', 'BYU Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Florida Gators', 'Providence Friars')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', \"Saint Mary's Gaels\")": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Norfolk State Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('Indiana Hoosiers', 'Bethune-Cookman Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Wyoming Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('Chicago State Cougars', 'St. Xavier  (IL) Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Jaguars', 'Louisiana Christian Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Villanova Wildcats', 'Temple Owls')": [
+      1.0,
+      0.0
+    ],
+    "('Toledo Rockets', 'Central State (OH) Marauders')": [
+      1.0,
+      0.0
+    ],
+    "('Hampton Pirates', 'Apprentice School Builders')": [
+      1.0,
+      0.0
+    ],
+    "('Troy Trojans', 'West Georgia Wolves')": [
+      0.0,
+      1.0
+    ],
+    "('Delaware Blue Hens', 'Iona Gaels')": [
+      0.0,
+      1.0
+    ],
+    "('Jacksonville State Gamecocks', 'North Alabama Lions')": [
+      0.0,
+      1.0
+    ],
+    "('Cincinnati Bearcats', 'Tarleton State Texans')": [
+      1.0,
+      0.0
+    ],
+    "('Xavier Musketeers', 'Saint Francis Red Flash')": [
+      1.0,
+      0.0
+    ],
+    "('Middle Tennessee Blue Raiders', 'UAB Blazers')": [
+      1.0,
+      0.0
+    ],
+    "('Incarnate Word Cardinals', 'McNeese Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('Northern Iowa Panthers', 'Coe Kohawks')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas State Wildcats', 'Bowling Green Falcons')": [
+      0.0,
+      1.0
+    ],
+    "('Southern Utah Thunderbirds', 'West Coast Baptist Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('New Mexico Lobos', 'New Mexico Highlands Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('Colorado Buffaloes', 'California Baptist Lancers')": [
+      1.0,
+      0.0
+    ],
+    "('Stanford Cardinal', 'Portland Pilots')": [
+      1.0,
+      0.0
+    ],
+    "('Eastern Illinois Panthers', 'Blackburn Beavers')": [
+      0.0,
+      1.0
+    ],
+    "('Rutgers Scarlet Knights', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Duke Blue Devils', 'Florida Gators')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan State Spartans', 'Iowa Hawkeyes')": [
+      1.0,
+      0.0
+    ],
+    "('Syracuse Orange', 'Tennessee Volunteers')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'North Carolina Tar Heels')": [
+      0.0,
+      1.0
+    ],
+    "('Oregon Ducks', 'USC Trojans')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'Louisville Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'California Baptist Lancers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Alcorn State Braves')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Clemson Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'SMU Mustangs')": [
+      1.0,
+      0.0
+    ],
+    "('Auburn Tigers', 'NC State Wolfpack')": [
+      1.0,
+      0.0
+    ],
+    "('Minnesota Golden Gophers', 'Indiana Hoosiers')": [
+      1.0,
+      0.0
+    ],
+    "('Fairleigh Dickinson Knights', 'Manor College Blue Jays')": [
+      1.0,
+      0.0
+    ],
+    "('Davidson Wildcats', 'The Citadel Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('South Florida Bulls', 'Utah State Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Merrimack Warriors', 'Rider Broncs')": [
+      1.0,
+      0.0
+    ],
+    "('Charleston Southern Buccaneers', 'Warren Wilson Owls')": [
+      1.0,
+      0.0
+    ],
+    "('Green Bay Phoenix', 'Robert Morris Colonials')": [
+      0.0,
+      1.0
+    ],
+    "('UC Santa Barbara Gauchos', 'Long Beach State Beach')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Northridge Matadors', 'Cal State Bakersfield Roadrunners')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Fullerton Titans', 'Cal Poly Mustangs')": [
+      0.0,
+      1.0
+    ],
+    "('UC Irvine Anteaters', 'UC Riverside Highlanders')": [
+      1.0,
+      0.0
+    ],
+    "(\"Hawai'i Rainbow Warriors\", 'UC Davis Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'East Texas A&M Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Iowa State Cyclones')": [
+      0.0,
+      1.0
+    ],
+    "('Arizona Wildcats', 'Auburn Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Rutgers Scarlet Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Louisville Cardinals', 'Indiana Hoosiers')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Florida State Seminoles')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "(\"St. John's Red Storm\", 'Ole Miss Rebels')": [
+      1.0,
+      0.0
+    ],
+    "('USC Trojans', 'Washington Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'Fresno State Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'North Florida Ospreys')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'UTSA Roadrunners')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Georgetown Hoyas')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'LSU Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Missouri Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Kennesaw State Owls', 'Southern Wesleyan Warriors')": [
+      1.0,
+      0.0
+    ],
+    "('Pennsylvania Quakers', 'Lafayette Leopards')": [
+      1.0,
+      0.0
+    ],
+    "('Charleston Southern Buccaneers', 'South Carolina State Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Miss Golden Eagles', 'Grambling Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Longhorns', 'Southern Jaguars')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas State Wildcats', 'Mississippi Valley State Delta Devils')": [
+      1.0,
+      0.0
+    ],
+    "('New Orleans Privateers', 'Incarnate Word Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Villanova Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Florida Gators')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Clemson Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Ohio State Buckeyes', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "('Virginia Cavaliers', 'Maryland Eastern Shore Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Minnesota Golden Gophers')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Jackson State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Wisconsin Badgers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Iowa Hawkeyes')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Texas Longhorns')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Maryland Terrapins', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Marquette Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'New Orleans Privateers')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'UCLA Bruins')": [
+      1.0,
+      0.0
+    ],
+    "('Penn State Nittany Lions', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('BYU Cougars', 'UC Riverside Highlanders')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Memphis Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Nebraska Cornhuskers')": [
+      0.5,
+      0.5
+    ],
+    "('North Carolina Tar Heels', 'South Carolina Upstate Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'Central Arkansas Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Texas Tech Red Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'George Washington Revolutionaries')": [
+      1.0,
+      0.0
+    ],
+    "('NC State Wolfpack', 'Kansas Jayhawks')": [
+      0.0,
+      1.0
+    ],
+    "('Auburn Tigers', 'Chattanooga Mocs')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Iona Gaels')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Eastern Illinois Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Samford Bulldogs', 'Bryan (TN) Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Florida A&M Rattlers', 'Albany St (GA) Golden Rams')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas-Pine Bluff Golden Lions', 'Ecclesia Royals')": [
+      1.0,
+      0.0
+    ],
+    "(\"Gardner-Webb Runnin' Bulldogs\", 'Wofford Terriers')": [
+      0.0,
+      1.0
+    ],
+    "('Stetson Hatters', 'Rhodes Lynx')": [
+      1.0,
+      0.0
+    ],
+    "('VCU Rams', 'Niagara Purple Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('SE Louisiana Lions', 'East Texas A&M Lions')": [
+      0.0,
+      1.0
+    ],
+    "('Western Kentucky Hilltoppers', 'Campbellsville Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('North Dakota State Bison', 'Minnesota Crookston Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('South Dakota State Jackrabbits', 'Wyoming Cowboys')": [
+      0.0,
+      1.0
+    ],
+    "('Alabama A&M Bulldogs', 'North Alabama Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Christian Huskies', 'McNeese Cowboys')": [
+      0.0,
+      1.0
+    ],
+    "('TCU Horned Frogs', 'Incarnate Word Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Indiana Screaming Eagles', 'East-West University Phantoms')": [
+      0.0,
+      1.0
+    ],
+    "('Arizona Wildcats', 'Abilene Christian Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Lipscomb Bisons')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Butler Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Toledo Rockets')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Pacific Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Louisville Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'East Tennessee State Buccaneers')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Queens University Royals')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Towson Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Northern Colorado Bears')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'DePaul Blue Demons')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Campbell Fighting Camels')": [
+      1.0,
+      0.0
+    ],
+    "('Memphis Tigers', 'Vanderbilt Commodores')": [
+      0.0,
+      1.0
+    ],
+    "('Alabama Crimson Tide', 'South Florida Bulls')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Saint Francis Red Flash')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Bulldogs', 'Western Carolina Catamounts')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Abilene Christian Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'San Diego State Aztecs')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Texas Tech Red Raiders')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Auburn Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan State Spartans', 'Oakland Golden Grizzlies')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Montana Grizzlies')": [
+      1.0,
+      0.0
+    ],
+    "('Ohio State Buckeyes', 'North Carolina Tar Heels')": [
+      0.0,
+      1.0
+    ],
+    "('Kentucky Wildcats', \"St. John's Red Storm\")": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Cavaliers', 'Maryland Terrapins')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'La Salle Explorers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Long Beach State Beach')": [
+      1.0,
+      0.0
+    ],
+    "('DePaul Blue Demons', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Oregon Ducks', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Wake Forest Demon Deacons', 'Vanderbilt Commodores')": [
+      0.0,
+      1.0
+    ],
+    "('Nebraska Cornhuskers', 'North Dakota Fighting Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Kennesaw State Owls')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', \"Gardner-Webb Runnin' Bulldogs\")": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Colgate Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Bethune-Cookman Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Eastern Washington Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'East Carolina Pirates')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Davidson Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Missouri Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Cavaliers', 'American University Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Bulldogs', 'West Georgia Wolves')": [
+      1.0,
+      0.0
+    ],
+    "('Campbell Fighting Camels', 'Green Bay Phoenix')": [
+      1.0,
+      0.0
+    ],
+    "('Army Black Knights', 'Binghamton Bearcats')": [
+      1.0,
+      0.0
+    ],
+    "('Kentucky Wildcats', 'Bellarmine Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Ohio State Buckeyes', 'Grambling Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('UCF Knights', 'Florida Atlantic Owls')": [
+      1.0,
+      0.0
+    ],
+    "('Missouri State Bears', 'Lindenwood Lions')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'UC Riverside Highlanders')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Bakersfield Roadrunners', 'Idaho Vandals')": [
+      1.0,
+      0.0
+    ],
+    "('Loyola Marymount Lions', 'Morgan State Bears')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Harvard Crimson')": [
+      1.0,
+      0.0
+    ],
+    "('Marshall Thundering Herd', 'WVU Tech Golden Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Seton Hall Pirates', 'Villanova Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('UNC Wilmington Seahawks', 'Columbia College (SC) Fighting Koalas')": [
+      1.0,
+      0.0
+    ],
+    "('Duquesne Dukes', 'Cleary University Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Stanford Cardinal', 'Cal State Northridge Matadors')": [
+      1.0,
+      0.0
+    ],
+    "('Pepperdine Waves', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Texas Tech Red Raiders', 'Winthrop Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'South Dakota State Jackrabbits')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'McNeese Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Houston Christian Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Kent State Golden Flashes')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Middle Tennessee Blue Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Cornell Big Red')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'New Haven Chargers')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Yale Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'James Madison Dukes')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Southern Jaguars')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Dartmouth Big Green')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Bulldogs', 'Long Island University Sharks')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa Hawkeyes', 'UMass Lowell River Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('San Diego Toreros', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('North Carolina Tar Heels', 'Florida State Seminoles')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'New Hampshire Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('California Golden Bears', 'Louisville Cardinals')": [
+      0.0,
+      1.0
+    ],
+    "('Tennessee Volunteers', 'South Carolina State Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Xavier Musketeers', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Duke Blue Devils', 'Georgia Tech Yellow Jackets')": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Tech Hokies', 'Virginia Cavaliers')": [
+      1.0,
+      0.0
+    ],
+    "('Dartmouth Big Green', 'Elms College Blazers')": [
+      1.0,
+      0.0
+    ],
+    "('Youngstown State Penguins', 'Oakland Golden Grizzlies')": [
+      0.5,
+      0.5
+    ],
+    "('VMI Keydets', 'Samford Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Coastal Carolina Chanticleers', 'Georgia Southern Eagles')": [
+      0.0,
+      1.0
+    ],
+    "('North Alabama Lions', 'Stetson Hatters')": [
+      0.0,
+      1.0
+    ],
+    "('North Dakota Fighting Hawks', 'Oral Roberts Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Northern Kentucky Norse', 'IU Indianapolis Jaguars')": [
+      1.0,
+      0.0
+    ],
+    "('Wright State Raiders', 'Milwaukee Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Fort Wayne Mastodons', 'Green Bay Phoenix')": [
+      0.0,
+      1.0
+    ],
+    "('Lipscomb Bisons', 'Jacksonville Dolphins')": [
+      1.0,
+      0.0
+    ],
+    "('Central Arkansas Bears', 'Florida Gulf Coast Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Illinois Salukis', 'Valparaiso Beacons')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois State Redbirds', 'Evansville Purple Aces')": [
+      1.0,
+      0.0
+    ],
+    "('UT Arlington Mavericks', 'California Baptist Lancers')": [
+      1.0,
+      0.0
+    ],
+    "('UNC Greensboro Spartans', 'Chattanooga Mocs')": [
+      1.0,
+      0.0
+    ],
+    "('Weber State Wildcats', 'Portland State Vikings')": [
+      0.0,
+      1.0
+    ],
+    "('UT Martin Skyhawks', 'Western Illinois Leathernecks')": [
+      1.0,
+      0.0
+    ],
+    "('SIU Edwardsville Cougars', 'Southern Indiana Screaming Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Lindenwood Lions', 'Morehead State Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('UC Davis Aggies', 'Cal State Northridge Matadors')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Bakersfield Roadrunners', 'UC Irvine Anteaters')": [
+      0.0,
+      1.0
+    ],
+    "('UL Monroe Warhawks', 'Southern Miss Golden Eagles')": [
+      0.0,
+      1.0
+    ],
+    "('South Dakota State Jackrabbits', 'Omaha Mavericks')": [
+      1.0,
+      0.0
+    ],
+    "('Montana Grizzlies', 'Northern Arizona Lumberjacks')": [
+      1.0,
+      0.0
+    ],
+    "('Little Rock Trojans', 'Tennessee Tech Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Belmont Bruins', 'Bradley Braves')": [
+      1.0,
+      0.0
+    ],
+    "('Queens University Royals', 'Eastern Kentucky Colonels')": [
+      1.0,
+      0.0
+    ],
+    "('West Georgia Wolves', 'Bellarmine Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Northern Iowa Panthers', 'Indiana State Sycamores')": [
+      1.0,
+      0.0
+    ],
+    "('UC Riverside Highlanders', \"Hawai'i Rainbow Warriors\")": [
+      0.0,
+      1.0
+    ],
+    "('Austin Peay Governors', 'North Florida Ospreys')": [
+      1.0,
+      0.0
+    ],
+    "('Tarleton State Texans', 'Utah Valley Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Abilene Christian Wildcats', 'Utah Tech Trailblazers')": [
+      0.0,
+      1.0
+    ],
+    "('Southeast Missouri State Redhawks', 'Eastern Illinois Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('UIC Flames', 'Murray State Racers')": [
+      0.0,
+      1.0
+    ],
+    "('Montana State Bobcats', 'Northern Colorado Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Idaho State Bengals', 'Sacramento State Hornets')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Fullerton Titans', 'UC Santa Barbara Gauchos')": [
+      1.0,
+      0.0
+    ],
+    "('Cal Poly Mustangs', 'UC San Diego Tritons')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'USC Trojans')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'West Virginia Mountaineers')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Seattle U Redhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Michigan State Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('Stanford Cardinal', 'Louisville Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('Utah Utes', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Wisconsin Badgers', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Florida State Seminoles', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Cincinnati Bearcats', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Kansas State Wildcats', 'BYU Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('South Carolina Gamecocks', 'Vanderbilt Commodores')": [
+      0.0,
+      1.0
+    ],
+    "('SMU Mustangs', 'North Carolina Tar Heels')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Kentucky Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Oklahoma State Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('UCF Knights', 'Kansas Jayhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Tennessee Volunteers')": [
+      1.0,
+      0.0
+    ],
+    "('Penn State Nittany Lions', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "('NC State Wolfpack', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Missouri Tigers', 'Florida Gators')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Bulldogs', 'Auburn Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa Hawkeyes', 'UCLA Bruins')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Marquette Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Loyola Marymount Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Ohio State Buckeyes', 'Nebraska Cornhuskers')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan State Spartans', 'USC Trojans')": [
+      1.0,
+      0.0
+    ],
+    "('Penn State Nittany Lions', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Louisville Cardinals', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Houston Cougars', 'Texas Tech Red Raiders')": [
+      0.5,
+      0.5
+    ],
+    "('Florida Gators', 'Georgia Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Minnesota Golden Gophers', 'Iowa Hawkeyes')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Texas Longhorns')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'TCU Horned Frogs')": [
+      1.0,
+      0.0
+    ],
+    "('Oklahoma State Cowboys', 'UCF Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Kansas State Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Baylor Bears', 'Iowa State Cyclones')": [
+      0.0,
+      1.0
+    ],
+    "('Providence Friars', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Washington Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Arizona State Sun Devils')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'Alabama Crimson Tide')": [
+      1.0,
+      0.0
+    ],
+    "('Ole Miss Rebels', 'Arkansas Razorbacks')": [
+      0.0,
+      1.0
+    ],
+    "('Virginia Cavaliers', 'California Golden Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Clemson Tigers', 'SMU Mustangs')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Santa Clara Broncos')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Northwestern Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Rutgers Scarlet Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Youngstown State Penguins', 'Bryant & Stratton (Ohio) Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "('Toledo Rockets', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ],
+    "('Fairfield Stags', 'Rider Broncs')": [
+      1.0,
+      0.0
+    ],
+    "('Oakland Golden Grizzlies', 'Cleveland State Vikings')": [
+      1.0,
+      0.0
+    ],
+    "('Detroit Mercy Titans', 'Wright State Raiders')": [
+      0.5,
+      0.5
+    ],
+    "('Green Bay Phoenix', 'IU Indianapolis Jaguars')": [
+      1.0,
+      0.0
+    ],
+    "('Siena Saints', 'Merrimack Warriors')": [
+      0.0,
+      1.0
+    ],
+    "(\"Mount St. Mary's Mountaineers\", \"Saint Peter's Peacocks\")": [
+      1.0,
+      0.0
+    ],
+    "('Iona Gaels', 'Niagara Purple Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Sacred Heart Pioneers', 'Marist Red Foxes')": [
+      0.0,
+      1.0
+    ],
+    "('Manhattan Jaspers', 'Canisius Golden Griffins')": [
+      0.0,
+      1.0
+    ],
+    "('Milwaukee Panthers', 'Northern Kentucky Norse')": [
+      0.0,
+      1.0
+    ],
+    "('Bowling Green Falcons', 'Akron Zips')": [
+      0.0,
+      1.0
+    ],
+    "('Minnesota Golden Gophers', 'USC Trojans')": [
+      0.0,
+      1.0
+    ],
+    "('Colorado State Rams', 'UNLV Rebels')": [
+      1.0,
+      0.0
+    ],
+    "('TCU Horned Frogs', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan Wolverines', 'Wisconsin Badgers')": [
+      0.0,
+      1.0
+    ],
+    "('Iowa State Cyclones', 'Oklahoma State Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'DePaul Blue Demons')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Penn State Nittany Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'SMU Mustangs')": [
+      1.0,
+      0.0
+    ],
+    "('Baylor Bears', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Utah Utes', 'BYU Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Indiana Hoosiers', 'Nebraska Cornhuskers')": [
+      0.0,
+      1.0
+    ],
+    "('Vanderbilt Commodores', 'LSU Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Texas Longhorns')": [
+      0.0,
+      1.0
+    ],
+    "('Colorado Buffaloes', 'Texas Tech Red Raiders')": [
+      0.0,
+      1.0
+    ],
+    "('Auburn Tigers', 'Arkansas Razorbacks')": [
+      0.5,
+      0.5
+    ],
+    "('North Carolina Tar Heels', 'Wake Forest Demon Deacons')": [
+      1.0,
+      0.0
+    ],
+    "('South Carolina Gamecocks', 'Georgia Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Louisville Cardinals', 'Boston College Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'Tennessee Volunteers')": [
+      1.0,
+      0.0
+    ],
+    "('West Virginia Mountaineers', 'Kansas Jayhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Cavaliers', 'Stanford Cardinal')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa Hawkeyes', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "('UCF Knights', 'Cincinnati Bearcats')": [
+      1.0,
+      0.0
+    ],
+    "('Morgan State Bears', 'North Carolina Central Eagles')": [
+      0.0,
+      1.0
+    ],
+    "('Howard Bison', 'Delaware State Hornets')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama State Hornets', 'Alcorn State Braves')": [
+      1.0,
+      0.0
+    ],
+    "('Florida A&M Rattlers', 'Grambling Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Prairie View A&M Panthers', 'Arkansas-Pine Bluff Golden Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Bethune-Cookman Wildcats', 'Southern Jaguars')": [
+      0.0,
+      1.0
+    ],
+    "('Norfolk State Spartans', 'Maryland Eastern Shore Hawks')": [
+      0.0,
+      1.0
+    ],
+    "('Coppin State Eagles', 'South Carolina State Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Lamar Cardinals', 'Houston Christian Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('American University Eagles', 'Navy Midshipmen')": [
+      1.0,
+      0.0
+    ],
+    "('Stephen F. Austin Lumberjacks', 'Incarnate Word Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('SE Louisiana Lions', 'New Orleans Privateers')": [
+      0.0,
+      1.0
+    ],
+    "('Northwestern State Demons', 'UT Rio Grande Valley Vaqueros')": [
+      1.0,
+      0.0
+    ],
+    "('McNeese Cowboys', 'Nicholls Colonels')": [
+      1.0,
+      0.0
+    ],
+    "('East Texas A&M Lions', 'Texas A&M-Corpus Christi Islanders')": [
+      0.0,
+      1.0
+    ],
+    "('Texas Southern Tigers', 'Mississippi Valley State Delta Devils')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama A&M Bulldogs', 'Jackson State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Iowa State Cyclones')": [
+      0.5,
+      0.5
+    ],
+    "('Seton Hall Pirates', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Houston Cougars', 'West Virginia Mountaineers')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Oregon Ducks')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Indiana Hoosiers')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Mississippi State Bulldogs', 'Alabama Crimson Tide')": [
+      0.0,
+      1.0
+    ],
+    "('Oklahoma Sooners', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "('Clemson Tigers', 'Boston College Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Texas A&M Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Arizona State Sun Devils')": [
+      1.0,
+      0.0
+    ],
+    "('Washington Huskies', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Iowa Hawkeyes')": [
+      1.0,
+      0.0
+    ],
+    "('California Golden Bears', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Texas Longhorns', 'Vanderbilt Commodores')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'TCU Horned Frogs')": [
+      1.0,
+      0.0
+    ],
+    "('Northwestern Wildcats', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "('Stanford Cardinal', 'North Carolina Tar Heels')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Utah Utes')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'South Carolina Gamecocks')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Bulldogs', 'Ole Miss Rebels')": [
+      0.0,
+      1.0
+    ],
+    "('Utah State Aggies', 'Nevada Wolf Pack')": [
+      1.0,
+      0.0
+    ],
+    "('Washington State Cougars', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Providence Friars', 'Creighton Bluejays')": [
+      1.0,
+      0.0
+    ],
+    "('Kent State Golden Flashes', 'Toledo Rockets')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Baylor Bears')": [
+      1.0,
+      0.0
+    ],
+    "('Dayton Flyers', 'Loyola Chicago Ramblers')": [
+      1.0,
+      0.0
+    ],
+    "('DePaul Blue Demons', 'Marquette Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Ball State Cardinals', 'Ohio Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "('Boise State Broncos', 'Colorado State Rams')": [
+      1.0,
+      0.0
+    ],
+    "('UCF Knights', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Cincinnati Bearcats', 'Iowa State Cyclones')": [
+      1.0,
+      0.0
+    ],
+    "('Georgetown Hoyas', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Oregon Ducks', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('USC Trojans', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Stanford Cardinal', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Northwestern Wildcats', 'Nebraska Cornhuskers')": [
+      0.0,
+      1.0
+    ],
+    "('Seattle U Redhawks', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Vanderbilt Commodores', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "('Texas Tech Red Raiders', 'BYU Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Washington Huskies', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('Illinois Fighting Illini', 'Minnesota Golden Gophers')": [
+      1.0,
+      0.0
+    ],
+    "('California Golden Bears', 'North Carolina Tar Heels')": [
+      1.0,
+      0.0
+    ],
+    "('SMU Mustangs', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia Bulldogs', 'Arkansas Razorbacks')": [
+      1.0,
+      0.0
+    ],
+    "('Oklahoma Sooners', 'Alabama Crimson Tide')": [
+      0.0,
+      1.0
+    ],
+    "('Pittsburgh Panthers', 'Louisville Cardinals')": [
+      0.0,
+      1.0
+    ],
+    "('Clemson Tigers', 'Miami Hurricanes')": [
+      1.0,
+      0.0
+    ],
+    "('Grand Canyon Lopes', 'Utah State Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Tennessee Volunteers', 'Kentucky Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Seton Hall Pirates', 'Butler Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Houston Cougars', 'Arizona State Sun Devils')": [
+      1.0,
+      0.0
+    ],
+    "('Monmouth Hawks', 'Northeastern Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('Saint Francis Red Flash', 'Stonehill Skyhawks')": [
+      1.0,
+      0.0
+    ],
+    "('UAlbany Great Danes', 'Vermont Catamounts')": [
+      1.0,
+      0.0
+    ],
+    "('Towson Tigers', 'Drexel Dragons')": [
+      1.0,
+      0.0
+    ],
+    "(\"Saint Peter's Peacocks\", 'Iona Gaels')": [
+      1.0,
+      0.0
+    ],
+    "('Rider Broncs', 'Sacred Heart Pioneers')": [
+      0.0,
+      1.0
+    ],
+    "('Brown Bears', 'Cornell Big Red')": [
+      0.0,
+      1.0
+    ],
+    "('Yale Bulldogs', 'Columbia Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Siena Saints', 'Fairfield Stags')": [
+      1.0,
+      0.0
+    ],
+    "('Niagara Purple Eagles', \"Mount St. Mary's Mountaineers\")": [
+      0.0,
+      1.0
+    ],
+    "('Marist Red Foxes', 'Merrimack Warriors')": [
+      0.0,
+      1.0
+    ],
+    "('Quinnipiac Bobcats', 'Manhattan Jaspers')": [
+      1.0,
+      0.0
+    ],
+    "('Mercyhurst Lakers', 'Central Connecticut Blue Devils')": [
+      1.0,
+      0.0
+    ],
+    "('Harvard Crimson', 'Pennsylvania Quakers')": [
+      1.0,
+      0.0
+    ],
+    "('Fairleigh Dickinson Knights', 'Wagner Seahawks')": [
+      1.0,
+      0.0
+    ],
+    "('Maine Black Bears', 'New Hampshire Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Binghamton Bearcats', 'UMBC Retrievers')": [
+      0.0,
+      1.0
+    ],
+    "('NJIT Highlanders', 'Bryant Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('VCU Rams', \"Saint Joseph's Hawks\")": [
+      1.0,
+      0.0
+    ],
+    "('Alcorn State Braves', 'Prairie View A&M Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Le Moyne Dolphins', 'Long Island University Sharks')": [
+      1.0,
+      0.0
+    ],
+    "('Howard Bison', 'Morehouse Maroon Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Texas A&M-Corpus Christi Islanders', 'McNeese Cowboys')": [
+      0.0,
+      1.0
+    ],
+    "('George Mason Patriots', 'George Washington Revolutionaries')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama State Hornets', 'Alabama A&M Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Dartmouth Big Green', 'Princeton Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Marquette Golden Eagles', 'Providence Friars')": [
+      1.0,
+      0.0
+    ],
+    "('Incarnate Word Cardinals', 'East Texas A&M Lions')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas-Pine Bluff Golden Lions', 'Bethune-Cookman Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Norfolk State Spartans', 'Elizabeth City State Vikings')": [
+      1.0,
+      0.0
+    ],
+    "('Chicago State Cougars', 'New Haven Chargers')": [
+      0.0,
+      1.0
+    ],
+    "('Lehigh Mountain Hawks', 'Loyola Maryland Greyhounds')": [
+      1.0,
+      0.0
+    ],
+    "('UT Rio Grande Valley Vaqueros', 'SE Louisiana Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Nicholls Colonels', 'Stephen F. Austin Lumberjacks')": [
+      0.0,
+      1.0
+    ],
+    "('Mississippi Valley State Delta Devils', 'Florida A&M Rattlers')": [
+      0.0,
+      1.0
+    ],
+    "('Jackson State Tigers', 'Texas Southern Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Christian Huskies', 'Northwestern State Demons')": [
+      1.0,
+      0.0
+    ],
+    "('New Orleans Privateers', 'Lamar Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('Northern Colorado Bears', 'Montana State Bobcats')": [
+      0.0,
+      1.0
+    ],
+    "('Northern Arizona Lumberjacks', 'Montana Grizzlies')": [
+      0.0,
+      1.0
+    ],
+    "('Hampton Pirates', 'North Carolina A&T Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Indiana Hoosiers')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Purdue Boilermakers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'UCF Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Oregon Ducks', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('Baylor Bears', 'Texas Tech Red Raiders')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'Vanderbilt Commodores')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'LSU Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Clemson Tigers', 'NC State Wolfpack')": [
+      0.0,
+      1.0
+    ],
+    "('Colorado Buffaloes', 'Kansas Jayhawks')": [
+      0.0,
+      1.0
+    ],
+    "('Missouri Tigers', 'Georgia Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Duquesne Dukes', 'Saint Louis Billikens')": [
+      0.0,
+      1.0
+    ],
+    "('Kent State Golden Flashes', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ],
+    "('Arizona Wildcats', 'Cincinnati Bearcats')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Washington Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Pepperdine Waves')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Maryland Terrapins')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Notre Dame Fighting Irish')": [
+      1.0,
+      0.0
+    ],
+    "('Marshall Thundering Herd', 'UL Monroe Warhawks')": [
+      1.0,
+      0.0
+    ],
+    "('App State Mountaineers', \"Louisiana Ragin' Cajuns\")": [
+      1.0,
+      0.0
+    ],
+    "('Lipscomb Bisons', 'Stetson Hatters')": [
+      1.0,
+      0.0
+    ],
+    "('Austin Peay Governors', 'Florida Gulf Coast Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('West Georgia Wolves', 'Central Arkansas Bears')": [
+      0.0,
+      1.0
+    ],
+    "('UMass Lowell River Hawks', 'Vermont Catamounts')": [
+      0.0,
+      1.0
+    ],
+    "('UMBC Retrievers', 'NJIT Highlanders')": [
+      1.0,
+      0.0
+    ],
+    "('New Hampshire Wildcats', 'Binghamton Bearcats')": [
+      1.0,
+      0.0
+    ],
+    "('Maine Black Bears', 'UAlbany Great Danes')": [
+      1.0,
+      0.0
+    ],
+    "('Youngstown State Penguins', 'Green Bay Phoenix')": [
+      1.0,
+      0.0
+    ],
+    "('UAB Blazers', 'South Florida Bulls')": [
+      0.0,
+      1.0
+    ],
+    "('Penn State Nittany Lions', 'Wisconsin Badgers')": [
+      0.0,
+      1.0
+    ],
+    "('Iona Gaels', 'Merrimack Warriors')": [
+      1.0,
+      0.0
+    ],
+    "('Robert Morris Colonials', 'Milwaukee Panthers')": [
+      1.0,
+      0.0
+    ],
+    "(\"Mount St. Mary's Mountaineers\", 'Quinnipiac Bobcats')": [
+      0.0,
+      1.0
+    ],
+    "('Fairfield Stags', 'Niagara Purple Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Sacred Heart Pioneers', 'Canisius Golden Griffins')": [
+      1.0,
+      0.0
+    ],
+    "('Siena Saints', 'Marist Red Foxes')": [
+      1.0,
+      0.0
+    ],
+    "('William & Mary Tribe', 'UNC Wilmington Seahawks')": [
+      1.0,
+      0.0
+    ],
+    "('Charleston Cougars', 'Campbell Fighting Camels')": [
+      1.0,
+      0.0
+    ],
+    "('Elon Phoenix', 'Towson Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Hampton Pirates', 'Monmouth Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina A&T Aggies', 'Hofstra Pride')": [
+      1.0,
+      0.0
+    ],
+    "('Northeastern Huskies', 'Stony Brook Seawolves')": [
+      0.0,
+      1.0
+    ],
+    "('James Madison Dukes', 'South Alabama Jaguars')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia State Panthers', 'Southern Miss Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Georgia Southern Eagles', 'Arkansas State Red Wolves')": [
+      0.0,
+      1.0
+    ],
+    "('Coastal Carolina Chanticleers', 'Texas State Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "('North Florida Ospreys', 'Eastern Kentucky Colonels')": [
+      1.0,
+      0.0
+    ],
+    "('Jacksonville Dolphins', 'Bellarmine Knights')": [
+      0.0,
+      1.0
+    ],
+    "('Morehead State Eagles', 'Western Illinois Leathernecks')": [
+      1.0,
+      0.0
+    ],
+    "('Oral Roberts Golden Eagles', 'North Dakota Fighting Hawks')": [
+      0.0,
+      1.0
+    ],
+    "('Southeast Missouri State Redhawks', 'Little Rock Trojans')": [
+      1.0,
+      0.0
+    ],
+    "('Lindenwood Lions', 'Tennessee Tech Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Indiana Screaming Eagles', 'Eastern Illinois Panthers')": [
+      0.0,
+      1.0
+    ],
+    "('St. Thomas-Minnesota Tommies', 'South Dakota State Jackrabbits')": [
+      1.0,
+      0.0
+    ],
+    "('Denver Pioneers', 'North Dakota State Bison')": [
+      0.0,
+      1.0
+    ],
+    "('UC Santa Barbara Gauchos', 'Cal Poly Mustangs')": [
+      1.0,
+      0.0
+    ],
+    "('UC Davis Aggies', 'UC San Diego Tritons')": [
+      0.0,
+      1.0
+    ],
+    "('Montana Grizzlies', 'Weber State Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Montana State Bobcats', 'Idaho State Bengals')": [
+      1.0,
+      0.0
+    ],
+    "('Idaho Vandals', 'Sacramento State Hornets')": [
+      1.0,
+      0.0
+    ],
+    "('Eastern Washington Eagles', 'Portland State Vikings')": [
+      0.0,
+      1.0
+    ],
+    "('SIU Edwardsville Cougars', 'Tennessee State Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('New Mexico State Aggies', 'Missouri State Bears')": [
+      0.0,
+      1.0
+    ],
+    "('UTEP Miners', 'Florida International Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Fullerton Titans', 'Long Beach State Beach')": [
+      1.0,
+      0.0
+    ],
+    "('UC Riverside Highlanders', 'UC Irvine Anteaters')": [
+      0.0,
+      1.0
+    ],
+    "(\"Hawai'i Rainbow Warriors\", 'Cal State Bakersfield Roadrunners')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Ohio State Buckeyes')": [
+      1.0,
+      0.0
+    ],
+    "('St. Bonaventure Bonnies', 'Saint Louis Billikens')": [
+      0.0,
+      1.0
+    ],
+    "('Arizona Wildcats', 'West Virginia Mountaineers')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Villanova Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "('Duke Blue Devils', 'Wake Forest Demon Deacons')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Houston Cougars')": [
+      0.5,
+      0.5
+    ],
+    "('Minnesota Golden Gophers', 'Nebraska Cornhuskers')": [
+      0.0,
+      1.0
+    ],
+    "('Gonzaga Bulldogs', 'San Francisco Dons')": [
+      1.0,
+      0.0
+    ],
+    "('Oklahoma State Cowboys', 'Iowa State Cyclones')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan State Spartans', 'Maryland Terrapins')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Utah Utes')": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Cavaliers', 'North Carolina Tar Heels')": [
+      0.0,
+      1.0
+    ],
+    "('Mississippi State Bulldogs', 'Vanderbilt Commodores')": [
+      0.0,
+      1.0
+    ],
+    "('Florida Gators', 'Auburn Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Alabama Crimson Tide', 'Tennessee Volunteers')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia Tech Yellow Jackets', 'Clemson Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Kansas State Wildcats', 'Kansas Jayhawks')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'LSU Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Longhorns', 'Georgia Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Virginia Tech Hokies')": [
+      1.0,
+      0.0
+    ],
+    "('South Florida Bulls', 'Florida Atlantic Owls')": [
+      1.0,
+      0.0
+    ],
+    "('Washington Huskies', 'Oregon Ducks')": [
+      1.0,
+      0.0
+    ],
+    "('Mercyhurst Lakers', 'Chicago State Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'USC Trojans')": [
+      0.0,
+      1.0
+    ],
+    "('New Haven Chargers', 'Saint Francis Red Flash')": [
+      0.0,
+      1.0
+    ],
+    "('IU Indianapolis Jaguars', 'Purdue Fort Wayne Mastodons')": [
+      0.0,
+      1.0
+    ],
+    "('Evansville Purple Aces', 'Southern Illinois Salukis')": [
+      0.0,
+      1.0
+    ],
+    "('BYU Cougars', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Duke Blue Devils', 'Louisville Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Providence Friars')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Nebraska Cornhuskers')": [
+      1.0,
+      0.0
+    ],
+    "('Rutgers Scarlet Knights', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('Indiana Hoosiers', 'Purdue Boilermakers')": [
+      0.5,
+      0.5
+    ],
+    "('Oklahoma Sooners', 'Arkansas Razorbacks')": [
+      0.0,
+      1.0
+    ],
+    "('Notre Dame Fighting Irish', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Vanderbilt Commodores', 'Kentucky Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Saint Louis Billikens', 'George Washington Revolutionaries')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Missouri Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Miami (OH) RedHawks', 'Massachusetts Minutemen')": [
+      1.0,
+      0.0
+    ],
+    "('TCU Horned Frogs', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('South Carolina Gamecocks', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "(\"St. John's Red Storm\", 'Butler Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Colorado Buffaloes')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Washington Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Saint Louis Billikens', 'Dayton Flyers')": [
+      0.5,
+      0.5
+    ],
+    "('Arizona State Sun Devils', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Creighton Bluejays', 'UConn Huskies')": [
+      0.5,
+      0.5
+    ],
+    "('Virginia Tech Hokies', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Gonzaga Bulldogs', \"Saint Mary's Gaels\")": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Cincinnati Bearcats')": [
+      1.0,
+      0.0
+    ],
+    "('UCF Knights', 'Texas Tech Red Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'BYU Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Kentucky Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia Tech Yellow Jackets', 'North Carolina Tar Heels')": [
+      0.0,
+      1.0
+    ],
+    "('Boston College Eagles', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Vanderbilt Commodores', 'Ole Miss Rebels')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'SMU Mustangs')": [
+      0.5,
+      0.5
+    ],
+    "('Clemson Tigers', 'Pittsburgh Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Miami (OH) RedHawks', 'Northern Illinois Huskies')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Illinois Fighting Illini')": [
+      0.5,
+      0.5
+    ],
+    "('Kansas State Wildcats', 'Iowa State Cyclones')": [
+      0.0,
+      1.0
+    ],
+    "('Maryland Terrapins', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Florida Gators', 'Alabama Crimson Tide')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Kansas Jayhawks')": [
+      0.0,
+      1.0
+    ],
+    "('North Carolina Tar Heels', 'Syracuse Orange')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Xavier Musketeers')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Boston College Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Cavaliers', 'Pittsburgh Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Davidson Wildcats', 'Saint Louis Billikens')": [
+      0.0,
+      1.0
+    ],
+    "('DePaul Blue Demons', \"St. John's Red Storm\")": [
+      0.0,
+      1.0
+    ],
+    "('Buffalo Bulls', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ],
+    "('Tennessee Volunteers', 'Ole Miss Rebels')": [
+      1.0,
+      0.0
+    ],
+    "('Illinois Fighting Illini', 'Northwestern Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Portland Pilots', 'Gonzaga Bulldogs')": [
+      0.5,
+      0.5
+    ],
+    "('Houston Cougars', 'UCF Knights')": [
+      1.0,
+      0.0
+    ],
+    "('Minnesota Golden Gophers', 'Michigan State Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('Oklahoma State Cowboys', 'BYU Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Stanford Cardinal', 'Clemson Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Louisville Cardinals', 'Notre Dame Fighting Irish')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan Wolverines', 'Penn State Nittany Lions')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'UConn Huskies')": [
+      0.5,
+      0.5
+    ],
+    "('Arizona Wildcats', 'Oklahoma State Cowboys')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Duke Blue Devils')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'Illinois Fighting Illini')": [
+      1.0,
+      0.0
+    ],
+    "('Oregon State Beavers', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Iowa State Cyclones', 'Baylor Bears')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Rutgers Scarlet Knights', 'Nebraska Cornhuskers')": [
+      0.0,
+      1.0
+    ],
+    "('Kansas Jayhawks', 'Utah Utes')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Oregon Ducks')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'Oklahoma Sooners')": [
+      0.0,
+      1.0
+    ],
+    "('Texas A&M Aggies', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "('Virginia Cavaliers', 'Syracuse Orange')": [
+      1.0,
+      0.0
+    ],
+    "('Saint Louis Billikens', 'La Salle Explorers')": [
+      1.0,
+      0.0
+    ],
+    "('California Golden Bears', 'Clemson Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Mississippi State Bulldogs', 'Arkansas Razorbacks')": [
+      0.0,
+      1.0
+    ],
+    "('Marshall Thundering Herd', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ],
+    "('Wake Forest Demon Deacons', 'Louisville Cardinals')": [
+      0.0,
+      1.0
+    ],
+    "('Kentucky Wildcats', 'Tennessee Volunteers')": [
+      1.0,
+      0.0
+    ],
+    "('Ohio State Buckeyes', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('West Virginia Mountaineers', 'Texas Tech Red Raiders')": [
+      0.0,
+      1.0
+    ],
+    "('Kansas Jayhawks', 'Arizona Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "(\"St. John's Red Storm\", 'Xavier Musketeers')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'NC State Wolfpack')": [
+      1.0,
+      0.0
+    ],
+    "('Utah Utes', 'Houston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Pittsburgh Panthers', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('TCU Horned Frogs', 'Iowa State Cyclones')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Illinois Fighting Illini', 'Wisconsin Badgers')": [
+      0.0,
+      1.0
+    ],
+    "('Miami Hurricanes', 'North Carolina Tar Heels')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Washington State Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Florida State Seminoles', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Auburn Tigers', 'Vanderbilt Commodores')": [
+      0.0,
+      1.0
+    ],
+    "('LSU Tigers', 'Arkansas Razorbacks')": [
+      0.0,
+      1.0
+    ],
+    "('Baylor Bears', 'BYU Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('Northwestern Wildcats', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Butler Bulldogs', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia Bulldogs', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "('Texas Tech Red Raiders', 'Colorado Buffaloes')": [
+      1.0,
+      0.0
+    ],
+    "('Clemson Tigers', 'Virginia Tech Hokies')": [
+      0.0,
+      1.0
+    ],
+    "('New Hampshire Wildcats', 'NJIT Highlanders')": [
+      0.0,
+      1.0
+    ],
+    "('Maine Black Bears', 'UMBC Retrievers')": [
+      0.0,
+      1.0
+    ],
+    "('UMass Lowell River Hawks', 'Bryant Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('IU Indianapolis Jaguars', 'Northern Kentucky Norse')": [
+      0.0,
+      1.0
+    ],
+    "('Binghamton Bearcats', 'Vermont Catamounts')": [
+      0.0,
+      1.0
+    ],
+    "('Kennesaw State Owls', 'Middle Tennessee Blue Raiders')": [
+      0.0,
+      1.0
+    ],
+    "('Illinois State Redbirds', 'Valparaiso Beacons')": [
+      1.0,
+      0.0
+    ],
+    "('Indiana State Sycamores', 'Murray State Racers')": [
+      0.0,
+      1.0
+    ],
+    "('Merrimack Warriors', 'Marist Red Foxes')": [
+      1.0,
+      0.0
+    ],
+    "(\"Gardner-Webb Runnin' Bulldogs\", 'Winthrop Eagles')": [
+      0.0,
+      1.0
+    ],
+    "('Longwood Lancers', 'UNC Asheville Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Charleston Southern Buccaneers', 'Presbyterian Blue Hose')": [
+      1.0,
+      0.0
+    ],
+    "('South Carolina Upstate Spartans', 'High Point Panthers')": [
+      0.0,
+      1.0
+    ],
+    "('Cleveland State Vikings', 'Robert Morris Colonials')": [
+      0.0,
+      1.0
+    ],
+    "('Oakland Golden Grizzlies', 'Youngstown State Penguins')": [
+      0.5,
+      0.5
+    ],
+    "('Wright State Raiders', 'Detroit Mercy Titans')": [
+      0.5,
+      0.5
+    ],
+    "('Green Bay Phoenix', 'Purdue Fort Wayne Mastodons')": [
+      1.0,
+      0.0
+    ],
+    "('New Haven Chargers', 'Central Connecticut Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Chicago State Cougars', 'Stonehill Skyhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Wagner Seahawks', 'Long Island University Sharks')": [
+      0.0,
+      1.0
+    ],
+    "('Le Moyne Dolphins', 'Mercyhurst Lakers')": [
+      1.0,
+      0.0
+    ],
+    "('Fairleigh Dickinson Knights', 'Saint Francis Red Flash')": [
+      1.0,
+      0.0
+    ],
+    "('Towson Tigers', 'Stony Brook Seawolves')": [
+      1.0,
+      0.0
+    ],
+    "('Charleston Cougars', 'Hofstra Pride')": [
+      0.0,
+      1.0
+    ],
+    "('Drexel Dragons', 'Monmouth Hawks')": [
+      0.0,
+      1.0
+    ],
+    "('Northeastern Huskies', 'William & Mary Tribe')": [
+      0.0,
+      1.0
+    ],
+    "('UNC Wilmington Seahawks', 'Elon Phoenix')": [
+      1.0,
+      0.0
+    ],
+    "('James Madison Dukes', 'Georgia State Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Florida International Panthers', 'Delaware Blue Hens')": [
+      0.0,
+      1.0
+    ],
+    "('Drake Bulldogs', 'UIC Flames')": [
+      0.0,
+      1.0
+    ],
+    "('Morehead State Eagles', 'Tennessee Tech Golden Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Illinois Salukis', 'Evansville Purple Aces')": [
+      1.0,
+      0.0
+    ],
+    "('Oral Roberts Golden Eagles', 'Kansas City Roos')": [
+      1.0,
+      0.0
+    ],
+    "('Omaha Mavericks', 'St. Thomas-Minnesota Tommies')": [
+      1.0,
+      0.0
+    ],
+    "(\"Louisiana Ragin' Cajuns\", 'Coastal Carolina Chanticleers')": [
+      0.0,
+      1.0
+    ],
+    "('Northern Colorado Bears', 'Sacramento State Hornets')": [
+      1.0,
+      0.0
+    ],
+    "('Northern Arizona Lumberjacks', 'Portland State Vikings')": [
+      0.0,
+      1.0
+    ],
+    "('Southern Miss Golden Eagles', 'South Alabama Jaguars')": [
+      0.0,
+      1.0
+    ],
+    "('SIU Edwardsville Cougars', 'Southeast Missouri State Redhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Western Illinois Leathernecks', 'Little Rock Trojans')": [
+      0.0,
+      1.0
+    ],
+    "('Lindenwood Lions', 'UT Martin Skyhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Utah Thunderbirds', 'California Baptist Lancers')": [
+      0.0,
+      1.0
+    ],
+    "('Missouri State Bears', 'Louisiana Tech Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Belmont Bruins', 'Northern Iowa Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('San Francisco Dons', 'Oregon State Beavers')": [
+      0.0,
+      1.0
+    ],
+    "('North Texas Mean Green', 'Memphis Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Denver Pioneers', 'South Dakota State Jackrabbits')": [
+      1.0,
+      0.0
+    ],
+    "('Idaho Vandals', 'Weber State Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Eastern Washington Eagles', 'Idaho State Bengals')": [
+      1.0,
+      0.0
+    ],
+    "('Southern Indiana Screaming Eagles', 'Tennessee State Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('Utah Tech Trailblazers', 'Utah Valley Wolverines')": [
+      1.0,
+      0.0
+    ],
+    "('Abilene Christian Wildcats', 'UT Arlington Mavericks')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Bakersfield Roadrunners', \"Hawai'i Rainbow Warriors\")": [
+      0.0,
+      1.0
+    ],
+    "('UC Riverside Highlanders', 'UC Santa Barbara Gauchos')": [
+      0.0,
+      1.0
+    ],
+    "('Long Beach State Beach', 'Cal State Fullerton Titans')": [
+      0.0,
+      1.0
+    ],
+    "('Cal Poly Mustangs', 'UC Irvine Anteaters')": [
+      1.0,
+      0.0
+    ],
+    "('UC San Diego Tritons', 'UC Davis Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'Michigan State Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('Loyola Chicago Ramblers', 'Saint Louis Billikens')": [
+      0.0,
+      1.0
+    ],
+    "('Miami (OH) RedHawks', 'Ohio Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'Texas Tech Red Raiders')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan Wolverines', 'UCLA Bruins')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Kansas State Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Clemson Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Kansas Jayhawks')": [
+      0.5,
+      0.5
+    ],
+    "('UConn Huskies', 'Georgetown Hoyas')": [
+      1.0,
+      0.0
+    ],
+    "('Nebraska Cornhuskers', 'Northwestern Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Pittsburgh Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Santa Clara Broncos', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Iowa Hawkeyes', 'Purdue Boilermakers')": [
+      0.0,
+      1.0
+    ],
+    "('Florida Gators', 'Kentucky Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Ohio State Buckeyes', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Providence Friars', \"St. John's Red Storm\")": [
+      0.0,
+      1.0
+    ],
+    "('Vanderbilt Commodores', 'Texas A&M Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Auburn Tigers')": [
+      0.5,
+      0.5
+    ],
+    "('BYU Cougars', 'Colorado Buffaloes')": [
+      1.0,
+      0.0
+    ],
+    "('Baylor Bears', 'Louisville Cardinals')": [
+      0.0,
+      1.0
+    ],
+    "('Illinois Fighting Illini', 'Indiana Hoosiers')": [
+      1.0,
+      0.0
+    ],
+    "('Iowa State Cyclones', 'Houston Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Syracuse Orange')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Iowa Hawkeyes', 'Nebraska Cornhuskers')": [
+      1.0,
+      0.0
+    ],
+    "('Florida Gators', 'South Carolina Gamecocks')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona State Sun Devils', 'Texas Tech Red Raiders')": [
+      1.0,
+      0.0
+    ],
+    "('Michigan State Spartans', 'UCLA Bruins')": [
+      1.0,
+      0.0
+    ],
+    "('NC State Wolfpack', 'North Carolina Tar Heels')": [
+      1.0,
+      0.0
+    ],
+    "('Rhode Island Rams', 'Saint Louis Billikens')": [
+      1.0,
+      0.0
+    ],
+    "('SMU Mustangs', 'Louisville Cardinals')": [
+      0.5,
+      0.5
+    ],
+    "('Massachusetts Minutemen', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ],
+    "('Ohio State Buckeyes', 'Wisconsin Badgers')": [
+      1.0,
+      0.0
+    ],
+    "('Arizona Wildcats', 'BYU Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('UConn Huskies', 'Creighton Bluejays')": [
+      0.5,
+      0.5
+    ],
+    "('Oklahoma State Cowboys', 'Kansas Jayhawks')": [
+      0.0,
+      1.0
+    ],
+    "('USC Trojans', 'Illinois Fighting Illini')": [
+      0.0,
+      1.0
+    ],
+    "('San Francisco Dons', 'Gonzaga Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia Tech Yellow Jackets', 'Virginia Cavaliers')": [
+      0.0,
+      1.0
+    ],
+    "('Marquette Golden Eagles', \"St. John's Red Storm\")": [
+      0.0,
+      1.0
+    ],
+    "('Missouri Tigers', 'Vanderbilt Commodores')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Arkansas Razorbacks')": [
+      1.0,
+      0.0
+    ],
+    "('UMBC Retrievers', 'Vermont Catamounts')": [
+      1.0,
+      0.0
+    ],
+    "('UMass Lowell River Hawks', 'New Hampshire Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Bryant Bulldogs', 'Binghamton Bearcats')": [
+      0.0,
+      1.0
+    ],
+    "('Liberty Flames', 'Florida International Panthers')": [
+      1.0,
+      0.0
+    ],
+    "('Winthrop Eagles', 'South Carolina Upstate Spartans')": [
+      1.0,
+      0.0
+    ],
+    "('App State Mountaineers', 'Marshall Thundering Herd')": [
+      0.0,
+      1.0
+    ],
+    "('South Florida Bulls', 'Memphis Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('High Point Panthers', 'UNC Asheville Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Presbyterian Blue Hose', 'Longwood Lancers')": [
+      1.0,
+      0.0
+    ],
+    "('Radford Highlanders', \"Gardner-Webb Runnin' Bulldogs\")": [
+      1.0,
+      0.0
+    ],
+    "('Wright State Raiders', 'IU Indianapolis Jaguars')": [
+      1.0,
+      0.0
+    ],
+    "('Mercyhurst Lakers', 'Wagner Seahawks')": [
+      0.0,
+      1.0
+    ],
+    "('New Haven Chargers', 'Stonehill Skyhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Saint Francis Red Flash', 'Long Island University Sharks')": [
+      0.0,
+      1.0
+    ],
+    "('Central Connecticut Blue Devils', 'Le Moyne Dolphins')": [
+      1.0,
+      0.0
+    ],
+    "('Chicago State Cougars', 'Fairleigh Dickinson Knights')": [
+      0.0,
+      1.0
+    ],
+    "('NJIT Highlanders', 'UAlbany Great Danes')": [
+      0.0,
+      1.0
+    ],
+    "('UNC Wilmington Seahawks', 'Monmouth Hawks')": [
+      1.0,
+      0.0
+    ],
+    "('Northeastern Huskies', 'Drexel Dragons')": [
+      0.0,
+      1.0
+    ],
+    "('Campbell Fighting Camels', 'William & Mary Tribe')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina A&T Aggies', 'Charleston Cougars')": [
+      0.0,
+      1.0
+    ],
+    "('The Citadel Bulldogs', 'Samford Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('Mercer Bears', 'Chattanooga Mocs')": [
+      0.0,
+      1.0
+    ],
+    "('North Florida Ospreys', 'Austin Peay Governors')": [
+      0.0,
+      1.0
+    ],
+    "('Bethune-Cookman Wildcats', 'Alabama State Hornets')": [
+      1.0,
+      0.0
+    ],
+    "('North Dakota Fighting Hawks', 'Kansas City Roos')": [
+      1.0,
+      0.0
+    ],
+    "('Hofstra Pride', 'Hampton Pirates')": [
+      1.0,
+      0.0
+    ],
+    "('South Alabama Jaguars', 'Texas State Bobcats')": [
+      0.0,
+      1.0
+    ],
+    "(\"Louisiana Ragin' Cajuns\", 'Arkansas State Red Wolves')": [
+      0.0,
+      1.0
+    ],
+    "('Georgia State Panthers', 'Georgia Southern Eagles')": [
+      1.0,
+      0.0
+    ],
+    "('Stetson Hatters', 'Central Arkansas Bears')": [
+      0.0,
+      1.0
+    ],
+    "('Utah Valley Wolverines', 'California Baptist Lancers')": [
+      1.0,
+      0.0
+    ],
+    "('UT Arlington Mavericks', 'Utah Tech Trailblazers')": [
+      1.0,
+      0.0
+    ],
+    "('Tarleton State Texans', 'Southern Utah Thunderbirds')": [
+      1.0,
+      0.0
+    ],
+    "('Little Rock Trojans', 'UT Martin Skyhawks')": [
+      1.0,
+      0.0
+    ],
+    "('Western Illinois Leathernecks', 'Southern Indiana Screaming Eagles')": [
+      0.0,
+      1.0
+    ],
+    "('Tennessee State Tigers', 'Lindenwood Lions')": [
+      1.0,
+      0.0
+    ],
+    "('Eastern Illinois Panthers', 'Morehead State Eagles')": [
+      0.0,
+      1.0
+    ],
+    "('Mississippi Valley State Delta Devils', 'Prairie View A&M Panthers')": [
+      0.0,
+      1.0
+    ],
+    "('Tennessee Tech Golden Eagles', 'SIU Edwardsville Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas-Pine Bluff Golden Lions', 'Texas Southern Tigers')": [
+      0.0,
+      1.0
+    ],
+    "('UC Santa Barbara Gauchos', 'Cal State Northridge Matadors')": [
+      0.0,
+      1.0
+    ],
+    "('Denver Pioneers', 'South Dakota Coyotes')": [
+      1.0,
+      0.0
+    ],
+    "('Weber State Wildcats', 'Montana State Bobcats')": [
+      1.0,
+      0.0
+    ],
+    "('Idaho State Bengals', 'Montana Grizzlies')": [
+      1.0,
+      0.0
+    ],
+    "('Portland State Vikings', 'Idaho Vandals')": [
+      1.0,
+      0.0
+    ],
+    "('North Texas Mean Green', 'Tulane Green Wave')": [
+      0.0,
+      1.0
+    ],
+    "('Florida A&M Rattlers', 'Alabama A&M Bulldogs')": [
+      0.0,
+      1.0
+    ],
+    "('UC Riverside Highlanders', 'Cal State Bakersfield Roadrunners')": [
+      1.0,
+      0.0
+    ],
+    "('Cal State Fullerton Titans', 'UC Davis Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Long Beach State Beach', 'UC Irvine Anteaters')": [
+      0.0,
+      1.0
+    ],
+    "('Sacramento State Hornets', 'Eastern Washington Eagles')": [
+      0.0,
+      1.0
+    ],
+    "(\"Hawai'i Rainbow Warriors\", 'Cal Poly Mustangs')": [
+      0.0,
+      1.0
+    ],
+    "('Purdue Boilermakers', 'Indiana Hoosiers')": [
+      0.5,
+      0.5
+    ],
+    "('Saint Louis Billikens', 'VCU Rams')": [
+      1.0,
+      0.0
+    ],
+    "('Miami (OH) RedHawks', 'Bowling Green Falcons')": [
+      1.0,
+      0.0
+    ],
+    "('Duke Blue Devils', 'Michigan Wolverines')": [
+      1.0,
+      0.0
+    ],
+    "('Houston Cougars', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Villanova Wildcats', 'UConn Huskies')": [
+      0.0,
+      1.0
+    ],
+    "('BYU Cougars', 'Iowa State Cyclones')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Cincinnati Bearcats')": [
+      0.0,
+      1.0
+    ],
+    "('Nebraska Cornhuskers', 'Penn State Nittany Lions')": [
+      1.0,
+      0.0
+    ],
+    "('UCLA Bruins', 'Illinois Fighting Illini')": [
+      1.0,
+      0.0
+    ],
+    "('Gonzaga Bulldogs', 'Pacific Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Ole Miss Rebels', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "('Texas Tech Red Raiders', 'Kansas State Wildcats')": [
+      1.0,
+      0.0
+    ],
+    "('Virginia Cavaliers', 'Miami Hurricanes')": [
+      1.0,
+      0.0
+    ],
+    "('Syracuse Orange', 'North Carolina Tar Heels')": [
+      0.0,
+      1.0
+    ],
+    "(\"St. John's Red Storm\", 'Creighton Bluejays')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'Tennessee Volunteers')": [
+      0.0,
+      1.0
+    ],
+    "('Arkansas Razorbacks', 'Missouri Tigers')": [
+      1.0,
+      0.0
+    ],
+    "('Louisville Cardinals', 'Georgia Tech Yellow Jackets')": [
+      1.0,
+      0.0
+    ],
+    "('LSU Tigers', 'Alabama Crimson Tide')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan State Spartans', 'Ohio State Buckeyes')": [
+      1.0,
+      0.0
+    ],
+    "('Wisconsin Badgers', 'Iowa Hawkeyes')": [
+      1.0,
+      0.0
+    ],
+    "('Kansas Jayhawks', 'Houston Cougars')": [
+      1.0,
+      0.0
+    ],
+    "('North Carolina Tar Heels', 'Louisville Cardinals')": [
+      1.0,
+      0.0
+    ],
+    "('Notre Dame Fighting Irish', 'Duke Blue Devils')": [
+      0.0,
+      1.0
+    ],
+    "('Baylor Bears', 'Arizona Wildcats')": [
+      0.0,
+      1.0
+    ],
+    "('Michigan Wolverines', 'Minnesota Golden Gophers')": [
+      1.0,
+      0.0
+    ],
+    "('Utah Utes', 'Iowa State Cyclones')": [
+      0.0,
+      1.0
+    ],
+    "('Virginia Cavaliers', 'NC State Wolfpack')": [
+      1.0,
+      0.0
+    ],
+    "('Texas Tech Red Raiders', 'Cincinnati Bearcats')": [
+      1.0,
+      0.0
+    ],
+    "('BYU Cougars', 'UCF Knights')": [
+      0.0,
+      1.0
+    ],
+    "('Eastern Michigan Eagles', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ],
+    "('Missouri Tigers', 'Tennessee Volunteers')": [
+      1.0,
+      0.0
+    ],
+    "('Dayton Flyers', 'Saint Louis Billikens')": [
+      0.5,
+      0.5
+    ],
+    "('UConn Huskies', \"St. John's Red Storm\")": [
+      0.5,
+      0.5
+    ],
+    "('Texas Longhorns', 'Florida Gators')": [
+      0.0,
+      1.0
+    ],
+    "('Gonzaga Bulldogs', 'Portland Pilots')": [
+      0.5,
+      0.5
+    ],
+    "('Nebraska Cornhuskers', 'Maryland Terrapins')": [
+      1.0,
+      0.0
+    ],
+    "('Alabama Crimson Tide', 'Mississippi State Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Arkansas Razorbacks', 'Texas A&M Aggies')": [
+      1.0,
+      0.0
+    ],
+    "('Vanderbilt Commodores', 'Georgia Bulldogs')": [
+      1.0,
+      0.0
+    ],
+    "('Purdue Boilermakers', 'Michigan State Spartans')": [
+      0.0,
+      1.0
+    ],
+    "('Illinois Fighting Illini', 'Michigan Wolverines')": [
+      0.0,
+      1.0
+    ],
+    "('Western Michigan Broncos', 'Miami (OH) RedHawks')": [
+      0.0,
+      1.0
+    ]
+  }
+}

@@ -346,23 +346,57 @@ async def _get_cbb_game_state(game_id: str) -> dict:
         a_rank = getattr(game.away, "rank", None) or 50
         ranking_diff = (a_rank - h_rank) / 4.0
 
+        def parse_record(rec: str) -> float:
+            try:
+                parts = rec.split("-")
+                wins, losses = int(parts[0]), int(parts[1])
+                return wins / (wins + losses) if (wins + losses) > 0 else 0.5
+            except Exception:
+                return 0.5
+
+        h_rec = getattr(game.home, "record", "0-0") or "0-0"
+        a_rec = getattr(game.away, "record", "0-0") or "0-0"
+        h_wp = parse_record(h_rec)
+        a_wp = parse_record(a_rec)
+
         if status == "pre":
-            # Blend ranking + record for pre-game
-            h_rec = getattr(game.home, "record", "0-0") or "0-0"
-            a_rec = getattr(game.away, "record", "0-0") or "0-0"
-
-            def parse_record(rec: str) -> float:
-                try:
-                    parts = rec.split("-")
-                    wins, losses = int(parts[0]), int(parts[1])
-                    return wins / (wins + losses) if (wins + losses) > 0 else 0.5
-                except Exception:
-                    return 0.5
-
-            record_diff = (parse_record(h_rec) - parse_record(a_rec)) * 10
-            strength_diff = (ranking_diff * 0.6) + (record_diff * 0.4)
+            # Record-based only — matches how pre-game rows were built in training data
+            record_diff = (h_wp - a_wp) * 10
+            strength_diff = record_diff * 0.4
         else:
             strength_diff = ranking_diff
+
+        # Contextual features from training-data lookup
+        home_name = getattr(game.home, "team_name", None) or getattr(game.home, "name", "")
+        away_name = getattr(game.away, "team_name", None) or getattr(game.away, "name", "")
+
+        try:
+            import os as _os, json as _json
+            _lookup_path = _os.path.join(
+                _os.path.dirname(_os.path.dirname(_os.path.dirname(_os.path.abspath(__file__)))),
+                "team_features_lookup.json",
+            )
+            with open(_lookup_path) as _f:
+                _lookup = _json.load(_f)
+            _teams = _lookup.get("teams", {})
+            _h2h = {eval(k): v for k, v in _lookup.get("h2h", {}).items()}
+
+            def _tf(name: str, wp: float) -> dict:
+                info = _teams.get(name, {})
+                return {
+                    "conf_win_pct":        info.get("conf_win_pct",        wp),
+                    "recent_win_pct":      info.get("recent_win_pct",      wp),
+                    "collapse_pct_up_10":  info.get("collapse_pct_up_10",  0.0),
+                    "comeback_pct_down_5": info.get("comeback_pct_down_5", 0.0),
+                }
+
+            hf = _tf(home_name, h_wp)
+            af = _tf(away_name, a_wp)
+            h2h_pair = _h2h.get((home_name, away_name), [0.5, 0.5])
+        except Exception:
+            hf = {"conf_win_pct": h_wp, "recent_win_pct": h_wp, "collapse_pct_up_10": 0.0, "comeback_pct_down_5": 0.0}
+            af = {"conf_win_pct": a_wp, "recent_win_pct": a_wp, "collapse_pct_up_10": 0.0, "comeback_pct_down_5": 0.0}
+            h2h_pair = [0.5, 0.5]
 
         return {
             "game_id": game_id,
@@ -373,6 +407,19 @@ async def _get_cbb_game_state(game_id: str) -> dict:
             "time_ratio": float(time_ratio),
             "mins_remaining": float(total_mins_remaining),
             "period": float(period),
+            # Contextual features from training-data lookup
+            "home_collapse_pct_up_10":  hf["collapse_pct_up_10"],
+            "away_collapse_pct_up_10":  af["collapse_pct_up_10"],
+            "home_comeback_pct_down_5": hf["comeback_pct_down_5"],
+            "away_comeback_pct_down_5": af["comeback_pct_down_5"],
+            "home_conf_rank":           50.0,   # always 50 in training data
+            "away_conf_rank":           50.0,
+            "home_conf_win_pct":        hf["conf_win_pct"],
+            "away_conf_win_pct":        af["conf_win_pct"],
+            "home_recent_win_pct":      hf["recent_win_pct"],
+            "away_recent_win_pct":      af["recent_win_pct"],
+            "home_h2h_win_pct":         float(h2h_pair[0]),
+            "away_h2h_win_pct":         float(h2h_pair[1]),
         }
 
     except ImportError:

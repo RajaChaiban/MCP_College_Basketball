@@ -45,10 +45,10 @@ class MLMCPClient:
 
                 # Use context manager for stdio_client
                 self._context = stdio_client(server_params, errlog=sys.stderr)
-                stdio_context = await self._context.__aenter__()
+                read, write = await self._context.__aenter__()
 
-                # Create session with the stdio client
-                self.session = ClientSession(stdio_context)
+                # Create session with the stdio client — must unpack (read, write)
+                self.session = ClientSession(read, write)
                 await self.session.initialize()
 
                 logger.info("ml_mcp_client_connected", transport="stdio")

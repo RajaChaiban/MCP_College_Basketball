@@ -12,27 +12,25 @@ def build_chat_panel() -> html.Div:
     """Build the chat panel layout (used inside offcanvas)."""
     return html.Div(
         [
-            # Chat history display
-            html.Div(
-                [
-                    html.Div(
-                        id="chat-history",
-                        className="chat-history",
-                        children=render_chat_history([]),
-                    ),
-                    # Loading indicator positioned at the bottom of the history
-                    html.Div(
-                        dcc.Loading(
-                            id="chat-loading",
-                            type="dot",
-                            children=html.Div(id="chat-loading-dummy"),
-                            overlay_style={"visibility":"visible", "opacity": "0.5", "backgroundColor": "transparent"},
-                            color="var(--espn-red)",
-                        ),
-                        className="chat-loading-container",
-                    ),
-                ],
-                style={"flex-grow": "1", "display": "flex", "flex-direction": "column", "position": "relative", "overflow": "hidden"}
+            # Chat history display — dcc.Loading wraps chat-history so dots
+            # appear as a centred overlay while the AI callback runs, with no
+            # separate dummy output needed.
+            dcc.Loading(
+                html.Div(
+                    id="chat-history",
+                    className="chat-history",
+                    children=render_chat_history([]),
+                ),
+                id="chat-loading",
+                type="dot",
+                color="#CC0000",
+                overlay_style={
+                    "visibility": "visible",
+                    "opacity": 0.8,
+                    "backgroundColor": "rgba(0,0,0,0.4)",
+                    "borderRadius": "8px",
+                },
+                style={"flexGrow": "1", "display": "flex", "flexDirection": "column", "overflow": "hidden", "minHeight": "0"},
             ),
             # Input area
             html.Div(

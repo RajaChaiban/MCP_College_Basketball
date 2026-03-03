@@ -81,21 +81,15 @@ def build_rankings_list(poll: object | None, poll_type: str = "ap") -> html.Div:
     )
 
 
-def build_all_teams_section(all_teams: list | None) -> html.Div:
+def build_all_teams_rows(all_teams: list | None) -> list:
     """
-    Build the all-teams section with search box.
+    Build just the row children for the all-teams list (no wrapper IDs).
+    Used by the refresh callback to update all-teams-list.children safely.
 
-    Args:
-        all_teams: List of Team objects (or None if not loaded).
-
-    Returns:
-        html.Div with search input + scrollable team list.
+    Returns a flat list of Dash components (conference headers + team rows).
     """
     if not all_teams:
-        return html.Div([
-            html.H6("All Teams", className="rankings-title mt-3"),
-            html.P("Loading teams...", className="text-muted small"),
-        ])
+        return [html.P("Loading teams...", className="text-muted small")]
 
     # Group by conference, sort alphabetically within each group
     conferences: dict[str, list] = {}
@@ -112,10 +106,7 @@ def build_all_teams_section(all_teams: list | None) -> html.Div:
 
     rows = []
     for conf in sorted_confs:
-        # Conference header
-        rows.append(
-            html.Div(conf, className="team-conference-header")
-        )
+        rows.append(html.Div(conf, className="team-conference-header"))
         for team in conferences[conf]:
             name = getattr(team, "name", "Unknown")
             record = getattr(team, "record", None)
@@ -141,6 +132,14 @@ def build_all_teams_section(all_teams: list | None) -> html.Div:
                 )
             )
 
+    return rows
+
+
+def build_all_teams_section(all_teams: list | None) -> html.Div:
+    """
+    Build the static all-teams shell: title + search input + teams list container.
+    The IDs team-search-input and all-teams-list live here permanently in the layout.
+    """
     return html.Div(
         [
             html.H6("All Teams", className="rankings-title mt-3"),
@@ -151,7 +150,11 @@ def build_all_teams_section(all_teams: list | None) -> html.Div:
                 debounce=True,
                 className="team-search-input",
             ),
-            html.Div(rows, id="all-teams-list", className="all-teams-list"),
+            html.Div(
+                build_all_teams_rows(all_teams),
+                id="all-teams-list",
+                className="all-teams-list",
+            ),
         ]
     )
 
