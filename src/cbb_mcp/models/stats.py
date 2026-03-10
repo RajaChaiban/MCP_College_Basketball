@@ -27,6 +27,7 @@ class PlayerStats(BaseModel):
     name: str = ""
     team: str = ""
     position: str = ""
+    year: str = ""  # Fr, So, Jr, Sr
     games_played: int = 0
     minutes_per_game: float = 0.0
     ppg: float = 0.0

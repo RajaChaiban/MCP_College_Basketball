@@ -538,6 +538,11 @@ def build_prob_chart(game, history, win_prob=None) -> html.Div:
 
     return html.Div(
         [
+            html.Div(
+                f"Home Win Probability ({home_name}) / Away Win Probability ({away_name})",
+                className="text-muted",
+                style={"fontSize": "12px", "marginBottom": "8px"},
+            ),
             html.Div([home_card, away_card], className="prob-cards-row"),
             dcc.Graph(
                 figure=fig,

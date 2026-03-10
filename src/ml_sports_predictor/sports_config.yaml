@@ -11,7 +11,7 @@ sports:
     ranking_systems: ["ap_poll", "coaches_poll", "net_rankings"]
     predictor:
       features: ["score_diff", "momentum", "strength_diff", "time_ratio", "mins_remaining", "period"]
-      model_path: "cbb_predictor_bundle.joblib"
+      model_path: "cbb_predictor_bundle_2025_26_safe.joblib"
       calibration: "isotonic"
       ensemble_weights:
         lr: 0.5

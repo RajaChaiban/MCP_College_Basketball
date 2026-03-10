@@ -80,6 +80,14 @@ async def get_stat_leaders(
     return leaders
 
 
+async def get_freshman_players(
+    team_query: str = ""
+) -> list[PlayerStats]:
+    """Get all freshman players from a team (or all if team_query is empty)."""
+    players = await get_player_stats(team_query=team_query)
+    return [p for p in players if p.year and p.year.lower().startswith("fr")]
+
+
 async def compare_teams(team1_query: str, team2_query: str) -> TeamComparison:
     stats1 = await get_team_stats(team1_query)
     stats2 = await get_team_stats(team2_query)

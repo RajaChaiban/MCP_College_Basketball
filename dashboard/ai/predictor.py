@@ -5,6 +5,7 @@ Loads the joblib bundle and provides live predictions.
 
 from __future__ import annotations
 import json
+import math
 import os
 import joblib
 import pandas as pd
@@ -79,8 +80,13 @@ def _parse_win_pct(record: str) -> float:
 # ---------------------------------------------------------------------------
 
 class WinPredictor:
-    def __init__(self, model_path: str = "cbb_predictor_bundle.joblib"):
-        self.model_path = model_path
+    def __init__(self, model_path: str | None = None):
+        if model_path is None:
+            preferred = "cbb_predictor_bundle_2025_26_safe.joblib"
+            fallback = "cbb_predictor_bundle.joblib"
+            self.model_path = preferred if os.path.exists(preferred) else fallback
+        else:
+            self.model_path = model_path
         self.bundle = None
         self.lr_model = None
         self.xgb_model = None
@@ -136,6 +142,30 @@ class WinPredictor:
 
 # Global predictor instance
 predictor = WinPredictor()
+
+def _stabilize_live_probability(raw_prob: float, score_diff: float, mins_remaining: float, period: float) -> float:
+    """
+    Apply a conservative stabilization layer to reduce overconfident live outputs
+    when the model is fed sparse/noisy game-state features.
+    """
+    # Heuristic prior from score margin and remaining time.
+    elapsed = max(0.0, 40.0 - float(mins_remaining))
+    spread_scale = max(2.5, 1.0 + 0.12 * elapsed)
+    heuristic = 1.0 / (1.0 + math.exp(-(float(score_diff) / spread_scale)))
+
+    # Trust heuristic more earlier in game; trust model more late.
+    if mins_remaining >= 10:
+        alpha = 0.65
+        lo, hi = 0.03, 0.97
+    elif mins_remaining >= 5:
+        alpha = 0.50
+        lo, hi = 0.02, 0.98
+    else:
+        alpha = 0.25
+        lo, hi = 0.005, 0.995
+
+    blended = alpha * heuristic + (1.0 - alpha) * float(raw_prob)
+    return min(hi, max(lo, blended))
 
 
 def get_win_probability(game, pbp=None, strength_map=None) -> float | None:
@@ -242,6 +272,13 @@ def get_win_probability(game, pbp=None, strength_map=None) -> float | None:
     }
 
     result = predictor.predict(state)
+    if result is not None and status == "in":
+        result = _stabilize_live_probability(
+            raw_prob=float(result),
+            score_diff=float(score_diff),
+            mins_remaining=float(total_mins_remaining),
+            period=float(period),
+        )
     if result is not None and status == "pre":
         is_neutral = getattr(game_obj, "neutral_site", False)
         if not is_neutral:

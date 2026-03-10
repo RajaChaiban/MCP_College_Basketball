@@ -588,12 +588,15 @@ class ESPNSource(DataSource):
                     team_name = team_ref["displayName"]
 
             gp = stat_map.get("gamesPlayed", 0)
+            # Extract year from experience field (Fr, So, Jr, Sr)
+            year = _safe_get(athlete_data, "experience", "displayValue")
             players.append(
                 PlayerStats(
                     player_id=pid,
                     name=athlete_data.get("displayName", ""),
                     team=team_name,
                     position=_safe_get(athlete_data, "position", "abbreviation"),
+                    year=year,
                     games_played=int(gp),
                     minutes_per_game=stat_map.get("avgMinutes", 0),
                     ppg=stat_map.get("avgPoints", 0),

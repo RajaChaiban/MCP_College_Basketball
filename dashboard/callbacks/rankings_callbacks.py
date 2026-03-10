@@ -34,11 +34,40 @@ def register_rankings_callbacks(app) -> None:
         prevent_initial_call=False,
     )
     def refresh_all_teams(n_intervals):
-        """Fetch all D1 teams."""
-        from cbb_mcp.services import teams as teams_svc
+        """Fetch all D1 teams and enrich with current AP Top 25 rankings."""
+        from cbb_mcp.services import teams as teams_svc, rankings as rankings_svc
 
         try:
             all_teams = run_async(teams_svc.search_teams(""))
+
+            # Enrich teams with current AP Top 25 rankings
+            try:
+                poll = run_async(rankings_svc.get_rankings(poll_type="ap"))
+                # Build maps of team name -> rank and team ID -> rank
+                rankings_by_name: dict[str, int] = {}
+                rankings_by_id: dict[str, int] = {}
+                if poll and hasattr(poll, 'teams'):
+                    for ranked_team in poll.teams:
+                        name = ranked_team.team_name.lower() if ranked_team.team_name else ""
+                        team_id = str(ranked_team.team_id) if ranked_team.team_id else ""
+                        if name:
+                            rankings_by_name[name] = ranked_team.rank
+                        if team_id:
+                            rankings_by_id[team_id] = ranked_team.rank
+
+                # Enrich teams with ranks from current rankings
+                for team in all_teams:
+                    team_name_lower = team.name.lower() if team.name else ""
+                    team_id = str(team.id) if team.id else ""
+                    # Try matching by name first, then by ID
+                    if team_name_lower in rankings_by_name:
+                        team.rank = rankings_by_name[team_name_lower]
+                    elif team_id in rankings_by_id:
+                        team.rank = rankings_by_id[team_id]
+            except Exception as e:
+                print(f"[all-teams] Ranking enrichment failed: {e}")
+                # Continue without enrichment if rankings fail
+
             return build_all_teams_rows(all_teams)
         except Exception as e:
             print(f"[all-teams] Error: {e}")

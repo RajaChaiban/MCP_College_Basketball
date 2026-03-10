@@ -1,5 +1,10 @@
 """
-Fast 2025-26 Data Collection - Using game summaries instead of play-by-play
+Fast 2025-26 Data Collection (Synthetic Approximation)
+
+WARNING:
+- This script generates synthetic snapshot features from final scores.
+- Output is NOT suitable for production model training.
+- Use collect_real_2025_26_data.py for production-grade 2025-26 data.
 """
 import asyncio
 import sys
@@ -27,6 +32,8 @@ async def collect_fast():
     print(f"{'='*80}")
     print(f"Date range: {start.strftime('%Y-%m-%d')} to {end.strftime('%Y-%m-%d')}")
     print(f"Method: Game summaries (no play-by-play, much faster)")
+    print(f"{'='*80}")
+    print("WARNING: Synthetic approximation mode. Do not use for production model training.")
     print(f"{'='*80}\n")
     
     while current <= end:
@@ -94,14 +101,15 @@ async def collect_fast():
     # Save
     if len(all_snapshots) > 0:
         df = pd.DataFrame(all_snapshots)
-        df.to_csv('cbb_training_data_real_2025_26.csv', index=False)
+        output_file = "cbb_training_data_fast_synthetic_2025_26.csv"
+        df.to_csv(output_file, index=False)
         
         print(f"\n{'='*80}")
         print(f"COLLECTION COMPLETE")
         print(f"{'='*80}")
         print(f"Completed games: {completed_games}")
         print(f"Training snapshots: {len(all_snapshots)}")
-        print(f"File: cbb_training_data_real_2025_26.csv")
+        print(f"File: {output_file}")
         print(f"{'='*80}\n")
         
         return df

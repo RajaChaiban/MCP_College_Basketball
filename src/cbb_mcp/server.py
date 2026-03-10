@@ -398,6 +398,28 @@ async def get_stat_leaders(category: str = "scoring", season: int = 0) -> str:
 
 
 @mcp.tool()
+async def get_freshman_players(team_name: str = "") -> str:
+    """Get all freshman players from a college basketball team.
+
+    Args:
+        team_name: Team name (fuzzy matched). If empty, searches across all teams.
+    """
+    async with _concurrency:
+        try:
+            team_name = _sanitize_text(team_name, "team_name") if team_name else ""
+            result = await stats.get_freshman_players(team_query=team_name)
+            if not result:
+                return f"No freshman players found for {team_name if team_name else 'any team'}."
+            # Sort by PPG descending (already sorted in service)
+            return formatting.format_player_stats(result)
+        except CBBError as e:
+            return str(e)
+        except Exception:
+            logger.exception("unexpected_error", tool="get_freshman_players")
+            return "An unexpected error occurred. Please try again."
+
+
+@mcp.tool()
 async def compare_teams(team1: str, team2: str) -> str:
     """Compare two teams side-by-side with stats and advantages.
 

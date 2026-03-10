@@ -72,23 +72,38 @@ async def collect_real_data():
                     strength_diff = (home_strength - away_strength) * 10
                     
                     # Create snapshots from play-by-play
-                    last_minute_sampled = -1
+                    # Fallback to estimated remaining time when feed clocks are sparse.
+                    last_minute_sampled = (-1, -1)
                     score_history = deque(maxlen=5)
+                    plays_by_period: dict[int, list] = {}
+                    for p in pbp.plays:
+                        pr = int(getattr(p, "period", 1) or 1)
+                        plays_by_period.setdefault(pr, []).append(p)
+                    period_positions = {id(p): i for pr in plays_by_period for i, p in enumerate(plays_by_period[pr])}
                     
                     for play in pbp.plays:
                         clock = play.clock or "20:00"
+                        period = int(getattr(play, "period", 1) or 1)
                         try:
                             parts = clock.split(":")
-                            mins = int(parts[0]) if len(parts) > 0 else 0
-                            period = play.period or 1
-                            total_mins_remaining = mins if period == 2 else mins + 20
-                        except:
-                            continue
+                            mins = int(parts[0]) if len(parts) > 0 else 20
+                            if mins < 0 or mins > 20:
+                                raise ValueError("clock out of range")
+                        except Exception:
+                            period_plays = plays_by_period.get(period, [])
+                            idx = period_positions.get(id(play), 0)
+                            total = max(1, len(period_plays))
+                            # Linear fallback from 20 -> 0 as plays progress in period.
+                            mins = int(round(20 - (idx / max(1, total - 1)) * 20))
+                            mins = max(0, min(20, mins))
+
+                        total_mins_remaining = mins if period >= 2 else mins + 20
                         
                         current_diff = play.score_home - play.score_away
                         
                         # Sample roughly every minute
-                        if total_mins_remaining != last_minute_sampled:
+                        sample_key = (period, total_mins_remaining)
+                        if sample_key != last_minute_sampled:
                             momentum = 0.0
                             if len(score_history) > 0:
                                 momentum = current_diff - score_history[0]
@@ -97,6 +112,7 @@ async def collect_real_data():
                                 "game_id": game.id,
                                 "home_team": game.home.team_name,
                                 "away_team": game.away.team_name,
+                                "game_date": date_str,
                                 "home_score": play.score_home,
                                 "away_score": play.score_away,
                                 "score_diff": current_diff,
@@ -108,7 +124,7 @@ async def collect_real_data():
                                 "is_home_win": home_win
                             })
                             day_snapshots += 1
-                            last_minute_sampled = total_mins_remaining
+                            last_minute_sampled = sample_key
                             score_history.append(current_diff)
                         
                 except Exception as e:
@@ -132,6 +148,9 @@ async def collect_real_data():
     print(f"Completed games: {completed_games}")
     print(f"Training snapshots: {len(all_snapshots)}")
     print(f"File: cbb_training_data_real_2025_26.csv")
+    if len(all_snapshots) > 0:
+        unique_mins = pd.DataFrame(all_snapshots)["mins_remaining"].nunique()
+        print(f"Unique mins_remaining values: {unique_mins}")
     print(f"{'='*80}\n")
     
     if len(all_snapshots) < 100:

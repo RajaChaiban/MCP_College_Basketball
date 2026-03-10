@@ -3,6 +3,7 @@
 import asyncio
 import hmac
 import logging
+import math
 import re
 import sys
 import json
@@ -65,6 +66,29 @@ def _get_predictor() -> MultiSportPredictor:
             available_sports=_predictor.get_available_sports(),
         )
     return _predictor
+
+
+def _stabilize_cbb_live_probability(prob: float, game_state: dict[str, Any]) -> float:
+    """Reduce overconfident CBB live probabilities for mid-game scenarios."""
+    score_diff = float(game_state.get("score_diff", 0.0))
+    mins_remaining = float(game_state.get("mins_remaining", 20.0))
+
+    elapsed = max(0.0, 40.0 - mins_remaining)
+    spread_scale = max(2.5, 1.0 + 0.12 * elapsed)
+    heuristic = 1.0 / (1.0 + math.exp(-(score_diff / spread_scale)))
+
+    if mins_remaining >= 10:
+        alpha = 0.65
+        lo, hi = 0.03, 0.97
+    elif mins_remaining >= 5:
+        alpha = 0.50
+        lo, hi = 0.02, 0.98
+    else:
+        alpha = 0.25
+        lo, hi = 0.005, 0.995
+
+    blended = alpha * heuristic + (1.0 - alpha) * float(prob)
+    return max(lo, min(hi, blended))
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -154,7 +178,12 @@ async def get_win_probability(
 
             # Run prediction
             predictor = _get_predictor()
-            prob = await predictor.predict(sport_id, game_state)
+            if sport_id == "cbb" and str(game_state.get("status", "")) == "post":
+                prob = float(game_state.get("result", 0.0))
+            else:
+                prob = await predictor.predict(sport_id, game_state)
+            if sport_id == "cbb" and str(game_state.get("status", "in")) == "in":
+                prob = _stabilize_cbb_live_probability(prob, game_state)
 
             logger.info(
                 "prediction_complete",
@@ -210,7 +239,12 @@ async def explain_win_probability(
 
             # Get prediction and sport config
             predictor = _get_predictor()
-            prob = await predictor.predict(sport_id, game_state)
+            if sport_id == "cbb" and str(game_state.get("status", "")) == "post":
+                prob = float(game_state.get("result", 0.0))
+            else:
+                prob = await predictor.predict(sport_id, game_state)
+            if sport_id == "cbb" and str(game_state.get("status", "in")) == "in":
+                prob = _stabilize_cbb_live_probability(prob, game_state)
             config = settings.sports_registry[sport_id]
 
             # Extract features for explanation

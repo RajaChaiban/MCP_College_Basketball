@@ -150,6 +150,16 @@ FUNCTION_DECLARATIONS: list[dict] = [
         },
     },
     {
+        "name": "get_freshman_players",
+        "description": "Get all freshman players from a college basketball team, sorted by points per game. Great for finding breakout freshman performers.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "team_name": {"type": "string", "description": "Team name (fuzzy matched). If empty, searches across all teams."},
+            },
+        },
+    },
+    {
         "name": "get_stat_leaders",
         "description": "Get national statistical leaders by category.",
         "parameters": {

@@ -5,7 +5,7 @@
 
 **NCAA Men's D1 College Basketball — Live Dashboard + Predictive Win Probability Engine**
 
-A full-stack Python application that combines a live college basketball data server with an interactive dashboard and an in-game win probability predictor. Watch games in real time on an interactive US map, explore box scores and play-by-play, and get live win probability powered by an ensemble ML model.
+A full-stack Python application that combines a live college basketball MCP server with an interactive dashboard and an in-game win probability predictor. Watch games in real time on an interactive US map, explore box scores and play-by-play, and get live win probability powered by an ensemble ML model.
 
 ---
 

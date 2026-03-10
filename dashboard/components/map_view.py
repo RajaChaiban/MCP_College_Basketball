@@ -63,7 +63,11 @@ def build_map_figure(games: list, conference_filter: str = "") -> go.Figure:
         if status == "in":
             prob_text = ""
             if win_prob is not None:
-                prob_text = f"<br>Win Prob: <b>{win_prob:.1%}</b> {home_team}"
+                away_prob = 1.0 - float(win_prob)
+                prob_text = (
+                    f"<br>Home Win Prob ({home_team}): <b>{win_prob:.1%}</b>"
+                    f"<br>Away Win Prob ({away_team}): <b>{away_prob:.1%}</b>"
+                )
             score_text = f"{away_team} {away_score} - {home_score} {home_team}"
             time_text = status_detail or clock or "In Progress"
             hover = f"<b>{score_text}</b><br>{time_text}{prob_text}<br><i>Click for details</i>"
@@ -72,9 +76,14 @@ def build_map_figure(games: list, conference_filter: str = "") -> go.Figure:
             hover = f"<b>{score_text}</b><br>Final<br><i>Click for box score</i>"
         else:
             if win_prob is not None:
+                away_prob = 1.0 - float(win_prob)
                 winner = home_team if win_prob >= 0.5 else away_team
                 conf_pct = max(win_prob, 1 - win_prob)
-                pred_text = f"<br>Prediction: <b>{winner}</b> favored ({conf_pct:.0%})"
+                pred_text = (
+                    f"<br>Prediction: <b>{winner}</b> favored ({conf_pct:.0%})"
+                    f"<br>Home Win Prob ({home_team}): <b>{win_prob:.1%}</b>"
+                    f"<br>Away Win Prob ({away_team}): <b>{away_prob:.1%}</b>"
+                )
             else:
                 pred_text = ""
             hover = f"<b>{away_team} @ {home_team}</b><br>{status_detail or 'Upcoming'}{pred_text}"
