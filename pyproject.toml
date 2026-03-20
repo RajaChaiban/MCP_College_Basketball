@@ -6,7 +6,6 @@ build-backend = "hatchling.build"
 name = "cbb-mcp"
 version = "0.1.0"
 description = "MCP server for NCAA Men's D1 College Basketball — live scores, rankings, stats, box scores, and more"
-readme = "README.md"
 license = "MIT"
 requires-python = ">=3.11"
 authors = [
