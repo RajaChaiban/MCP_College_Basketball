@@ -2,6 +2,8 @@ FROM python:3.12-slim
 
 WORKDIR /app
 
+# CBB MCP Server - NCAA College Basketball Data API
+
 # Install system deps for C extensions (rapidfuzz, lxml)
 RUN apt-get update && \
     apt-get install -y --no-install-recommends gcc g++ && \
