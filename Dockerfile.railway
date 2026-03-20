@@ -1,0 +1,49 @@
+FROM python:3.12-slim
+
+WORKDIR /app
+
+# Install system dependencies for C extensions and geospatial libraries
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+    gcc \
+    g++ \
+    libgdal-dev \
+    libgeos-dev \
+    libproj-dev && \
+    rm -rf /var/lib/apt/lists/*
+
+# Copy project files
+COPY pyproject.toml README.md .
+COPY src/ src/
+COPY dashboard/ dashboard/
+
+# Install all dependencies (MCP server + dashboard)
+RUN pip install --no-cache-dir -e ".[dashboard]"
+
+# Copy startup script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
+# Non-root user for security
+RUN useradd -m cbbapp
+USER cbbapp
+
+# Environment defaults
+ENV CBB_TRANSPORT=streamable-http
+ENV CBB_HOST=0.0.0.0
+ENV CBB_PORT=8000
+ENV CBB_DASH_PORT=8050
+ENV CBB_DASH_HOST=0.0.0.0
+ENV LLM_BACKEND=gemini
+ENV GEMINI_MODEL=gemini-2.5-flash
+ENV CBB_LOG_LEVEL=INFO
+ENV CBB_DEBUG=0
+ENV CBB_CACHE_ENABLED=true
+
+EXPOSE 8050 8000
+
+HEALTHCHECK --interval=30s --timeout=5s --start-period=30s --retries=3 \
+    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8050', timeout=5)" || exit 1
+
+# Run startup script
+CMD ["/app/start.sh"]

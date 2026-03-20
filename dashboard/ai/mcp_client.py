@@ -1,7 +1,12 @@
 """
-Persistent MCP stdio client for the dashboard.
-Spawns the cbb-mcp server as a subprocess and keeps the connection alive
-for the lifetime of the dashboard process.
+MCP client for the dashboard.
+Supports two modes:
+1. Stdio mode: Spawns cbb-mcp as subprocess (local development)
+2. HTTP mode: Connects to remote MCP server via HTTP (Docker deployment)
+
+Detection is automatic:
+- If MCP_SERVER_URL env var is set → Use HTTP mode
+- Otherwise → Use stdio mode
 """
 
 from __future__ import annotations
@@ -21,7 +26,7 @@ _SRC = os.path.join(_PROJECT_ROOT, "src")
 
 
 class MCPClient:
-    """Lazy-connecting MCP stdio client. Thread-safe via asyncio.Lock."""
+    """Dual-mode MCP client: stdio (local) or HTTP (remote). Thread-safe via asyncio.Lock."""
 
     def __init__(self) -> None:
         self._session = None
@@ -29,8 +34,12 @@ class MCPClient:
         self._lock = asyncio.Lock()
         self._connected = False
 
-    async def _connect(self) -> None:
-        """Start the MCP server subprocess and initialize the session."""
+        # Detect transport mode
+        self._server_url = os.environ.get("MCP_SERVER_URL", "").strip()
+        self._transport_mode = "http" if self._server_url else "stdio"
+
+    async def _connect_stdio(self) -> None:
+        """Start the MCP server subprocess and initialize the session (stdio mode)."""
         from mcp import ClientSession, StdioServerParameters
         from mcp.client.stdio import stdio_client
 
@@ -59,6 +68,36 @@ class MCPClient:
             self._exit_stack = None
             self._session = None
             raise
+
+    async def _connect_http(self) -> None:
+        """Connect to remote MCP server via HTTP (Docker/cloud mode)."""
+        from mcp import ClientSession
+        from mcp.client.sse import sse_client
+
+        self._exit_stack = AsyncExitStack()
+        try:
+            read, write = await self._exit_stack.enter_async_context(
+                sse_client(self._server_url)
+            )
+            self._session = await self._exit_stack.enter_async_context(
+                ClientSession(read, write)
+            )
+            await self._session.initialize()
+            self._connected = True
+            logger.info("mcp_client_connected", transport="http", url=self._server_url)
+        except Exception as e:
+            logger.error("mcp_client_http_connect_failed", url=self._server_url, error=str(e))
+            await self._exit_stack.aclose()
+            self._exit_stack = None
+            self._session = None
+            raise
+
+    async def _connect(self) -> None:
+        """Connect using detected transport mode (stdio or HTTP)."""
+        if self._transport_mode == "http":
+            await self._connect_http()
+        else:
+            await self._connect_stdio()
 
     async def ensure_connected(self) -> None:
         """Connect if not already connected (idempotent, thread-safe)."""

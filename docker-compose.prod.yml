@@ -1,0 +1,105 @@
+version: '3.8'
+
+services:
+  # MCP Server - Data backend for college basketball tools
+  cbb-mcp:
+    build: .
+    container_name: cbb-mcp-prod
+    ports:
+      - "8000:8000"
+    environment:
+      # Transport & Server Config
+      - CBB_TRANSPORT=streamable-http
+      - CBB_HOST=0.0.0.0
+      - CBB_PORT=8000
+      - CBB_LOG_LEVEL=INFO
+
+      # AI Chat Backend (Gemini)
+      - LLM_BACKEND=gemini
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=gemini-2.5-flash
+
+      # Cache & Rate Limits
+      - CBB_CACHE_ENABLED=true
+      - CBB_ESPN_RATE_LIMIT=10
+      - CBB_NCAA_RATE_LIMIT=5
+
+      # Security
+      - CBB_SERVER_API_KEY=${CBB_SERVER_API_KEY:-}
+    restart: unless-stopped
+    read_only: true
+    tmpfs:
+      - /tmp/cbb-cache
+    security_opt:
+      - no-new-privileges:true
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 128M
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8000/mcp', timeout=4)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - cbb-network
+    expose:
+      - "8000"
+
+  # Dash Dashboard - Web UI
+  cbb-dashboard:
+    build:
+      context: .
+      dockerfile: Dockerfile.dashboard
+    container_name: cbb-dashboard-prod
+    ports:
+      - "8050:8050"
+    environment:
+      # Dashboard Config
+      - CBB_DASH_PORT=8050
+      - CBB_DASH_HOST=0.0.0.0
+      - CBB_LOG_LEVEL=INFO
+
+      # MCP Server Connection
+      - MCP_SERVER_URL=http://cbb-mcp:8000
+
+      # AI Chat Backend (Gemini)
+      - LLM_BACKEND=gemini
+      - GEMINI_API_KEY=${GEMINI_API_KEY}
+      - GEMINI_MODEL=gemini-2.5-flash
+
+      # Ollama Config (optional fallback)
+      - OLLAMA_BASE_URL=http://localhost:11434/v1
+      - OLLAMA_MODEL=llama3.1:8b
+
+      # Debug
+      - CBB_DEBUG=0
+    restart: unless-stopped
+    depends_on:
+      cbb-mcp:
+        condition: service_healthy
+    deploy:
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 512M
+        reservations:
+          memory: 256M
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:8050', timeout=5)"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 15s
+    networks:
+      - cbb-network
+    expose:
+      - "8050"
+
+networks:
+  cbb-network:
+    driver: bridge
