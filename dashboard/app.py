@@ -95,8 +95,9 @@ if __name__ == "__main__":
         )
 
     debug = os.environ.get("CBB_DEBUG", "1") == "1"
-    port = int(os.environ.get("CBB_DASH_PORT", "8050"))
-    host = os.environ.get("CBB_DASH_HOST", "127.0.0.1")
+    # Railway sets PORT env var; fall back to CBB_DASH_PORT or 8050
+    port = int(os.environ.get("PORT", os.environ.get("CBB_DASH_PORT", "8050")))
+    host = os.environ.get("CBB_DASH_HOST", "0.0.0.0")
 
     print(f"\n CBB Live Dashboard starting on http://{host}:{port}\n")
     app.run(debug=debug, host=host, port=port)
