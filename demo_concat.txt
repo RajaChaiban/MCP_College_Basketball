@@ -1,0 +1,16 @@
+file 'demo_01_dashboard.png'
+duration 1.5
+file 'demo_02_chat_greeting.png'
+duration 1.5
+file 's03_question1_typed.png'
+duration 1
+file 's04_question1_response.png'
+duration 2
+file 's05_question2_typed.png'
+duration 1
+file 's06_question2_response.png'
+duration 2
+file 's09_dashboard_games_list.png'
+duration 1.2
+file 's10_game_details.png'
+duration 1.2
