@@ -14,16 +14,11 @@ CBB_PORT=8000 CBB_HOST=0.0.0.0 CBB_TRANSPORT=streamable-http cbb-mcp &
 MCP_PID=$!
 echo "MCP server PID: $MCP_PID"
 
-# Wait for MCP server to be ready (max 30 seconds)
+# Wait for MCP server to be ready (max 10 seconds)
+# MCP endpoint returns 405/406 for GET (expects POST) — that means it's running
 echo "Waiting for MCP server to be ready..."
-for i in {1..30}; do
-    if python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/mcp', timeout=2)" 2>/dev/null; then
-        echo "MCP server is ready!"
-        break
-    fi
-    echo "  Waiting... ($i/30)"
-    sleep 1
-done
+sleep 3
+echo "MCP server should be ready."
 
 # Railway sets PORT env var — dashboard must listen on it
 DASH_PORT=${PORT:-8050}
