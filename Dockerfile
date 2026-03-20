@@ -21,8 +21,8 @@ COPY start.sh .
 # Install all dependencies (MCP server + dashboard)
 RUN pip install --no-cache-dir -e ".[dashboard]"
 
-# Make startup script executable
-RUN chmod +x /app/start.sh
+# Fix line endings (Windows CRLF → Unix LF) and make executable
+RUN sed -i 's/\r$//' /app/start.sh && chmod +x /app/start.sh
 
 # Non-root user for security
 RUN useradd -m cbbapp
