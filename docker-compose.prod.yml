@@ -17,7 +17,7 @@ services:
       # AI Chat Backend (Gemini)
       - LLM_BACKEND=gemini
       - GEMINI_API_KEY=${GEMINI_API_KEY}
-      - GEMINI_MODEL=gemini-2.5-flash
+      - GEMINI_MODEL=gemini-3.1-flash
 
       # Cache & Rate Limits
       - CBB_CACHE_ENABLED=true
@@ -70,7 +70,7 @@ services:
       # AI Chat Backend (Gemini)
       - LLM_BACKEND=gemini
       - GEMINI_API_KEY=${GEMINI_API_KEY}
-      - GEMINI_MODEL=gemini-2.5-flash
+      - GEMINI_MODEL=gemini-3.1-flash
 
       # Ollama Config (optional fallback)
       - OLLAMA_BASE_URL=http://localhost:11434/v1

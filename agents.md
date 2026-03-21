@@ -427,7 +427,7 @@ server:
 | `CBB_ESPN_RATE_LIMIT` | `10` | ESPN requests/sec |
 | `CBB_NCAA_RATE_LIMIT` | `5` | NCAA requests/sec |
 | `GEMINI_API_KEY` | *(required)* | Google Generai API key |
-| `GEMINI_MODEL` | `gemini-1.5-flash` | Gemini model to use |
+| `GEMINI_MODEL` | `gemini-3.1-flash` | Gemini model to use |
 
 ---
 
