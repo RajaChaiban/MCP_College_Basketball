@@ -60,8 +60,11 @@ async def run_chat_turn(
     """
     Run one turn of the Gemini agentic chat loop.
     """
+    print(f"[Agent] run_chat_turn called: {user_message[:80]!r}")
+
     api_key = os.environ.get("GEMINI_API_KEY")
     if not api_key:
+        print("[Agent] ERROR: GEMINI_API_KEY not set!")
         return (
             "GEMINI_API_KEY is not set. Please set it to enable AI chat.",
             history,
@@ -71,12 +74,14 @@ async def run_chat_turn(
         from google import genai
         from google.genai import types
         from google.api_core import exceptions
-    except ImportError:
+    except ImportError as ie:
+        print(f"[Agent] ERROR: Import failed: {ie}")
         return (
             "google-genai is not installed. Run: pip install -e '.[dashboard]'",
             history,
         )
 
+    print(f"[Agent] Using model={MODEL}, key=...{api_key[-4:]}")
     client = genai.Client(api_key=api_key)
 
     # ... (rest of the setup logic)
@@ -120,19 +125,22 @@ async def run_chat_turn(
     try:
         while rounds < MAX_TOOL_ROUNDS:
             rounds += 1
+            print(f"[Agent] Round {rounds}: calling Gemini...")
 
             response = await client.aio.models.generate_content(
                 model=MODEL,
                 contents=contents,
                 config=config,
             )
+            print(f"[Agent] Round {rounds}: got response")
 
             if not response.candidates:
                 final_text = "No response from model."
+                print(f"[Agent] No candidates in response")
                 break
 
             candidate = response.candidates[0]
-            model_content = candidate.content 
+            model_content = candidate.content
 
             text_parts = []
             function_calls = []
@@ -149,13 +157,18 @@ async def run_chat_turn(
             contents.append(model_content)
 
             if not function_calls:
+                print(f"[Agent] No tool calls, final response ready ({len(final_text)} chars)")
                 break
+
+            for fc in function_calls:
+                print(f"[Agent] Tool call: {fc.name}({dict(fc.args) if fc.args else {}})")
 
             function_response_parts = []
             for fc in function_calls:
                 tool_name = fc.name
                 tool_args = dict(fc.args) if fc.args else {}
                 result = await dispatch_tool(tool_name, tool_args)
+                print(f"[Agent] Tool result for {tool_name}: {str(result)[:200]}")
                 function_response_parts.append(
                     types.Part.from_function_response(
                         name=tool_name,
@@ -168,6 +181,7 @@ async def run_chat_turn(
             )
 
     except Exception as e:
+        print(f"[Agent] ERROR: {type(e).__name__}: {e}")
         if "429" in str(e) or "RESOURCE_EXHAUSTED" in str(e):
             final_text = (
                 "⚠️ **API Quota Exceeded**\n\n"

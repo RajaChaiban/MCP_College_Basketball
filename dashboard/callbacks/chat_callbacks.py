@@ -139,11 +139,14 @@ def register_chat_callbacks(app) -> None:
         try:
             from dashboard.ai.agent import run_chat_turn
 
+            print(f"[Chat] Sending to agent: {user_input.strip()[:80]!r}")
             response_text, updated_history = run_async(
                 run_chat_turn(user_input.strip(), history, context),
                 timeout=120.0,
             )
+            print(f"[Chat] Got response: {response_text[:200]!r}")
         except Exception as e:
+            print(f"[Chat] ERROR: {type(e).__name__}: {e}")
             response_text = f"Error: {e}"
             updated_history = history + [
                 {"role": "user", "parts": [{"text": user_input}]},

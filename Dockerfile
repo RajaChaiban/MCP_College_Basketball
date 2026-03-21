@@ -12,7 +12,7 @@ RUN apt-get update && \
     libproj-dev && \
     rm -rf /var/lib/apt/lists/*
 
-# Copy project files
+# Copy project files (bust cache: v2)
 COPY pyproject.toml .
 COPY src/ src/
 COPY dashboard/ dashboard/
@@ -28,7 +28,9 @@ RUN pip install --no-cache-dir -e ".[dashboard]"
 RUN sed -i 's/\r$//' /app/start.sh && chmod +x /app/start.sh
 
 # Non-root user for security
-RUN useradd -m cbbapp
+RUN useradd -m cbbapp && \
+    mkdir -p /app/.cache && \
+    chown -R cbbapp:cbbapp /app
 USER cbbapp
 
 # Environment defaults
