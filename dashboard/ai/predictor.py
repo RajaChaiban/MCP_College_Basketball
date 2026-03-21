@@ -185,12 +185,26 @@ def get_win_probability(game, pbp=None, strength_map=None) -> float | None:
         game_obj = game
 
     status = getattr(game_obj, "status", "pre")
+    is_neutral = getattr(game_obj, "neutral_site", False)
+
+    # On neutral floors, orient the prediction around the higher-ranked team
+    # so the displayed probability is always for the favorite.
+    swapped = False
+    if is_neutral:
+        h_rank = getattr(game_obj.home, "rank", None)
+        a_rank = getattr(game_obj.away, "rank", None)
+        # Lower rank number = better team. Swap if away is better ranked.
+        # Also swap if away is ranked but home is not.
+        if (a_rank and not h_rank) or (a_rank and h_rank and int(a_rank) < int(h_rank)):
+            game_obj.home, game_obj.away = game_obj.away, game_obj.home
+            swapped = True
 
     # 1. Handle Final Games
     h_score = getattr(game_obj.home, "score", 0)
     a_score = getattr(game_obj.away, "score", 0)
     if status == "post":
-        return 1.0 if h_score > a_score else 0.0
+        result = 1.0 if h_score > a_score else 0.0
+        return 1.0 - result if swapped else result
 
     # 2. Score Difference
     score_diff = h_score - a_score
@@ -282,7 +296,12 @@ def get_win_probability(game, pbp=None, strength_map=None) -> float | None:
             period=float(period),
         )
     if result is not None and status == "pre":
-        is_neutral = getattr(game_obj, "neutral_site", False)
         if not is_neutral:
+            # Home court advantage boost for non-neutral games
             result = min(0.95, max(0.05, result + 0.03))
+
+    # If we swapped teams for neutral-site prediction, swap the result back
+    # so the UI shows probability for the original home team
+    if swapped and result is not None:
+        result = 1.0 - result
     return result

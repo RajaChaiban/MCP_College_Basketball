@@ -18,6 +18,11 @@ env/
 .env.local
 .env.production
 .env.*.local
+.env.example  # Only commit template, never actual values
+*.key
+*.pem
+credentials.json
+secrets.json
 
 # Cache
 .cache/

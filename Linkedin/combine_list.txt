@@ -1,0 +1,9 @@
+file 's01_dashboard_initial.png'
+duration 3
+file 'AI_Analyst_Chat_Final.mp4'
+file 's02_dashboard_initial.png'
+duration 3
+file 's03_dashboard_initial.png'
+duration 3
+file 's04_dashboard_initial.png'
+duration 3

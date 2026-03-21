@@ -40,6 +40,7 @@ def build_layout() -> dbc.Container:
             dcc.Store(id="selected-game-store", storage_type="memory"),
             dcc.Store(id="conversation-store", storage_type="session"),
             dcc.Store(id="prob-history-store", storage_type="memory"),
+            dcc.Store(id="page-layout-store", storage_type="memory", data={"loaded": True}),  # Triggers on page load
 
             # ── Intervals ────────────────────────────────────────────────────
             dcc.Interval(id="live-refresh", interval=30_000, n_intervals=0),
@@ -211,3 +212,53 @@ def register_layout_callbacks(app) -> None:
                 dbc.Badge(f"{total} Total", color="secondary"),
             ]
         return dbc.Badge(f"{total} Games", color="secondary")
+
+    # Initialize rankings and teams on page load
+    @app.callback(
+        Output("rankings-content", "children", allow_duplicate=True),
+        Output("all-teams-list", "children", allow_duplicate=True),
+        Input("page-layout-store", "data"),
+        prevent_initial_call='initial_duplicate',
+    )
+    def init_rankings_and_teams(data):
+        """Populate rankings and teams on page load."""
+        from dashboard.callbacks.rankings_callbacks import build_rankings_list, build_all_teams_rows
+        from dashboard.utils import run_async
+        from cbb_mcp.services import teams as teams_svc, rankings as rankings_svc
+
+        try:
+            # Fetch rankings
+            poll = run_async(rankings_svc.get_rankings(poll_type="ap"))
+            rankings_content = build_rankings_list(poll, poll_type="ap")
+
+            # Fetch all teams
+            all_teams = run_async(teams_svc.search_teams(""))
+
+            # Enrich teams with rankings
+            try:
+                if poll and hasattr(poll, 'teams'):
+                    rankings_by_name = {}
+                    rankings_by_id = {}
+                    for ranked_team in poll.teams:
+                        name = ranked_team.team_name.lower() if ranked_team.team_name else ""
+                        team_id = str(ranked_team.team_id) if ranked_team.team_id else ""
+                        if name:
+                            rankings_by_name[name] = ranked_team.rank
+                        if team_id:
+                            rankings_by_id[team_id] = ranked_team.rank
+
+                    for team in all_teams:
+                        team_name_lower = team.name.lower() if team.name else ""
+                        team_id = str(team.id) if team.id else ""
+                        if team_name_lower in rankings_by_name:
+                            team.rank = rankings_by_name[team_name_lower]
+                        elif team_id in rankings_by_id:
+                            team.rank = rankings_by_id[team_id]
+            except Exception as e:
+                pass  # Continue without enrichment if rankings fail
+
+            teams_content = build_all_teams_rows(all_teams)
+            return rankings_content, teams_content
+
+        except Exception as e:
+            return build_rankings_list(None, poll_type="ap"), build_all_teams_rows(None)
