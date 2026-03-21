@@ -36,9 +36,9 @@ Summary_CBB_Predictive_Model.md
 
 # ML Model Data
 *.csv
-*.joblib
 *.pkl
 *.onnx
+# Note: *.joblib tracked intentionally (~2MB model files needed for deployment)
 
 # IDE
 .vscode/

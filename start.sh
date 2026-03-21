@@ -20,6 +20,9 @@ echo "Waiting for MCP server to be ready..."
 sleep 3
 echo "MCP server should be ready."
 
+# Tell the dashboard how to reach the MCP server (HTTP mode)
+export MCP_SERVER_URL=http://localhost:8000/mcp
+
 # Railway sets PORT env var — dashboard must listen on it
 DASH_PORT=${PORT:-8050}
 

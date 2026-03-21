@@ -82,8 +82,10 @@ def _parse_win_pct(record: str) -> float:
 class WinPredictor:
     def __init__(self, model_path: str | None = None):
         if model_path is None:
-            preferred = "cbb_predictor_bundle_2025_26_safe.joblib"
-            fallback = "cbb_predictor_bundle.joblib"
+            _project_root = os.path.dirname(os.path.dirname(os.path.dirname(
+                os.path.abspath(__file__))))
+            preferred = os.path.join(_project_root, "cbb_predictor_bundle_2025_26_safe.joblib")
+            fallback = os.path.join(_project_root, "cbb_predictor_bundle.joblib")
             self.model_path = preferred if os.path.exists(preferred) else fallback
         else:
             self.model_path = model_path

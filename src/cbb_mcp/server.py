@@ -16,6 +16,7 @@ from cbb_mcp.services import games, rankings, stats, teams
 from cbb_mcp.utils import formatting
 from cbb_mcp.utils.constants import ESPN_CONFERENCES, CURRENT_SEASON
 from cbb_mcp.utils.errors import CBBError
+from cbb_mcp.predictor_server import get_win_probability as pred_get_win_probability
 
 _LOG_LEVELS = {"DEBUG", "INFO", "WARNING", "ERROR", "CRITICAL"}
 _level_name = settings.log_level.upper() if settings.log_level.upper() in _LOG_LEVELS else "INFO"
@@ -280,6 +281,65 @@ async def get_play_by_play(game_id: str, last_n: int = 20) -> str:
             return str(e)
         except Exception:
             logger.exception("unexpected_error", tool="get_play_by_play")
+            return "An unexpected error occurred. Please try again."
+
+
+@mcp.tool()
+async def get_win_probability_by_teams(home_team: str, away_team: str, date: str = "") -> str:
+    """Get win probability prediction for a specific matchup by team names.
+    Searches for the game on the specified date and returns win probability.
+
+    Args:
+        home_team: Home team name (e.g., "North Carolina", "Duke")
+        away_team: Away team name (e.g., "VCU")
+        date: Date in YYYY-MM-DD format. Defaults to today.
+    """
+    async with _concurrency:
+        try:
+            home_team = _sanitize_text(home_team, "home_team")
+            away_team = _sanitize_text(away_team, "away_team")
+            d = _validate_date(date)
+
+            # Get all games on the specified date
+            games_list = await games.get_live_scores(d)
+
+            # Fuzzy match to find the game between these teams
+            from difflib import SequenceMatcher
+
+            def sim(a: str, b: str) -> float:
+                return SequenceMatcher(None, a.lower(), b.lower()).ratio()
+
+            best_match = None
+            best_score = 0.0
+
+            for game in games_list:
+                h_name = getattr(game.home, "team_name", None) or getattr(game.home, "name", "")
+                a_name = getattr(game.away, "team_name", None) or getattr(game.away, "name", "")
+
+                score1 = sim(home_team, h_name) + sim(away_team, a_name)
+                score2 = sim(home_team, a_name) + sim(away_team, h_name)
+
+                if score1 > best_score:
+                    best_score = score1
+                    best_match = game
+                if score2 > best_score:
+                    best_score = score2
+                    best_match = game
+
+            if not best_match or best_score < 1.2:
+                return f"No game found between {home_team} and {away_team} on {d}. Please check the team names or date."
+
+            game_id = getattr(best_match, "id", None)
+            if not game_id:
+                return f"Could not find game ID for {home_team} vs {away_team}."
+
+            result = await pred_get_win_probability(game_id)
+            return result
+
+        except CBBError as e:
+            return str(e)
+        except Exception:
+            logger.exception("unexpected_error", tool="get_win_probability_by_teams")
             return "An unexpected error occurred. Please try again."
 
 

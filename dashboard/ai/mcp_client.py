@@ -72,12 +72,12 @@ class MCPClient:
     async def _connect_http(self) -> None:
         """Connect to remote MCP server via HTTP (Docker/cloud mode)."""
         from mcp import ClientSession
-        from mcp.client.sse import sse_client
+        from mcp.client.streamable_http import streamablehttp_client
 
         self._exit_stack = AsyncExitStack()
         try:
-            read, write = await self._exit_stack.enter_async_context(
-                sse_client(self._server_url)
+            read, write, _ = await self._exit_stack.enter_async_context(
+                streamablehttp_client(self._server_url)
             )
             self._session = await self._exit_stack.enter_async_context(
                 ClientSession(read, write)

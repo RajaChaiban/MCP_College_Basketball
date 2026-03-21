@@ -17,6 +17,9 @@ COPY pyproject.toml .
 COPY src/ src/
 COPY dashboard/ dashboard/
 COPY start.sh .
+COPY cbb_predictor_bundle.joblib .
+COPY cbb_predictor_bundle_2025_26_safe.joblib .
+COPY team_features_lookup.json .
 
 # Install all dependencies (MCP server + dashboard)
 RUN pip install --no-cache-dir -e ".[dashboard]"
