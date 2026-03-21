@@ -1,6 +1,5 @@
 """
-Shared async utilities for the dashboard.
-Provides a background event loop so sync Dash callbacks can call async services.
+Shared utilities for the dashboard.
 """
 
 from __future__ import annotations
@@ -26,3 +25,20 @@ def run_async(coro: Coroutine[Any, Any, T], timeout: float = 30.0) -> T:
     """
     future = asyncio.run_coroutine_threadsafe(coro, _loop)
     return future.result(timeout=timeout)
+
+
+# Export rate limiter functions
+from dashboard.utils.rate_limiter import (
+    check_rate_limit,
+    get_client_ip,
+    get_remaining_questions,
+    reset_ip_limit,
+)
+
+__all__ = [
+    "run_async",
+    "check_rate_limit",
+    "get_client_ip",
+    "get_remaining_questions",
+    "reset_ip_limit",
+]

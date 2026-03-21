@@ -4,10 +4,12 @@ Chat callbacks: user input → AI agent → display response.
 
 from __future__ import annotations
 
-from dash import Input, Output, State, callback, no_update
+from dash import Input, Output, State, callback, no_update, html
+from flask import request
 
 from dashboard.components.chat_panel import render_chat_history
 from dashboard.utils import run_async
+from dashboard.utils.rate_limiter import check_rate_limit, get_client_ip, get_remaining_questions
 
 
 def register_chat_callbacks(app) -> None:
@@ -115,9 +117,23 @@ def register_chat_callbacks(app) -> None:
 
         history = history or []
 
-        # Add user message to history immediately for state preservation
-        # (Though Dash updates the whole list anyway)
-        
+        # --- Rate Limiting Check ---
+        user_ip = get_client_ip(request)
+        allowed, limit_message = check_rate_limit(user_ip)
+
+        if not allowed:
+            print(f"[Chat] Rate limit exceeded for IP {user_ip}: {limit_message}")
+            remaining = get_remaining_questions(user_ip)
+
+            # Show rate limit message to user
+            error_response = f"{limit_message}\n\n(Remaining today: {remaining['daily_remaining']}/{remaining['daily_limit']})"
+            updated_history = history + [
+                {"role": "user", "parts": [{"text": user_input}]},
+                {"role": "model", "parts": [{"text": error_response}]},
+            ]
+            rendered = render_chat_history(updated_history, show_typing=False)
+            return rendered, updated_history, ""
+
         # Build context from selected game
         context = {}
         try:
@@ -139,7 +155,7 @@ def register_chat_callbacks(app) -> None:
         try:
             from dashboard.ai.agent import run_chat_turn
 
-            print(f"[Chat] Sending to agent: {user_input.strip()[:80]!r}")
+            print(f"[Chat] IP {user_ip}: Sending to agent: {user_input.strip()[:80]!r}")
             response_text, updated_history = run_async(
                 run_chat_turn(user_input.strip(), history, context),
                 timeout=120.0,
