@@ -7,7 +7,7 @@
 
 ## Dashboard Preview
 
-![CBB Dashboard](./media/dashboard_preview.png)
+![CBB Live Dashboard - Interactive US Map with AP Top 25 Rankings](./docs/screenshots/dashboard_overview.png)
 
 A full-stack Python application that combines a live college basketball MCP server with an interactive dashboard and an in-game win probability predictor. Watch games in real time on an interactive US map, explore box scores and play-by-play, and get live win probability powered by an ensemble ML model.
 
