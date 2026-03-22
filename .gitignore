@@ -35,8 +35,7 @@ secrets.json
 
 # Claude
 .claude/
-CLAUDE.md
-claude.md
+docs_internal/
 Summary_CBB_Predictive_Model.md
 
 # ML Model Data
@@ -58,3 +57,7 @@ nul
 
 # Junk files from bad pip installs
 =*
+
+# Organized folders (not for Git)
+media/
+testing/

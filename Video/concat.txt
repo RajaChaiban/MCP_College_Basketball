@@ -1,4 +1,0 @@
-file 'img1.mp4'
-file 'img2.mp4'
-file 'img3.mp4'
-file 'img4.mp4'

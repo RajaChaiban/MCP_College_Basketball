@@ -273,6 +273,22 @@ def get_gemini_tools() -> list[dict]:
     return [{"function_declarations": FUNCTION_DECLARATIONS}]
 
 
+def get_openai_tools() -> list[dict]:
+    """Convert FUNCTION_DECLARATIONS to OpenAI/Ollama tool format."""
+    tools = []
+    for func in FUNCTION_DECLARATIONS:
+        tool = {
+            "type": "function",
+            "function": {
+                "name": func["name"],
+                "description": func["description"],
+                "parameters": func["parameters"],
+            }
+        }
+        tools.append(tool)
+    return tools
+
+
 # ── MCP dispatch ─────────────────────────────────────────────────────────────
 
 async def dispatch_tool(tool_name: str, tool_args: dict[str, Any]) -> str:

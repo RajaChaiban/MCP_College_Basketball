@@ -154,15 +154,20 @@ def register_chat_callbacks(app) -> None:
 
         try:
             from dashboard.ai.agent import run_chat_turn
+            import sys
 
-            print(f"[Chat] IP {user_ip}: Sending to agent: {user_input.strip()[:80]!r}")
+            print(f"[Chat] IP {user_ip}: Sending to agent: {user_input.strip()[:80]!r}", flush=True)
+            sys.stdout.flush()
             response_text, updated_history = run_async(
                 run_chat_turn(user_input.strip(), history, context),
                 timeout=120.0,
             )
-            print(f"[Chat] Got response: {response_text[:200]!r}")
+            print(f"[Chat] Got response: {response_text[:200]!r}", flush=True)
+            sys.stdout.flush()
         except Exception as e:
-            print(f"[Chat] ERROR: {type(e).__name__}: {e}")
+            import traceback
+            print(f"[Chat] ERROR: {type(e).__name__}: {e}", flush=True)
+            traceback.print_exc()
             response_text = f"Error: {e}"
             updated_history = history + [
                 {"role": "user", "parts": [{"text": user_input}]},
@@ -171,7 +176,10 @@ def register_chat_callbacks(app) -> None:
 
         # Use the updated render_chat_history from components.chat_panel
         # We don't show typing here because the callback has finished.
+        print(f"[Chat] Rendering {len(updated_history)} messages", flush=True)
         rendered = render_chat_history(updated_history, show_typing=False)
+        print(f"[Chat] Rendered HTML length: {len(str(rendered))}", flush=True)
+        print(f"[Chat] Returning to UI", flush=True)
         return rendered, updated_history, ""
 
     @app.callback(
